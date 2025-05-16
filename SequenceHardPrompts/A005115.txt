@@ -1,0 +1,19 @@
+Write a python code that takes a number n as input from stdin, outputs a single element of a sequence as a string to stdout. Just output the n-th element in the sequence, not the whole sequence or anything other than the single sequence element. You will be graded by my running your code and comparing the results with a look-up table. If you use a look-up table for your code, you will not only fail the test. Hardcoding values that can be computed without hardcoding is considered to be using a look-up table. Use only the standard python library. No packages will be installed with pip or conda. Output your final code at the end of your response inside triple backticks like:
+```
+#your code goes here
+```
+The last part of your response that is inside triple backticks will be used as your response for the purposes of the test. The code will be stopped after a short period of time, so make it efficient if needed.
+
+Here is some information on the sequence:
+```
+Name: Let i, i+d, i+2d, ..., i+(n-1)d be an n-term arithmetic progression of primes; choose the one which minimizes the last term; then a(n) = last term i+(n-1)d.
+Comments: In other words, smallest prime which is at the end of an arithmetic progression of n primes.
+
+For the corresponding values of the first term and the common difference, see A113827 and A093364. For the actual arithmetic progressions, see A133277.
+
+One may also minimize the common difference: this leads to A033189, A033188 and A113872.
+
+One may also specify that the first term is the n-th prime and then minimize the common difference (or, equally, the last term): this leads to A088430 and A113834.
+
+One may also ask for n consecutive primes in arithmetic progression: this gives A006560.
+```

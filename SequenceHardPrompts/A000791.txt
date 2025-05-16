@@ -1,0 +1,15 @@
+Write a python code that takes a number n as input from stdin, outputs a single element of a sequence as a string to stdout. Just output the n-th element in the sequence, not the whole sequence or anything other than the single sequence element. You will be graded by my running your code and comparing the results with a look-up table. If you use a look-up table for your code, you will not only fail the test. Hardcoding values that can be computed without hardcoding is considered to be using a look-up table. Use only the standard python library. No packages will be installed with pip or conda. Output your final code at the end of your response inside triple backticks like:
+```
+#your code goes here
+```
+The last part of your response that is inside triple backticks will be used as your response for the purposes of the test. The code will be stopped after a short period of time, so make it efficient if needed.
+
+Here is some information on the sequence:
+```
+Name: Ramsey numbers R(3,n).
+Comments: a(10) is either 40, 41, or 42 (Goedgebeur, Radziszowski). - _Ray G. Opao_, Oct 07 2015
+
+Kim proves that a(n) ≍ n^2/log n; the lower and upper constants, respectively, can be chosen arbitrarily close to 1/162 and 1. (Kim notes that he made no attempt to make 1/162 tight.) - _Charles R Greathouse IV_, Jun 23 2023
+
+As of 31 December 2023, Vigleik Angeltveit claims to have ruled out a(10)=42 with a massive computer search. See links. That would mean that 40 <= a(10) <= 41. - _Allan C. Wechsler_, Apr 05 2024
+```

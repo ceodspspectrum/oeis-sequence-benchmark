@@ -1,0 +1,15 @@
+Write a python code that takes a number n as input from stdin, outputs a single element of a sequence as a string to stdout. Just output the n-th element in the sequence, not the whole sequence or anything other than the single sequence element. You will be graded by my running your code and comparing the results with a look-up table. If you use a look-up table for your code, you will not only fail the test. Hardcoding values that can be computed without hardcoding is considered to be using a look-up table. Use only the standard python library. No packages will be installed with pip or conda. Output your final code at the end of your response inside triple backticks like:
+```
+#your code goes here
+```
+The last part of your response that is inside triple backticks will be used as your response for the purposes of the test. The code will be stopped after a short period of time, so make it efficient if needed.
+
+Here is some information on the sequence:
+```
+Name: Unary representation of natural numbers.
+Comments: Or, numbers written in base 1.
+
+If p is a prime > 5 then d_{a(p)} == 1 (mod p) where d_{a(p)} is a divisor of a(p). This also gives an alternate elementary proof of the infinitude of prime numbers by the fact that for every prime p there exists at least one prime of the form k*p + 1. - _Amarnath Murthy_, Oct 05 2002
+
+11 = 1*9 + 2; 111 = 12*9 + 3; 1111 = 123*9 + 4; 11111 = 1234*9 + 5; 111111 = 12345*9 + 6; 1111111 = 123456*9 + 7; 11111111 = 1234567*9 + 8; 111111111 = 12345678*9 + 9. - _Vincenzo Librandi_, Jul 18 2010
+```

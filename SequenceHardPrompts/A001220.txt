@@ -1,0 +1,71 @@
+Write a python code that takes a number n as input from stdin, outputs a single element of a sequence as a string to stdout. Just output the n-th element in the sequence, not the whole sequence or anything other than the single sequence element. You will be graded by my running your code and comparing the results with a look-up table. If you use a look-up table for your code, you will not only fail the test. Hardcoding values that can be computed without hardcoding is considered to be using a look-up table. Use only the standard python library. No packages will be installed with pip or conda. Output your final code at the end of your response inside triple backticks like:
+```
+#your code goes here
+```
+The last part of your response that is inside triple backticks will be used as your response for the purposes of the test. The code will be stopped after a short period of time, so make it efficient if needed.
+
+Here is some information on the sequence:
+```
+Name: Wieferich primes: primes p such that p^2 divides 2^(p-1) - 1.
+Comments: Sequence is believed to be infinite.
+
+Joseph Silverman showed that the abc-conjecture implies that there are infinitely many primes which are not in the sequence. - _Benoit Cloitre_, Jan 09 2003
+
+Graves and Murty (2013) improved Silverman's result by showing that for any fixed k > 1, the abc-conjecture implies that there are infinitely many primes == 1 (mod k) which are not in the sequence. - _Jonathan Sondow_, Jan 21 2013
+
+The squares of these numbers are Fermat pseudoprimes to base 2 (A001567) and Catalan pseudoprimes (A163209). - _T. D. Noe_, May 22 2003
+
+Primes p that divide the numerator of the harmonic number H((p-1)/2); that is, p divides A001008((p-1)/2). - _T. D. Noe_, Mar 31 2004
+
+In a 1977 paper, Wells Johnson, citing a suggestion from Lawrence Washington, pointed out the repetitions in the binary representations of the numbers which are one less than the two known Wieferich primes; i.e., 1092 = 10001000100 (base 2); 3510 = 110110110110 (base 2). It is perhaps worth remarking that 1092 = 444 (base 16) and 3510 = 6666 (base 8), so that these numbers are small multiples of repunits in the respective bases. Whether this is mathematically significant does not appear to be known. - _John Blythe Dobson_, Sep 29 2007
+
+A002326((a(n)^2 - 1)/2) = A002326((a(n)-1)/2). - _Vladimir Shevelev_, Jul 09 2008, Aug 24 2008
+
+It is believed that p^2 does not divide 3^(p-1) - 1 if p = a(n). This is true for n = 1 and 2. See A178815, A178844, A178900, and Ostafe-Shparlinski (2010) Section 1.1. - _Jonathan Sondow_, Jun 29 2010
+
+These primes also divide the numerator of the harmonic number H(floor((p-1)/4)). - H. Eskandari (hamid.r.eskandari(AT)gmail.com), Sep 28 2010
+
+1093 and 3511 are prime numbers p satisfying congruence 429327^(p-1) == 1 (mod p^2). Why? - _Arkadiusz Wesolowski_, Apr 07 2011. Such bases are listed in A247208. - _Max Alekseyev_, Nov 25 2014. See A269798 for all such bases, prime and composite, that are not powers of 2. - _Felix Fröhlich_, Apr 07 2018
+
+A196202(A049084(a(1))) = A196202(A049084(a(2))) = 1. - _Reinhard Zumkeller_, Sep 29 2011
+
+If q is prime and q^2 divides a prime-exponent Mersenne number, then q must be a Wieferich prime. Neither of the two known Wieferich primes divide Mersenne numbers. See Will Edgington's Mersenne page in the links below. - _Daran Gill_, Apr 04 2013
+
+There are no other terms below 4.97*10^17 as established by PrimeGrid (see link below). - _Max Alekseyev_, Nov 20 2015. The search was done via PrimeGrid's PRPNet and the results were not double-checked. Because of the unreliability of the testing, the search was suspended in May 2017 (cf. Goetz, 2017). - _Felix Fröhlich_, Apr 01 2018. On Nov 28 2020, PrimeGrid has resumed the search (cf. Reggie, 2020). - _Felix Fröhlich_, Nov 29 2020. As of Dec 29 2022, PrimeGrid has completed the search to 2^64 (about 1.8 * 10^19) and has no plans to continue further. - _Charles R Greathouse IV_, Sep 24 2024
+
+Are there other primes q >= p such that q^2 divides 2^(p-1)-1, where p is a prime? - _Thomas Ordowski_, Nov 22 2014. Any such q must be a Wieferich prime. - _Max Alekseyev_, Nov 25 2014
+
+Primes p such that p^2 divides 2^r - 1 for some r, 0 < r < p. - _Thomas Ordowski_, Nov 28 2014, corrected by _Max Alekseyev_, Nov 28 2014
+
+For some reason, both p=a(1) and p=a(2) also have more bases b with 1 < b < p that make b^(p-1) == 1 (mod p^2) than any smaller prime p; in other words, a(1) and a(2) belong to A248865. - _Jeppe Stig Nielsen_, Jul 28 2015
+
+Let r_1, r_2, r_3, ..., r_i be the set of roots of the polynomial X^((p-1)/2) - (p-3)! * X^((p-3)/2) - (p-5)! * X^((p-5)/2) - ... - 1. Then p is a Wieferich prime iff p divides sum{k=1, p}(r_k^((p-1)/2)) (see Example 2 in Jakubec, 1994). - _Felix Fröhlich_, May 27 2016
+
+Arthur Wieferich showed that if p is not a term of this sequence, then the First Case of Fermat's Last Theorem has no solution in x, y and z for prime exponent p (cf. Wieferich, 1909). - _Felix Fröhlich_, May 27 2016
+
+Let U_n(P, Q) be a Lucas sequence of the first kind, let e be the Legendre symbol (D/p) and let p be a prime not dividing 2QD, where D = P^2 - 4*Q. Then a prime p such that U_(p-e) == 0 (mod p^2) is called a "Lucas-Wieferich prime associated to the pair (P, Q)". Wieferich primes are those Lucas-Wieferich primes that are associated to the pair (3, 2) (cf. McIntosh, Roettger, 2007, p. 2088). - _Felix Fröhlich_, May 27 2016
+
+Any repeated prime factor of a term of A000215 is a term of this sequence. Thus, if there exist infinitely many Fermat numbers that are not squarefree, then this sequence is infinite, since no two Fermat numbers share a common factor. - _Felix Fröhlich_, May 27 2016
+
+If the Diophantine equation p^x - 2^y = d has more than one solution in positive integers (x, y), with (p, d) not being one of the pairs (3, 1), (3, -5), (3, -13) or (5, -3), then p is a term of this sequence (cf. Scott, Styer, 2004, Corollary to Theorem 2). - _Felix Fröhlich_, Jun 18 2016
+
+Odd primes p such that Chi_(D_0)(p) != 1 and Lambda_p(Q(sqrt(D_0))) != 1, where D_0 < 0 is the fundamental discriminant of the imaginary quadratic field Q(sqrt(1-p^2)) and Chi and Lambda are Iwasawa invariants (cf. Byeon, 2006, Proposition 1 (i)). - _Felix Fröhlich_, Jun 25 2016
+
+If q is an odd prime, k, p are primes with p = 2*k+1, k == 3 (mod 4), p == -1 (mod q) and p =/= -1 (mod q^3) (Jakubec, 1998, Corollary 2 gives p == -5 (mod q) and p =/= -5 (mod q^3)) with the multiplicative order of q modulo k = (k-1)/2 and q dividing the class number of the real cyclotomic field Q(Zeta_p + (Zeta_p)^(-1)), then q is a term of this sequence (cf. Jakubec, 1995, Theorem 1). - _Felix Fröhlich_, Jun 25 2016
+
+From _Felix Fröhlich_, Aug 06 2016: (Start)
+
+Primes p such that p-1 is in A240719.
+
+Prime terms of A077816 (cf. Agoh, Dilcher, Skula, 1997, Corollary 5.9).
+
+p = prime(n) is in the sequence iff T(2, n) > 1, where T = A258045.
+
+p = prime(n) is in the sequence iff an integer k exists such that T(n, k) = 2, where T = A258787. (End)
+
+Conjecture: an integer n > 1 such that n^2 divides 2^(n-1)-1 must be a Wieferich prime. - _Thomas Ordowski_, Dec 21 2016
+
+The above conjecture is equivalent to the statement that no "Wieferich pseudoprimes" (WPSPs) exist. While base-b WPSPs are known to exist for several bases b > 1 other than 2 (see for example A244752), no base-2 WPSPs are known. Since two necessary conditions for a composite to be a base-2 WPSP are that, both, it is a base-2 Fermat pseudoprime (A001567) and all its prime factors are Wieferich primes (cf. A270833), as shown in the comments in A240719, it seems that the first base-2 WPSP, if it exists, is probably very large. This appears to be supported by the guess that the properties of a composite to be a term of A001567 and of A270833 are "independent" of each other and by the observation that the scatterplot of A256517 seems to become "less dense" at the x-axis parallel line y = 2 for increasing n. It has been suggested in the literature that there could be asymptotically about log(log(x)) Wieferich primes below some number x, which is a function that grows to infinity, but does so very slowly. Considering the above constraints, the number of WPSPs may grow even more slowly, suggesting any such number, should it exist, probably lies far beyond any bound a brute-force search could reach in the forseeable future. Therefore I guess that the conjecture may be false, but a disproof or the discovery of a counterexample are probably extraordinarily difficult problems. - _Felix Fröhlich_, Jan 18 2019
+
+Named after the German mathematician Arthur Josef Alwin Wieferich (1884-1954). a(1) = 1093 was found by Waldemar Meissner in 1913. a(2) = 3511 was found by N. G. W. H. Beeger in 1922. - _Amiram Eldar_, Jun 05 2021
+```

@@ -1,0 +1,31 @@
+Write a python code that takes a number n as input from stdin, outputs a single element of a sequence as a string to stdout. Just output the n-th element in the sequence, not the whole sequence or anything other than the single sequence element. You will be graded by my running your code and comparing the results with a look-up table. If you use a look-up table for your code, you will not only fail the test. Hardcoding values that can be computed without hardcoding is considered to be using a look-up table. Use only the standard python library. No packages will be installed with pip or conda. Output your final code at the end of your response inside triple backticks like:
+```
+#your code goes here
+```
+The last part of your response that is inside triple backticks will be used as your response for the purposes of the test. The code will be stopped after a short period of time, so make it efficient if needed.
+
+Here is some information on the sequence:
+```
+Name: Number of different quasi-orders (or topologies, or transitive digraphs) with n labeled elements.
+Comments: From _Altug Alkan_, Dec 18 2015 and Feb 28 2017: (Start)
+
+a(p^k) == k+1 (mod p) for all primes p. This is proved by Kizmaz at On The Number Of Topologies On A Finite Set link. For proof see Theorem 2.4 in page 2 and 3. So a(19) == 2 (mod 19).
+
+a(p+n) == A265042(n) (mod p) for all primes p. This is also proved by Kizmaz at related link, see Theorem 2.7 in page 4. If n=2 and p=17, a(17+2) == A265042(2) (mod 17), that is a(19) == 51 (mod 17). So a(19) is divisible by 17.
+
+In conclusion, a(19) is a number of the form 323*n - 17. (End)
+
+The BII-numbers of finite topologies without their empty set are given by A326876. - _Gus Wiseman_, Aug 01 2019
+
+From _Tian Vlasic_, Feb 23 2022: (Start)
+
+Although no general formula is known for a(n), by considering the number of topologies with a fixed number of open sets, it is possible to explicitly represent the sequence in terms of Stirling numbers of the second kind.
+
+For example: a(n,3) = 2*S(n,2), a(n,4) = S(n,2) + 6*S(n,3), a(n,5) = 6*S(n,3) + 24*S(n,4).
+
+Lower and upper bounds are known: 2^n <= a(n) <= 2^(n*(n-1)), n > 1.
+
+This follows from the fact that there are 2^(n*(n-1)) reflexive relations on a set with n elements.
+
+Furthermore: a(n+1) <= a(n)*(3a(n)+1). (End)
+```

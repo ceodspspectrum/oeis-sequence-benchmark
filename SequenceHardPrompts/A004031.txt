@@ -1,0 +1,21 @@
+Write a python code that takes a number n as input from stdin, outputs a single element of a sequence as a string to stdout. Just output the n-th element in the sequence, not the whole sequence or anything other than the single sequence element. You will be graded by my running your code and comparing the results with a look-up table. If you use a look-up table for your code, you will not only fail the test. Hardcoding values that can be computed without hardcoding is considered to be using a look-up table. Use only the standard python library. No packages will be installed with pip or conda. Output your final code at the end of your response inside triple backticks like:
+```
+#your code goes here
+```
+The last part of your response that is inside triple backticks will be used as your response for the purposes of the test. The code will be stopped after a short period of time, so make it efficient if needed.
+
+Here is some information on the sequence:
+```
+Name: Number of n-dimensional crystal systems.
+Comments: From _Andrey Zabolotskiy_, Jul 12 2017: (Start)
+
+From Souvignier (2003): "the unions of all geometric classes intersecting the same set of Bravais flocks is defined to be a crystal system or point-group system. <...> This means that two geometric classes belong to the same crystal system if for any representative of the first class there is a representative of the other class such that the representatives have GL(n,Q)-conjugate Bravais groups. <...> The definition for crystal systems as given by Brown et al. (1978) therefore is only valid in dimensions up to 4, where it coincides with the more general definition adopted here."
+
+For dimension 6, Souvignier (2003) uses old incorrect CARAT data, but the error affected only geometric classes and finer classification, so the data for crystal systems must be correct.
+
+Among 33 4-dimensional crystal systems, 7 are enantiomorphic.
+
+Coincides with the number of n-dimensional Bravais systems for n<5 (only).
+
+(End)
+```

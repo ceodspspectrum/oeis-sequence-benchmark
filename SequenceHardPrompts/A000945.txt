@@ -1,0 +1,23 @@
+Write a python code that takes a number n as input from stdin, outputs a single element of a sequence as a string to stdout. Just output the n-th element in the sequence, not the whole sequence or anything other than the single sequence element. You will be graded by my running your code and comparing the results with a look-up table. If you use a look-up table for your code, you will not only fail the test. Hardcoding values that can be computed without hardcoding is considered to be using a look-up table. Use only the standard python library. No packages will be installed with pip or conda. Output your final code at the end of your response inside triple backticks like:
+```
+#your code goes here
+```
+The last part of your response that is inside triple backticks will be used as your response for the purposes of the test. The code will be stopped after a short period of time, so make it efficient if needed.
+
+Here is some information on the sequence:
+```
+Name: Euclid-Mullin sequence: a(1) = 2, a(n+1) is smallest prime factor of 1 + Product_{k=1..n} a(k).
+Comments: "Does the sequence ... contain every prime? ... [It] was considered by Guy and Nowakowski and later by Shanks, [Wagstaff 1993] computed the sequence through the 43rd term. The computational problem inherent in continuing the sequence further is the enormous size of the numbers that must be factored. Already the number a(1)* ... *a(43) + 1 has 180 digits." - Crandall and Pomerance
+
+If this variant of Euclid-Mullin sequence is initiated either with 3, 7 or 43 instead of 2, then from a(5) onwards it is unchanged. See also A051614. - _Labos Elemer_, May 03 2004
+
+Wilfrid Keller informed me that a(1)* ... *a(43) + 1 was factored as the product of two primes on Mar 09 2010 by the GNFS method. See the post in the Mersenne Forum for more details. The smaller 68-digit prime is a(44). Terms a(45)-a(47) were easy to find. Finding a(48) will require the factorization of a 256-digit number. See the b-file for the four new terms. - _T. D. Noe_, Oct 15 2010
+
+On Sep 11 2012, Ryan Propper factored the 256-digit number by finding a 75-digit factor by using ECM. Finding a(52) will require the factorization of a 335-digit number. See the b-file for the terms a(48) to a(51). - _V. Raman_, Sep 17 2012
+
+Needs longer b-file. - _N. J. A. Sloane_, Dec 18 2015
+
+A056756 gives the position of the k-th prime in this sequence for each k. - _Jianing Song_, May 07 2021
+
+Named after the Greek mathematician Euclid (flourished c. 300 B.C.) and the American engineer and mathematician Albert Alkins Mullin (1933-2017). - _Amiram Eldar_, Jun 11 2021
+```

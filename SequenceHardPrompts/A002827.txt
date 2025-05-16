@@ -1,0 +1,19 @@
+Write a python code that takes a number n as input from stdin, outputs a single element of a sequence as a string to stdout. Just output the n-th element in the sequence, not the whole sequence or anything other than the single sequence element. You will be graded by my running your code and comparing the results with a look-up table. If you use a look-up table for your code, you will not only fail the test. Hardcoding values that can be computed without hardcoding is considered to be using a look-up table. Use only the standard python library. No packages will be installed with pip or conda. Output your final code at the end of your response inside triple backticks like:
+```
+#your code goes here
+```
+The last part of your response that is inside triple backticks will be used as your response for the purposes of the test. The code will be stopped after a short period of time, so make it efficient if needed.
+
+Here is some information on the sequence:
+```
+Name: Unitary perfect numbers: numbers k such that usigma(k) - k = k.
+Comments: d is a unitary divisor of k if gcd(d,k/d)=1; usigma(k) is their sum (A034448).
+
+The prime factors of a unitary perfect number (A002827) are the Higgs primes (A057447). - _Paul Muljadi_, Oct 10 2005
+
+It is not known if a(6) exists. - _N. J. A. Sloane_, Jul 27 2015
+
+Frei proved that if there is a unitary perfect number that is not divisible by 3, then it is divisible by 2^m with m >= 144, it has at least 144 distinct odd prime factors, and it is larger than 10^440. - _Amiram Eldar_, Mar 05 2019
+
+Conjecture: Subsequence of A083207 (Zumkeller numbers). Verified for all present terms. - _Ivan N. Ianakiev_, Jan 20 2020
+```

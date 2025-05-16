@@ -1,0 +1,47 @@
+Write a python code that takes a number n as input from stdin, outputs a single element of a sequence as a string to stdout. Just output the n-th element in the sequence, not the whole sequence or anything other than the single sequence element. You will be graded by my running your code and comparing the results with a look-up table. If you use a look-up table for your code, you will not only fail the test. Hardcoding values that can be computed without hardcoding is considered to be using a look-up table. Use only the standard python library. No packages will be installed with pip or conda. Output your final code at the end of your response inside triple backticks like:
+```
+#your code goes here
+```
+The last part of your response that is inside triple backticks will be used as your response for the purposes of the test. The code will be stopped after a short period of time, so make it efficient if needed.
+
+Here is some information on the sequence:
+```
+Name: Tangent (or "Zag") numbers: e.g.f. tan(x), also (up to signs) e.g.f. tanh(x).
+Comments: Number of Joyce trees with 2n-1 nodes. Number of tremolo permutations of {0,1,...,2n}. - _Ralf Stephan_, Mar 28 2003
+
+The Hankel transform of this sequence is A000178(n) for n odd = 1, 12, 34560, ...; example: det([1, 2, 16; 2, 16, 272, 16, 272, 7936]) = 34560. - _Philippe Deléham_, Mar 07 2004
+
+a(n) is the number of increasing labeled full binary trees with 2n-1 vertices. Full binary means every non-leaf vertex has two children, distinguished as left and right; labeled means the vertices are labeled 1,2,...,2n-1; increasing means every child has a label greater than its parent. - _David Callan_, Nov 29 2007
+
+From Micha Hofri (hofri(AT)wpi.edu), May 27 2009: (Start)
+
+a(n) was found to be the number of permutations of [2n] which when inserted in order, to form a binary search tree, yield the maximally full possible tree (with only one single-child node).
+
+The e.g.f. is sec^2(x)=1+tan^2(x), and the same coefficients can be manufactured from the tan(x) itself, which is the e.g.f. for the number of trees as above for odd number of nodes. (End)
+
+a(n) is the number of increasing strict binary trees with 2n-1 nodes. For more information about increasing strict binary trees with an associated permutation, see A245894. - _Manda Riehl_, Aug 07 2014
+
+For relations to alternating permutations, Euler and Bernoulli polynomials, zigzag numbers, trigonometric functions, Fourier transform of a square wave, quantum algebras, and integrals over and in n-dimensional hypercubes and over Green functions, see Hodges and Sukumar. For further discussion on the quantum algebra, see the later Hodges and Sukumar reference and the paper by Hetyei presenting connections to the general combinatorial theory of Viennot on orthogonal polynomials, inverse polynomials, tridiagonal matrices, and lattice paths (thereby related to continued fractions and cumulants). - _Tom Copeland_, Nov 30 2014
+
+The Zigzag Hankel transform is A000178. That is, A000178(2*n - k) = det( [a(i+j - k)]_{i,j = 1..n} ) for n>0 and k=0,1. - _Michael Somos_, Mar 12 2015
+
+a(n) is the number of standard Young tableaux of skew shape (n,n,n-1,n-2,...,3,2)/(n-1,n-2,n-3,...,2,1). - _Ran Pan_, Apr 10 2015
+
+For relations to the Sheffer Appell operator calculus and a Riccati differential equation for generating the Meixner-Pollaczek and Krawtchouk orthogonal polynomials, see page 45 of the Feinsilver link and Rzadkowski. - _Tom Copeland_, Sep 28 2015
+
+For relations to an elliptic curve, a Weierstrass elliptic function, the Lorentz formal group law, a Lie infinitesimal generator, and the Eulerian numbers A008292, see A155585. - _Tom Copeland_, Sep 30 2015
+
+Absolute values of the alternating sums of the odd-numbered rows (where the single 1 at the apex of the triangle is counted as row #1) of the Eulerian triangle, A008292. The actual alternating sums alternate in sign, e.g., 1, -2, 16, -272, etc. (Even-numbered rows have alternating sums always 0.) - _Gregory Gerard Wojnar_, Sep 28 2018
+
+The sequence is periodic modulo any odd prime p. The minimal period is (p-1)/2 if p == 1 mod 4 and p-1 if p == 3 mod 4 [Knuth & Buckholtz, 1967, Theorem 1]. - _Allen Stenger_, Aug 03 2020
+
+From _Peter Bala_, Dec 24 2021: (Start)
+
+Conjectures:
+
+1) The sequence taken modulo any integer k eventually becomes periodic with period dividing phi(k).
+
+2) The Gauss congruences a(n*p^k) == a(n*p^(k-1)) ( mod p^k ) hold for all prime p and positive integers n and k, except when p = 2, n = 1 and k = 1 or 2.
+
+3) For i >= 1 define a_i(n) = a(n+i). The Gauss congruences a_i(n*p^k) == a_i(n*p^(k-1)) ( mod p^k ) hold for all prime p and positive integers n and k. If true, then for each i >= 1 the expansion of exp(Sum_{n >= 1} a_i(n)*x^n/n) has integer coefficients. For an example, see A262145.(End)
+```

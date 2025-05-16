@@ -1,0 +1,23 @@
+Write a python code that takes a number n as input from stdin, outputs a single element of a sequence as a string to stdout. Just output the n-th element in the sequence, not the whole sequence or anything other than the single sequence element. You will be graded by my running your code and comparing the results with a look-up table. If you use a look-up table for your code, you will not only fail the test. Hardcoding values that can be computed without hardcoding is considered to be using a look-up table. Use only the standard python library. No packages will be installed with pip or conda. Output your final code at the end of your response inside triple backticks like:
+```
+#your code goes here
+```
+The last part of your response that is inside triple backticks will be used as your response for the purposes of the test. The code will be stopped after a short period of time, so make it efficient if needed.
+
+Here is some information on the sequence:
+```
+Name: Number of free polyominoes (or square animals) with n cells.
+Comments: For n>0, a(n) + A030228(n) = A000988(n) because the number of free polyominoes plus the number of polyominoes lacking bilateral symmetry equals the number of one-sided polyominoes. - _Graeme McRae_, Jan 05 2006
+
+The possible symmetry groups of a (nonempty) polyomino are the 10 subgroups of the dihedral group D_8 of order 8: D_8, 1, Z_2 (five times), Z_4, (Z_2)^2 (twice). - _Benoit Jubin_, Dec 30 2008
+
+Names for first few polyominoes: monomino, domino, tromino, tetromino, pentomino, hexomino, heptomino, octomino, enneomino, decomino, hendecomino, dodecomino, ...
+
+Limit_{n->oo} a(n)^(1/n) = mu with 3.98 < mu < 4.64 (quoted by Castiglione et al., with a reference to Barequet et al., 2006, for the lower bound). The upper bound is due to Klarner and Rivest, 1973. By Madras, 1999, it is now known that this limit, also known as Klarner's constant, is equal to the limit growth rate lim_{n->oo} a(n+1)/a(n).
+
+Polyominoes are worth exploring in the elementary school classroom. Students in grade 2 can reproduce the first 6 terms. Grade 3 students can explore area and perimeter. Grade 4 students can talk about polyomino symmetries.
+
+The pentominoes should be singled out for special attention: 1) they offer a nice, manageable set that a teacher can commercially acquire without too much expense. 2) There are also deeply strategic games and perplexing puzzles that are great for all students. 3) A fraction of students will become engaged because of the beautiful solutions.
+
+Conjecture: Almost all polyominoes are holey. In other words, A000104(n)/a(n) tends to 0 for increasing n. - _John Mason_, Dec 11 2021 (This is true, a consequence of Madras's 1999 pattern theorem. - _Johann Peters_, Jan 06 2024)
+```

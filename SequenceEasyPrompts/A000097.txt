@@ -1,0 +1,31 @@
+Write a python code that takes a number n as input from stdin, outputs a single element of a sequence as a string to stdout. Just output the n-th element in the sequence, not the whole sequence or anything other than the single sequence element. You will be graded by my running your code and comparing the results with a look-up table. If you use a look-up table for your code, you will not only fail the test. Hardcoding values that can be computed without hardcoding is considered to be using a look-up table. Use only the standard python library. No packages will be installed with pip or conda. Output your final code at the end of your response inside triple backticks like:
+```
+#your code goes here
+```
+The last part of your response that is inside triple backticks will be used as your response for the purposes of the test. The code will be stopped after a short period of time, so make it efficient if needed.
+
+Here is some information on the sequence:
+```
+Name: Number of partitions of n if there are two kinds of 1's and two kinds of 2's.
+Comments: Also number of partitions of 2*n with exactly 2 odd parts (offset 1). - _Vladeta Jovovic_, Jan 12 2005
+
+Also number of transitions from one partition of n+2 to another, where a transition consists of replacing any two parts with their sum. Remove all 1' and 2' from the partition, replacing them with ((number of 2') + 1) and ((number of 1') + (number of 2') + 1); these are the two parts being summed. Number of partitions of n into parts of 2 kinds with at most 2 parts of the second kind, or of n+2 into parts of 2 kinds with exactly 2 parts of the second kind. - _Franklin T. Adams-Watters_, Mar 20 2006
+
+From Christian Gutschwager (gutschwager(AT)math.uni-hannover.de), Feb 10 2010: (Start)
+
+a(n) is also the number of pairs of partitions of n+2 which differ by only one box (for bijection see Gutschwager link).
+
+a(n) is also the number of partitions of n with two parts marked.
+
+a(n) is also the number of partitions of n+1 with two different parts marked. (End)
+
+Convolution of A000041 and A008619. - _Vaclav Kotesovec_, Aug 18 2015
+
+a(n) = P(/2,n), a particular case of P(/k,n) defined as follows: P(/0,n) = A000041(n) and P(/k,n) = P(/k-1, n) + P(/k-1,n-k) + P(/k-1, n-2k) + ... Also, P(/k,n) = the convolution of A000041 and the partitions of n with exactly k parts, and g.f. P(/k,n) = (g.f. for P(n)) * 1/(1-x)...(1-x^k). - _Gregory L. Simay_, Mar 22 2018
+
+a(n) is also the sum of binomial(D(p),2) in partitions p of (n+3), where D(p)= number of different sizes of parts in p. - _Emily Anible_, Apr 03 2018
+
+Also partitions of 2*(n+1) with alternating sum 2. Also partitions of 2*(n+1) with reverse-alternating sum -2 or 2. - _Gus Wiseman_, Jun 21 2021
+
+Define the distance graph of the partitions of n using the distance function in A366156 as follows: two vertices (partitions) share an edge if and only if the distance between the vertices is 2. Then a(n) is the number of edges in the distance graph of the partitions of n. - _Clark Kimberling_, Oct 12 2023
+```

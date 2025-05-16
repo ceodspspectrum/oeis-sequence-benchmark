@@ -1,0 +1,71 @@
+Write a python code that takes a number n as input from stdin, outputs a single element of a sequence as a string to stdout. Just output the n-th element in the sequence, not the whole sequence or anything other than the single sequence element. You will be graded by my running your code and comparing the results with a look-up table. If you use a look-up table for your code, you will not only fail the test. Hardcoding values that can be computed without hardcoding is considered to be using a look-up table. Use only the standard python library. No packages will be installed with pip or conda. Output your final code at the end of your response inside triple backticks like:
+```
+#your code goes here
+```
+The last part of your response that is inside triple backticks will be used as your response for the purposes of the test. The code will be stopped after a short period of time, so make it efficient if needed.
+
+Here is some information on the sequence:
+```
+Name: Euler or up/down numbers: e.g.f. sec(x) + tan(x). Also for n >= 2, half the number of alternating permutations on n letters (A001250).
+Comments: Number of linear extensions of the "zig-zag" poset. See ch. 3, prob. 23 of Stanley. - _Mitch Harris_, Dec 27 2005
+
+Number of increasing 0-1-2 trees on n vertices. - _David Callan_, Dec 22 2006
+
+Also the number of refinements of partitions. - Heinz-Richard Halder (halder.bichl(AT)t-online.de), Mar 07 2008
+
+The ratio a(n)/n! is also the probability that n numbers x1,x2,...,xn randomly chosen uniformly and independently in [0,1] satisfy x1 > x2 < x3 > x4 < ... xn. - _Pietro Majer_, Jul 13 2009
+
+For n >= 2, a(n-2) = number of permutations w of an ordered n-set {x_1 < ... x_n} with the following properties: w(1) = x_n, w(n) = x_{n-1}, w(2) > w(n-1), and neither any subword of w, nor its reversal, has the first three properties. The count is unchanged if the third condition is replaced with w(2) < w(n-1). - _Jeremy L. Martin_, Mar 26 2010
+
+A partition of zigzag permutations of order n+1 by the smallest or the largest, whichever is behind. This partition has the same recurrent relation as increasing 1-2 trees of order n, by induction the bijection follows. - _Wenjin Woan_, May 06 2011
+
+As can be seen from the asymptotics given in the FORMULA section, one has lim_{n->oo} 2*n*a(n-1)/a(n) = Pi; see A132049/A132050 for the simplified fractions. - _M. F. Hasler_, Apr 03 2013
+
+a(n+1) is the sum of row n in triangle A008280. - _Reinhard Zumkeller_, Nov 05 2013
+
+M. Josuat-Verges, J.-C. Novelli and J.-Y. Thibon (2011) give a far-reaching generalization of the bijection between Euler numbers and alternating permutations. - _N. J. A. Sloane_, Jul 09 2015
+
+Number of treeshelves avoiding pattern T321. Treeshelves are ordered binary (0-1-2) increasing trees where every child is connected to its parent by a left or a right link, see A278678 for more definitions and examples. - _Sergey Kirgizov_, Dec 24 2016
+
+Number of sequences (e(1), ..., e(n-1)), 0 <= e(i) < i, such that no three terms are equal. [Theorem 7 of Corteel, Martinez, Savage, and Weselcouch] - _Eric M. Schmidt_, Jul 17 2017
+
+Number of self-dual edge-labeled trees with n vertices under "mind-body" duality.  Also number of self-dual rooted edge-labeled trees with n vertices.  See my paper linked below. - _Nikos Apostolakis_, Aug 01 2018
+
+The ratio a(n)/n! is the volume of the convex polyhedron defined as the set of (x_1,...,x_n) in [0,1]^n such that x_i + x_{i+1} <= 1 for every 1 <= i <= n-1; see the solutions by Macdonald and Nelsen to the Amer. Math. Monthly problem referenced below. - _Sanjay Ramassamy_, Nov 02 2018
+
+Number of total cyclic orders on {0,1,...,n} such that the triple (i-1,i,i+1) is positively oriented for every 1 <= i <= n-1; see my paper on cyclic orders linked below. - _Sanjay Ramassamy_, Nov 02 2018
+
+The number of binary, rooted, unlabeled histories with n+1 leaves (following the definition of Rosenberg 2006). Also termed Tajima trees, Tajima genealogies, or binary, rooted, unlabeled ranked trees (Palacios et al. 2015). See Disanto & Wiehe (2013) for a proof. - _Noah A Rosenberg_, Mar 10 2019
+
+From _Gus Wiseman_, Dec 31 2019: (Start)
+
+Also the number of non-isomorphic balanced reduced multisystems with n + 1 distinct atoms and maximum depth. A balanced reduced multisystem is either a finite multiset, or a multiset partition with at least two parts, not all of which are singletons, of a balanced reduced multisystem. The labeled version is A006472. For example, non-isomorphic representatives of the a(0) = 1 through a(4) = 5 multisystems are (commas elided):
+
+  {1}  {12}  {{1}{23}}  {{{1}}{{2}{34}}}  {{{{1}}}{{{2}}{{3}{45}}}}
+
+                        {{{12}}{{3}{4}}}  {{{{1}}}{{{23}}{{4}{5}}}}
+
+                                          {{{{1}{2}}}{{{3}}{{45}}}}
+
+                                          {{{{1}{23}}}{{{4}}{{5}}}}
+
+                                          {{{{12}}}{{{3}}{{4}{5}}}}
+
+Also the number of balanced reduced multisystems with n + 1 equal atoms and maximum depth. This is possibly the meaning of Heinz-Richard Halder's comment (see also A002846, A213427, A265947). The non-maximum-depth version is A318813. For example, the a(0) = 1 through a(4) = 5 multisystems are (commas elided):
+
+  {1}  {11}  {{1}{11}}  {{{1}}{{1}{11}}}  {{{{1}}}{{{1}}{{1}{11}}}}
+
+                        {{{11}}{{1}{1}}}  {{{{1}}}{{{11}}{{1}{1}}}}
+
+                                          {{{{1}{1}}}{{{1}}{{11}}}}
+
+                                          {{{{1}{11}}}{{{1}}{{1}}}}
+
+                                          {{{{11}}}{{{1}}{{1}{1}}}}
+
+(End)
+
+With s_n denoting the sum of n independent uniformly random numbers chosen from [-1/2,1/2], the probability that the closest integer to s_n is even is exactly 1/2 + a(n)/(2*n!). (See Hambardzumyan et al. 2023, Appendix B.) - _Suhail Sherif_, Mar 31 2024
+
+The number of permutations of size n+1 that require exactly n passes through a stack (i.e. have reverse-tier n-1) with an algorithm that prioritizes outputting the maximum possible prefix of the identity in a given pass and reverses the remainder of the permutation for prior to the next pass. - _Rebecca Smith_, Jun 05 2024
+```

@@ -1,0 +1,15 @@
+Write a python code that takes a number n as input from stdin, outputs a single element of a sequence as a string to stdout. Just output the n-th element in the sequence, not the whole sequence or anything other than the single sequence element. You will be graded by my running your code and comparing the results with a look-up table. If you use a look-up table for your code, you will not only fail the test. Hardcoding values that can be computed without hardcoding is considered to be using a look-up table. Use only the standard python library. No packages will be installed with pip or conda. Output your final code at the end of your response inside triple backticks like:
+```
+#your code goes here
+```
+The last part of your response that is inside triple backticks will be used as your response for the purposes of the test. The code will be stopped after a short period of time, so make it efficient if needed.
+
+Here is some information on the sequence:
+```
+Name: a(n) = 5*binomial(2n, n-2)/(n+3).
+Comments: a(n-3) is the number of n-th generation vertices in the tree of sequences with unit increase labeled by 4 (cf. _Zoran Sunic_ reference). - _Benoit Cloitre_, Oct 07 2003
+
+Number of lattice paths from (0,0) to (n,n) with steps E=(1,0) and N=(0,1) which touch but do not cross the line x-y=2. Example: For n=3 there are the 5 paths EENENN, EENNEN, EENNNE, ENEENN, NEEENN. - _Herbert Kociemba_, May 24 2004
+
+Number of standard tableaux of shape (n+2,n-2). - _Emeric Deutsch_, May 30 2004
+```

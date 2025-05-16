@@ -1,0 +1,21 @@
+Write a python code that takes a number n as input from stdin, outputs a single element of a sequence as a string to stdout. Just output the n-th element in the sequence, not the whole sequence or anything other than the single sequence element. You will be graded by my running your code and comparing the results with a look-up table. If you use a look-up table for your code, you will not only fail the test. Hardcoding values that can be computed without hardcoding is considered to be using a look-up table. Use only the standard python library. No packages will be installed with pip or conda. Output your final code at the end of your response inside triple backticks like:
+```
+#your code goes here
+```
+The last part of your response that is inside triple backticks will be used as your response for the purposes of the test. The code will be stopped after a short period of time, so make it efficient if needed.
+
+Here is some information on the sequence:
+```
+Name: Expansion of 2*x^3/((1-2*x)^2*(1-4*x)).
+Comments: Number of permutations of length n with exactly one valley. Also (for n>0), the number of ways to pick two of the 2^(n-1) vertices of an n-1 cube that are not connected by an edge. - _Aaron Meyerowitz_, Apr 21 2014
+
+a(n+1), n >= 1: Number of independent vertex pairs for Q_n, n >= 1: 2^(n-1) * (2^n - (n+1)) = T_(2^n - 1) - n * 2^(n-1) = L_n - E_n = A006516(n) - A001787(n), where L_n is the number of vertex pairs and E_n is the number of vertex pairs yielding edges. (Cf. A027624.) - _Daniel Forgues_, Feb 19 2015
+
+From _Petros Hadjicostas_, Aug 08 2019: (Start)
+
+Apparently, by saying "valley" of a permutation of [n], _Aaron Meyerowitz_ indirectly assumes that a "valley" is an interior minimum of a permutation (i.e., we ignore possible minima at the endpoints). Since the complement of a permutation b_1 b_2 ... b_n (using one-line notation, not cycle notation) is (n+1-b_1) (n+1-b_2) ... (n+1-b_n), the current sequence is also the number of permutations of [n] with exactly one peak (that is, exactly one interior maximum).
+
+Comtet (pp. 260-261 in his book) calls these peaks "intermediary peaks" to distinguish them from "left peaks" and "right peaks" (i.e., maxima at the endpoints).
+
+(End)
+```

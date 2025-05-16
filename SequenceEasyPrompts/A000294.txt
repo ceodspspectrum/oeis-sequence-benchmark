@@ -1,0 +1,19 @@
+Write a python code that takes a number n as input from stdin, outputs a single element of a sequence as a string to stdout. Just output the n-th element in the sequence, not the whole sequence or anything other than the single sequence element. You will be graded by my running your code and comparing the results with a look-up table. If you use a look-up table for your code, you will not only fail the test. Hardcoding values that can be computed without hardcoding is considered to be using a look-up table. Use only the standard python library. No packages will be installed with pip or conda. Output your final code at the end of your response inside triple backticks like:
+```
+#your code goes here
+```
+The last part of your response that is inside triple backticks will be used as your response for the purposes of the test. The code will be stopped after a short period of time, so make it efficient if needed.
+
+Here is some information on the sequence:
+```
+Name: Expansion of g.f. Product_{k >= 1} (1 - x^k)^(-k*(k+1)/2).
+Comments: Number of partitions of n if there are k(k+1)/2 kinds of k (k=1,2,...). E.g., a(3)=10 because we have six kinds of 3, three kinds of 2+1 because there are three kinds of 2 and 1+1+1+1. - _Emeric Deutsch_, Mar 23 2005
+
+Euler transform of the triangular numbers 1,3,6,10,...
+
+Equals A028377: [1, 1, 3, 9, 19, 46, 100, ...] convolved with the aerated version of A000294: [1, 0, 1, 0, 4, 0, 10, 0, 26, 0, 59, ...]. - _Gary W. Adamson_, Jun 13 2009
+
+The formula for p3(n) in the article by S. Finch (page 2) is incomplete, terms with n^(1/2) and n^(1/4) are also needed. These terms are in the article by Mustonen and Rajesh (page 2) and agree with my results, but in both articles the multiplicative constant is marked only as C, resp. c3(m). The following is a closed form of this constant: Pi^(1/24) * exp(1/24 - Zeta(3) / (8*Pi^2) + 75*Zeta(3)^3 / (2*Pi^8)) / (A^(1/2) * 2^(157/96) * 15^(13/96)) = A255939 = 0.213595160470..., where A = A074962 is the Glaisher-Kinkelin constant and Zeta(3) = A002117. - _Vaclav Kotesovec_, Mar 11 2015 [The new version of "Integer Partitions" by S. Finch contains the missing terms, see pages 2 and 5. - _Vaclav Kotesovec_, May 12 2015]
+
+Number of solid partitions of corner-hook volume n (see arXiv:2009.00592 among links for definition). E.g., a(2) = 1 because there is only one solid partition [[[2]]] with cohook volume 2; a(3) = 4 because we have three solid partitions with two 1's (entry at (1,1,1) contributes 1, another entry at (2,1,1) or (1,2,1) or (1,1,2) contributes 2 to corner-hook volume) and one solid partition with single entry 3 (which contributes 3 to the corner-hook volume). Namely as 3D arrays [[[1],[1]]],[[[1]],[[1]]],[[[1]],[[1]]], [[[3]]]. - _Alimzhan Amanov_, Jul 13 2021
+```

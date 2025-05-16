@@ -1,0 +1,41 @@
+Write a python code that takes a number n as input from stdin, outputs a single element of a sequence as a string to stdout. Just output the n-th element in the sequence, not the whole sequence or anything other than the single sequence element. You will be graded by my running your code and comparing the results with a look-up table. If you use a look-up table for your code, you will not only fail the test. Hardcoding values that can be computed without hardcoding is considered to be using a look-up table. Use only the standard python library. No packages will be installed with pip or conda. Output your final code at the end of your response inside triple backticks like:
+```
+#your code goes here
+```
+The last part of your response that is inside triple backticks will be used as your response for the purposes of the test. The code will be stopped after a short period of time, so make it efficient if needed.
+
+Here is some information on the sequence:
+```
+Name: Number of planar partitions (or plane partitions) of n.
+Comments: Two-dimensional partitions of n in which no row or column is longer than the one before it (compare A001970). E.g., a(4) = 13:
+
+4.31.3.22.2.211.21..2.1111.111.11.11.1 but not 2
+
+.....1....2.....1...1......1...11.1..1........ 11
+
+....................1.............1..1
+
+.....................................1
+
+In the above, one also must require that rows & columns are nondecreasing, e.g., [1,1; 2] is also forbidden (which implies that row and column lengths are nondecreasing, if empty cells are identified with cells filled with 0's). - _M. F. Hasler_, Sep 22 2018
+
+Can also be regarded as number of "safe pilings" of cubes in the corner of a room: the height should not increase away from the corner. - _Wouter Meeussen_
+
+Also number of partitions of n objects of 2 colors, each part containing at least one black object; see example. - _Christian G. Bower_, Jan 08 2004
+
+Number of partitions of n into 1 type of part 1, 2 types of part 2, ..., k types of part k. E.g., n=3 gives 111, 12, 12', 3, 3', 3''. - _Jon Perry_, May 27 2004
+
+The bijection between the partitions in the two preceding comments goes by identifying a part with k black objects with a part of type k. - _David Scambler_ and _Joerg Arndt_, May 01 2013
+
+Can also be regarded as the number of Jordan canonical forms for an n X n matrix. (I.e., a 5 X 5 matrix has 24 distinct Jordan canonical forms, dependent on the algebraic and geometric multiplicity of each eigenvalue.) - Aaron Gable (agable(AT)hmc.edu), May 26 2009
+
+(1/n) * convolution product of n terms * A001157 (sum of squares of divisors of n): (1, 5, 10, 21, 26, 50, 50, 85, ...) = a(n). As shown by [Bressoud, p. 12]: 1/6 * [1*24 + 5*13 + 10*6 + 21*3 + 26*1 + 50*1] = 288/6 = 48. - _Gary W. Adamson_, Jun 13 2009
+
+Convolved with the aerated version (1, 0, 1, 0, 3, 0, 6, 0, 13, ...) = A026007: (1, 1, 2, 5, 8, 16, 28, 49, 83, ...). - _Gary W. Adamson_, Jun 13 2009
+
+Starting with offset 1 = row sums of triangle A162453. - _Gary W. Adamson_, Jul 03 2009
+
+Unfortunately, Wright's formula is also incomplete in the paper by G. Almkvist: "Asymptotic formulas and generalized Dedekind sums", p. 344, (the denominator should have sqrt(3*Pi) not sqrt(Pi)). This error was already corrected in the paper by Steven Finch: "Integer Partitions". - _Vaclav Kotesovec_, Aug 17 2015
+
+Also the number of non-isomorphic weight-n chains of multisets whose dual is also a chain of multisets. The dual of a multiset partition has, for each vertex, one block consisting of the indices (or positions) of the blocks containing that vertex, counted with multiplicity. The weight of a multiset partition is the sum of sizes of its parts. - _Gus Wiseman_, Sep 25 2018
+```

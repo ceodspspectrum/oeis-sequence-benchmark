@@ -1,0 +1,19 @@
+Write a python code that takes a number n as input from stdin, outputs a single element of a sequence as a string to stdout. Just output the n-th element in the sequence, not the whole sequence or anything other than the single sequence element. You will be graded by my running your code and comparing the results with a look-up table. If you use a look-up table for your code, you will not only fail the test. Hardcoding values that can be computed without hardcoding is considered to be using a look-up table. Use only the standard python library. No packages will be installed with pip or conda. Output your final code at the end of your response inside triple backticks like:
+```
+#your code goes here
+```
+The last part of your response that is inside triple backticks will be used as your response for the purposes of the test. The code will be stopped after a short period of time, so make it efficient if needed.
+
+Here is some information on the sequence:
+```
+Name: Number of inequivalent ways of dissecting a regular (n+2)-gon into n triangles by n-1 non-intersecting diagonals under rotations and reflections; also the number of (unlabeled) maximal outerplanar graphs on n+2 vertices.
+Comments: Also a(n) is the number of hexaflexagons of order n+2. - Mike Godfrey (m.godfrey(AT)umist.ac.uk), Feb 25 2002 (see the Kosters paper).
+
+Number of normally non-isomorphic realizations of the associahedron of type II with dimension n in Ceballos et al. - _Tom Copeland_, Oct 19 2011
+
+Number of polyforms with n cells in the hyperbolic tiling with Schläfli symbol {3,oo}, not distinguishing enantiomorphs. - _Thomas Anton_, Jan 16 2019
+
+A stereographic projection of the {3,oo} tiling on the Poincaré disk can be obtained via the Christensson link. - _Robert A. Russell_, Jan 20 2024
+
+A maximal outerplanar graph (MOP) has a plane embedding with all vertices on the exterior region and interior regions triangles. - _Allan Bickle_, Feb 25 2024
+```

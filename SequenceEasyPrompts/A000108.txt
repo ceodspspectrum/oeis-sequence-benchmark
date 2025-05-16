@@ -1,0 +1,199 @@
+Write a python code that takes a number n as input from stdin, outputs a single element of a sequence as a string to stdout. Just output the n-th element in the sequence, not the whole sequence or anything other than the single sequence element. You will be graded by my running your code and comparing the results with a look-up table. If you use a look-up table for your code, you will not only fail the test. Hardcoding values that can be computed without hardcoding is considered to be using a look-up table. Use only the standard python library. No packages will be installed with pip or conda. Output your final code at the end of your response inside triple backticks like:
+```
+#your code goes here
+```
+The last part of your response that is inside triple backticks will be used as your response for the purposes of the test. The code will be stopped after a short period of time, so make it efficient if needed.
+
+Here is some information on the sequence:
+```
+Name: Catalan numbers: C(n) = binomial(2n,n)/(n+1) = (2n)!/(n!(n+1)!).
+Comments: These were formerly sometimes called Segner numbers.
+
+A very large number of combinatorial interpretations are known - see references, esp. R. P. Stanley, "Catalan Numbers", Cambridge University Press, 2015. This is probably the longest entry in the OEIS, and rightly so.
+
+The solution to Schröder's first problem: number of ways to insert n pairs of parentheses in a word of n+1 letters. E.g., for n=2 there are 2 ways: ((ab)c) or (a(bc)); for n=3 there are 5 ways: ((ab)(cd)), (((ab)c)d), ((a(bc))d), (a((bc)d)), (a(b(cd))).
+
+Consider all the binomial(2n,n) paths on squared paper that (i) start at (0, 0), (ii) end at (2n, 0) and (iii) at each step, either make a (+1,+1) step or a (+1,-1) step. Then the number of such paths that never go below the x-axis (Dyck paths) is C(n). [Chung-Feller]
+
+Number of noncrossing partitions of the n-set. For example, of the 15 set partitions of the 4-set, only [{13},{24}] is crossing, so there are a(4)=14 noncrossing partitions of 4 elements. - _Joerg Arndt_, Jul 11 2011
+
+a(n-1) is the number of ways of expressing an n-cycle (123...n) in the symmetric group S_n as a product of n-1 transpositions (u_1,v_1)*(u_2,v_2)*...*(u_{n-1},v_{n-1}) where u_i<v_i and u_k <= u_j for k < j; see example.  If the condition is dropped, one obtains A000272. - _Joerg Arndt_ and Greg Stevenson, Jul 11 2011
+
+Noncrossing partitions are partitions of genus 0. - _Robert Coquereaux_, Feb 13 2024
+
+a(n) is the number of ordered rooted trees with n nodes, not including the root. See the Conway-Guy reference where these rooted ordered trees are called plane bushes. See also the Bergeron et al. reference, Example 4, p. 167. - _Wolfdieter Lang_, Aug 07 2007
+
+As shown in the paper from Beineke and Pippert (1971), a(n-2)=D(n) is the number of labeled dissections of a disk, related to the number R(n)=A001761(n-2) of labeled planar 2-trees having n vertices and rooted at a given exterior edge, by the formula D(n)=R(n)/(n-2)!. - _M. F. Hasler_, Feb 22 2012
+
+Shifts one place left when convolved with itself.
+
+For n >= 1, a(n) is also the number of rooted bicolored unicellular maps of genus 0 on n edges. - Ahmed Fares (ahmedfares(AT)my-deja.com), Aug 15 2001
+
+Number of ways of joining 2n points on a circle to form n nonintersecting chords. (If no such restriction imposed, then the number of ways of forming n chords is given by (2n-1)!! = (2n)!/(n!*2^n) = A001147(n).)
+
+Arises in Schubert calculus - see Sottile reference.
+
+Inverse Euler transform of sequence is A022553.
+
+With interpolated zeros, the inverse binomial transform of the Motzkin numbers A001006. - _Paul Barry_, Jul 18 2003
+
+The Hankel transforms of this sequence or of this sequence with the first term omitted give A000012 = 1, 1, 1, 1, 1, 1, ...; example: Det([1, 1, 2, 5; 1, 2, 5, 14; 2, 5, 14, 42; 5, 14, 42, 132]) = 1 and Det([1, 2, 5, 14; 2, 5, 14, 42; 5, 14, 42, 132; 14, 42, 132, 429]) = 1. - _Philippe Deléham_, Mar 04 2004
+
+a(n) equals the sum of squares of terms in row n of triangle A053121, which is formed from successive self-convolutions of the Catalan sequence. - _Paul D. Hanna_, Apr 23 2005
+
+Also coefficients of the Mandelbrot polynomial M iterated an infinite number of times. Examples: M(0) = 0 = 0*c^0 = [0], M(1) = c = c^1 + 0*c^0 = [1 0], M(2) = c^2 + c = c^2 + c^1 + 0*c^0 = [1 1 0], M(3) = (c^2 + c)^2 + c = [0 1 1 2 1], ... ... M(5) = [0 1 1 2 5 14 26 44 69 94 114 116 94 60 28 8 1], ... - Donald D. Cross (cosinekitty(AT)hotmail.com), Feb 04 2005
+
+The multiplicity with which a prime p divides C_n can be determined by first expressing n+1 in base p. For p=2, the multiplicity is the number of 1 digits minus 1. For p an odd prime, count all digits greater than (p+1)/2; also count digits equal to (p+1)/2 unless final; and count digits equal to (p-1)/2 if not final and the next digit is counted. For example, n=62, n+1 = 223_5, so C_62 is not divisible by 5. n=63, n+1 = 224_5, so 5^3 | C_63. - _Franklin T. Adams-Watters_, Feb 08 2006
+
+Koshy and Salmassi give an elementary proof that the only prime Catalan numbers are a(2) = 2 and a(3) = 5. Is the only semiprime Catalan number a(4) = 14? - _Jonathan Vos Post_, Mar 06 2006
+
+The answer is yes. Using the formula C_n = binomial(2n,n)/(n+1), it is immediately clear that C_n can have no prime factor greater than 2n. For n >= 7, C_n > (2n)^2, so it cannot be a semiprime. Given that the Catalan numbers grow exponentially, the above consideration implies that the number of prime divisors of C_n, counted with multiplicity, must grow without limit. The number of distinct prime divisors must also grow without limit, but this is more difficult. Any prime between n+1 and 2n (exclusive) must divide C_n. That the number of such primes grows without limit follows from the prime number theorem. - _Franklin T. Adams-Watters_, Apr 14 2006
+
+The number of ways to place n indistinguishable balls in n numbered boxes B1,...,Bn such that at most a total of k balls are placed in boxes B1,...,Bk for k=1,...,n. For example, a(3)=5 since there are 5 ways to distribute 3 balls among 3 boxes such that (i) box 1 gets at most 1 ball and (ii) box 1 and box 2 together get at most 2 balls:(O)(O)(O), (O)()(OO), ()(OO)(O), ()(O)(OO), ()()(OOO). - _Dennis P. Walsh_, Dec 04 2006
+
+a(n) is also the order of the semigroup of order-decreasing and order-preserving full transformations (of an n-element chain) - now known as the Catalan monoid. - _Abdullahi Umar_, Aug 25 2008
+
+a(n) is the number of trivial representations in the direct product of 2n spinor (the smallest) representations of the group SU(2) (A(1)). - Rutger Boels (boels(AT)nbi.dk), Aug 26 2008
+
+The invert transform appears to converge to the Catalan numbers when applied infinitely many times to any starting sequence. - _Mats Granvik_, _Gary W. Adamson_ and _Roger L. Bagula_, Sep 09 2008, Sep 12 2008
+
+Limit_{n->oo} a(n)/a(n-1) = 4. - Francesco Antoni (francesco_antoni(AT)yahoo.com), Nov 24 2008
+
+Starting with offset 1 = row sums of triangle A154559. - _Gary W. Adamson_, Jan 11 2009
+
+C(n) is the degree of the Grassmannian G(1,n+1): the set of lines in (n+1)-dimensional projective space, or the set of planes through the origin in (n+2)-dimensional affine space. The Grassmannian is considered a subset of N-dimensional projective space, N = binomial(n+2,2) - 1. If we choose 2n general (n-1)-planes in projective (n+1)-space, then there are C(n) lines that meet all of them. - Benji Fisher (benji(AT)FisherFam.org), Mar 05 2009
+
+Starting with offset 1 = A068875: (1, 2, 4, 10, 18, 84, ...) convolved with Fine numbers, A000957: (1, 0, 1, 2, 6, 18, ...). a(6) = 132 = (1, 2, 4, 10, 28, 84) dot (18, 6, 2, 1, 0, 1) = (18 + 12 + 8 + 10 + 0 + 84) = 132. - _Gary W. Adamson_, May 01 2009
+
+Convolved with A032443: (1, 3, 11, 42, 163, ...) = powers of 4, A000302: (1, 4, 16, ...). - _Gary W. Adamson_, May 15 2009
+
+Sum_{k>=1} C(k-1)/2^(2k-1) = 1. The k-th term in the summation is the probability that a random walk on the integers (beginning at the origin) will arrive at positive one (for the first time) in exactly (2k-1) steps. - _Geoffrey Critzer_, Sep 12 2009
+
+C(p+q)-C(p)*C(q) = Sum_{i=0..p-1, j=0..q-1} C(i)*C(j)*C(p+q-i-j-1). - _Groux Roland_, Nov 13 2009
+
+Leonhard Euler used the formula C(n) = Product_{i=3..n} (4*i-10)/(i-1) in his 'Betrachtungen, auf wie vielerley Arten ein gegebenes polygonum durch Diagonallinien in triangula zerschnitten werden könne' and computes by recursion C(n+2) for n = 1..8. (Berlin, 4th September 1751, in a letter to Goldbach.) - _Peter Luschny_, Mar 13 2010
+
+Let A179277 = A(x). Then C(x) is satisfied by A(x)/A(x^2). - _Gary W. Adamson_, Jul 07 2010
+
+a(n) is also the number of quivers in the mutation class of type B_n or of type C_n. - _Christian Stump_, Nov 02 2010
+
+From _Matthew Vandermast_, Nov 22 2010: (Start)
+
+Consider a set of A000217(n) balls of n colors in which, for each integer k = 1 to n, exactly one color appears in the set a total of k times. (Each ball has exactly one color and is indistinguishable from other balls of the same color.) a(n+1) equals the number of ways to choose 0 or more balls of each color while satisfying the following conditions: 1. No two colors are chosen the same positive number of times. 2. For any two colors (c, d) that are chosen at least once, color c is chosen more times than color d iff color c appears more times in the original set than color d.
+
+If the second requirement is lifted, the number of acceptable ways equals A000110(n+1). See related comments for A016098, A085082. (End)
+
+Deutsch and Sagan prove the Catalan number C_n is odd if and only if n = 2^a - 1 for some nonnegative integer a. Lin proves for every odd Catalan number C_n, we have C_n == 1 (mod 4). - _Jonathan Vos Post_, Dec 09 2010
+
+a(n) is the number of functions f:{1,2,...,n}->{1,2,...,n} such that f(1)=1 and for all n >= 1 f(n+1) <= f(n)+1. For a nice bijection between this set of functions and the set of length 2n Dyck words, see page 333 of the Fxtbook (see link below). - _Geoffrey Critzer_, Dec 16 2010
+
+Postnikov (2005) defines "generalized Catalan numbers" associated with buildings (e.g., Catalan numbers of Type B, see A000984). - _N. J. A. Sloane_, Dec 10 2011
+
+Number of permutations in S(n) for which length equals depth. - _Bridget Tenner_, Feb 22 2012
+
+a(n) is also the number of standard Young tableau of shape (n,n). - _Thotsaporn Thanatipanonda_, Feb 25 2012
+
+a(n) is the number of binary sequences of length 2n+1 in which the number of ones first exceed the number of zeros at entry 2n+1. See the example below in the example section. - _Dennis P. Walsh_, Apr 11 2012
+
+Number of binary necklaces of length 2*n+1 containing n 1's (or, by symmetry, 0's). All these are Lyndon words and their representatives (as cyclic maxima) are the binary Dyck words. - _Joerg Arndt_, Nov 12 2012
+
+Number of sequences consisting of n 'x' letters and n 'y' letters such that (counting from the left) the 'x' count >= 'y' count. For example, for n=3 we have xxxyyy, xxyxyy, xxyyxy, xyxxyy and xyxyxy. - _Jon Perry_, Nov 16 2012
+
+a(n) is the number of Motzkin paths of length n-1 in which the (1,0)-steps come in 2 colors. Example: a(4)=14 because, denoting U=(1,1), H=(1,0), and D=(1,-1), we have 8 paths of shape HHH, 2 paths of shape UHD, 2 paths of shape UDH, and 2 paths of shape HUD. - _José Luis Ramírez Ramírez_, Jan 16 2013
+
+If p is an odd prime, then (-1)^((p-1)/2)*a((p-1)/2) mod p = 2. - _Gary Detlefs_, Feb 20 2013
+
+Conjecture: For any positive integer n, the polynomial Sum_{k=0..n} a(k)*x^k is irreducible over the field of rational numbers. - _Zhi-Wei Sun_, Mar 23 2013
+
+a(n) is the size of the Jones monoid on 2n points (cf. A225798). - _James Mitchell_, Jul 28 2013
+
+For 0 < p < 1, define f(p) = Sum_{n>=0} a(n)*(p*(1-p))^n, then f(p) = min{1/p, 1/(1-p)}, so f(p) reaches its maximum value 2 at p = 0.5, and p*f(p) is constant 1 for 0.5 <= p < 1. - _Bob Selcoe_, Nov 16 2013 [Corrected by _Jianing Song_, May 21 2021]
+
+No a(n) has the form x^m with m > 1 and x > 1. - _Zhi-Wei Sun_, Dec 02 2013
+
+From _Alexander Adamchuk_, Dec 27 2013: (Start)
+
+Prime p divides a((p+1)/2) for p > 3. See A120303(n) = Largest prime factor of Catalan number.
+
+Reciprocal Catalan Constant C = 1 + 4*sqrt(3)*Pi/27 = 1.80613.. = A121839.
+
+Log(Phi) = (125*C - 55) / (24*sqrt(5)), where C = Sum_{k>=1} (-1)^(k+1)*1/a(k). See A002390 = Decimal expansion of natural logarithm of golden ratio.
+
+3-d analog of the Catalan numbers: (3n)!/(n!(n+1)!(n+2)!) = A161581(n) = A006480(n) / ((n+1)^2*(n+2)), where A006480(n) = (3n)!/(n!)^3 De Bruijn's S(3,n). (End)
+
+For a relation to the inviscid Burgers's, or Hopf, equation, see A001764. - _Tom Copeland_, Feb 15 2014
+
+From _Fung Lam_, May 01 2014: (Start)
+
+One class of generalized Catalan numbers can be defined by g.f. A(x) = (1-sqrt(1-q*4*x*(1-(q-1)*x)))/(2*q*x) with nonzero parameter q.  Recurrence: (n+3)*a(n+2) -2*q*(2*n+3)*a(n+1) +4*q*(q-1)*n*a(n) = 0 with a(0)=1, a(1)=1.
+
+Asymptotic approximation for q >= 1: a(n) ~ (2*q+2*sqrt(q))^n*sqrt(2*q*(1+sqrt(q))) /sqrt(4*q^2*Pi*n^3).
+
+For q <= -1, the g.f. defines signed sequences with asymptotic approximation: a(n) ~ Re(sqrt(2*q*(1+sqrt(q)))*(2*q+2*sqrt(q))^n) / sqrt(q^2*Pi*n^3), where Re denotes the real part. Due to Stokes' phenomena, accuracy of the asymptotic approximation deteriorates at/near certain values of n.
+
+Special cases are A000108 (q=1), A068764 to A068772 (q=2 to 10), A240880 (q=-3).
+
+(End)
+
+Number of sequences [s(0), s(1), ..., s(n)] with s(n)=0, Sum_{j=0..n} s(j) = n, and Sum_{j=0..k} s(j)-1 >= 0 for k < n-1 (and necessarily Sum_{j=0..n-1} s(j)-1 = 0).  These are the branching sequences of the (ordered) trees with n non-root nodes, see example. - _Joerg Arndt_, Jun 30 2014
+
+Number of stack-sortable permutations of [n], these are the 231-avoiding permutations; see the Bousquet-Mélou reference. - _Joerg Arndt_, Jul 01 2014
+
+a(n) is the number of increasing strict binary trees with 2n-1 nodes that avoid 132. For more information about increasing strict binary trees with an associated permutation, see A245894. - _Manda Riehl_, Aug 07 2014
+
+In a one-dimensional medium with elastic scattering (zig-zag walk), first recurrence after 2n+1 scattering events has the probability C(n)/2^(2n+1). - _Joachim Wuttke_, Sep 11 2014
+
+The o.g.f. C(x) = (1 - sqrt(1-4x))/2, for the Catalan numbers, with comp. inverse Cinv(x) = x*(1-x) and the functions P(x) = x / (1 + t*x) and its inverse Pinv(x,t) = -P(-x,t) = x / (1 - t*x) form a group under composition that generates or interpolates among many classic arrays, such as the Motzkin (Riordan, A005043), Fibonacci (A000045), and Fine (A000957) numbers and polynomials (A030528), and enumerating arrays for Motzkin, Dyck, and Łukasiewicz lattice paths and different types of trees and non-crossing partitions (A091867, connected to sums of the refined Narayana numbers A134264). - _Tom Copeland_, Nov 04 2014
+
+Conjecture: All the rational numbers Sum_{i=j..k} 1/a(i) with 0 < min{2,k} <= j <= k have pairwise distinct fractional parts. - _Zhi-Wei Sun_, Sep 24 2015
+
+The Catalan number series A000108(n+3), offset n=0, gives Hankel transform revealing the square pyramidal numbers starting at 5, A000330(n+2), offset n=0 (empirical observation). - _Tony Foster III_, Sep 05 2016
+
+Hankel transforms of the Catalan numbers with the first 2, 4, and 5 terms omitted give A001477, A006858, and A091962, respectively, without the first 2 terms in all cases. More generally, the Hankel transform of the Catalan numbers with the first k terms omitted is H_k(n) = Product_{j=1..k-1} Product_{i=1..j} (2*n+j+i)/(j+i) [see Cigler (2011), Eq. (1.14) and references therein]; together they form the array A078920/A123352/A368025. - _Andrey Zabolotskiy_, Oct 13 2016
+
+Presumably this satisfies Benford's law, although the results in Hürlimann (2009) do not make this clear. See S. J. Miller, ed., 2015, p. 5. - _N. J. A. Sloane_, Feb 09 2017
+
+Coefficients of the generating series associated to the Magmatic and Dendriform operadic algebras. Cf. p. 422 and 435 of the Loday et al. paper. - _Tom Copeland_, Jul 08 2018
+
+Let M_n be the n X n matrix with M_n(i,j) = binomial(i+j-1,2j-2); then det(M_n) = a(n). - _Tony Foster III_, Aug 30 2018
+
+Also the number of Catalan trees, or planted plane trees (Bona, 2015, p. 299, Theorem 4.6.3). - _N. J. A. Sloane_, Dec 25 2018
+
+Number of coalescent histories for a caterpillar species tree and a matching caterpillar gene tree with n+1 leaves (Rosenberg 2007, Corollary 3.5). - _Noah A Rosenberg_, Jan 28 2019
+
+Finding solutions of eps*x^2+x-1 = 0 for eps small, that is, writing x = Sum_{n>=0} x_{n}*eps^n and expanding, one finds x = 1 - eps + 2*eps^2 - 5*eps^3 + 14*eps^3 - 42*eps^4 + ... with x_{n} = (-1)^n*C(n). Further, letting x = 1/y and expanding y about 0 to find large roots, that is, y = Sum_{n>=1} y_{n}*eps^n, one finds y = 0 - eps + eps^2 - 2*eps^3 + 5*eps^3 - ... with y_{n} = (-1)^n*C(n-1).  - _Derek Orr_, Mar 15 2019
+
+Permutations of length n that produce a bipartite permutation graph of order n [see Knuth (1973), Busch (2006), Golumbic and Trenk (2004)]. - _Elise Anderson_, _R. M. Argus_, _Caitlin Owens_, _Tessa Stevens_, Jun 27 2019
+
+For n > 0, a random selection of n + 1 objects (the minimum number ensuring one pair by the pigeonhole principle) from n distinct pairs of indistinguishable objects contains only one pair with probability 2^(n-1)/a(n) = b(n-1)/A098597(n), where b is the 0-offset sequence with the terms of A120777 repeated (1,1,4,4,8,8,64,64,128,128,...). E.g., randomly selecting 6 socks from 5 pairs that are black, blue, brown, green, and white, results in only one pair of the same color with probability 2^(5-1)/a(5) = 16/42 = 8/21 = b(4)/A098597(5). - _Rick L. Shepherd_, Sep 02 2019
+
+See Haran & Tabachnikov link for a video discussing Conway-Coxeter friezes. The Conway-Coxeter friezes with n nontrivial rows are generated by the counts of triangles at each vertex in the triangulations of regular n-gons, of which there are a(n). - _Charles R Greathouse IV_, Sep 28 2019
+
+For connections to knot theory and scattering amplitudes from Feynman diagrams, see Broadhurst and Kreimer, and Todorov. Eqn. 6.12 on p. 130 of Bessis et al. becomes, after scaling, -12g * r_0(-y/(12g)) = (1-sqrt(1-4y))/2, the o.g.f. (expressed as a Taylor series in Eqn. 7.22 in 12gx) given for the Catalan numbers in Copeland's (Sep 30 2011) formula below. (See also Mizera p. 34, Balduf pp. 79-80, Keitel and Bartosch.) - _Tom Copeland_, Nov 17 2019
+
+Number of permutations in S_n whose principal order ideals in the weak order are modular lattices. - _Bridget Tenner_, Jan 16 2020
+
+Number of permutations in S_n whose principal order ideals in the weak order are distributive lattices. - _Bridget Tenner_, Jan 16 2020
+
+Legendre gives the following formula for computing the square root modulo 2^m:
+
+  sqrt(1 + 8*a) mod 2^m = (1 + 4*a*Sum_{i=0..m-4} C(i)*(-2*a)^i) mod 2^m
+
+  as cited by L. D. Dickson, History of the Theory of Numbers, Vol. 1, 207-208. - _Peter Schorn_, Feb 11 2020
+
+a(n) is the number of length n permutations sorted to the identity by a consecutive-132-avoiding stack followed by a classical-21-avoiding stack. - _Kai Zheng_, Aug 28 2020
+
+Number of non-crossing partitions of a 2*n-set with n blocks of size 2. Also number of non-crossing partitions of a 2*n-set with n+1 blocks of size at most 3, and without cyclical adjacencies. The two partitions can be mapped by rotated Kreweras bijection. - _Yuchun Ji_, Jan 18 2021
+
+Named by Riordan (1968, and earlier in Mathematical Reviews, 1948 and 1964) after the French and Belgian mathematician Eugène Charles Catalan (1814-1894) (see Pak, 2014). - _Amiram Eldar_, Apr 15 2021
+
+For n >= 1, a(n-1) is the number of interpretations of x^n is an algebra where power-associativity is not assumed. For example, for n = 4 there are a(3) = 5 interpretations: x(x(xx)), x((xx)x), (xx)(xx), (x(xx))x, ((xx)x)x. See the link "Non-associate powers and a functional equation" from I. M. H. Etherington and the page "Nonassociative Product" from Eric Weisstein's World of Mathematics for detailed information. See also A001190 for the case where multiplication is commutative. - _Jianing Song_, Apr 29 2022
+
+Number of states in the transition diagram associated with the Laplacian system over the complete graph K_N, corresponding to ordered initial conditions x_1 < x_2 < ... < x_N. - _Andrea Arlette España_, Nov 06 2022
+
+a(n) is the number of 132-avoiding stabilized-interval-free permutations of size n+1. - _Juan B. Gil_, Jun 22 2023
+
+Number of rooted polyominoes composed of n triangular cells of the hyperbolic regular tiling with Schläfli symbol {3,oo}. A rooted polyomino has one external edge identified, and chiral pairs are counted as two. A stereographic projection of the {3,oo} tiling on the Poincaré disk can be obtained via the Christensson link. - _Robert A. Russell_, Jan 27 2024
+
+a(n) is the number of extremely lucky Stirling permutations of order n; i.e., the number of Stirling permutations of order n that have exactly n lucky cars. (see Colmenarejo et al. reference) - _Bridget Tenner_, Apr 16 2024
+```

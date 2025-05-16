@@ -1,0 +1,21 @@
+Write a python code that takes a number n as input from stdin, outputs a single element of a sequence as a string to stdout. Just output the n-th element in the sequence, not the whole sequence or anything other than the single sequence element. You will be graded by my running your code and comparing the results with a look-up table. If you use a look-up table for your code, you will not only fail the test. Hardcoding values that can be computed without hardcoding is considered to be using a look-up table. Use only the standard python library. No packages will be installed with pip or conda. Output your final code at the end of your response inside triple backticks like:
+```
+#your code goes here
+```
+The last part of your response that is inside triple backticks will be used as your response for the purposes of the test. The code will be stopped after a short period of time, so make it efficient if needed.
+
+Here is some information on the sequence:
+```
+Name: -1 + number of partitions of n.
+Comments: a(n+1) is the number of noncongruent n-dimensional integer-sided simplices with diameter n. - _Sascha Kurz_, Jul 26 2004
+
+Also, the number of partitions of n into parts each less than n.
+
+Also, the number of distinct types of equation which can be derived from the equation [n,0,0] not including itself. (Ince)
+
+Also, the number of rooted trees on n+1 nodes with height exactly 2.
+
+Also, the number of partitions (of any positive integer) whose sum + length is <= n. Example: a(5) = 6 counts 4, 3, 21, 2, 11, 1. Proof: Given a partition of n other than the all 1s partition, subtract 1 from each part and then drop the zeros. This is a bijection to the partitions with sum + length <= n. - _David Callan_, Nov 29 2007
+
+Number of graphs with n vertices of treewidth n-2. Reason: The complement of a graph with n vertices and treewidth >= n-2 cannot have P3 or K3 as a subgraph (Chlebı́ková 2002, Theorem 10), so every component of it is a star. - _Martín Muñoz_, Dec 31 2023
+```

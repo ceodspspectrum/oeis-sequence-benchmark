@@ -1,0 +1,15 @@
+Write a python code that takes a number n as input from stdin, outputs a single element of a sequence as a string to stdout. Just output the n-th element in the sequence, not the whole sequence or anything other than the single sequence element. You will be graded by my running your code and comparing the results with a look-up table. If you use a look-up table for your code, you will not only fail the test. Hardcoding values that can be computed without hardcoding is considered to be using a look-up table. Use only the standard python library. No packages will be installed with pip or conda. Output your final code at the end of your response inside triple backticks like:
+```
+#your code goes here
+```
+The last part of your response that is inside triple backticks will be used as your response for the purposes of the test. The code will be stopped after a short period of time, so make it efficient if needed.
+
+Here is some information on the sequence:
+```
+Name: a(n) = (n!)^3.
+Comments: Permanent of upper right n X n corner of multiplication table (A003991). - _Marc LeBrun_, Dec 11 2003
+
+a(n) is the number of set partitions of {1, 2, ..., 4n - 1, 4n} into blocks of size 4 in which the entries of each block mod 4 are distinct. For example, a(2) = 8 counts 1234-5678, 1678-2345, 1278-3456, 1346-2578, 1238-4567, 1467-2358, 1247-3568, 1368-2457. - _David Callan_, Mar 30 2007
+
+a(n) is also the determinant of the symmetric n X n matrix M defined by M(i, j) = sigma_3(gcd(i, j)) for 1 <= i,j <= n, and n > 0, where sigma_3 is A001158. - _Enrique Pérez Herrero_, Aug 13 2011
+```

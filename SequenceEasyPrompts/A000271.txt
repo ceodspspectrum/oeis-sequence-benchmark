@@ -1,0 +1,21 @@
+Write a python code that takes a number n as input from stdin, outputs a single element of a sequence as a string to stdout. Just output the n-th element in the sequence, not the whole sequence or anything other than the single sequence element. You will be graded by my running your code and comparing the results with a look-up table. If you use a look-up table for your code, you will not only fail the test. Hardcoding values that can be computed without hardcoding is considered to be using a look-up table. Use only the standard python library. No packages will be installed with pip or conda. Output your final code at the end of your response inside triple backticks like:
+```
+#your code goes here
+```
+The last part of your response that is inside triple backticks will be used as your response for the purposes of the test. The code will be stopped after a short period of time, so make it efficient if needed.
+
+Here is some information on the sequence:
+```
+Name: Sums of ménage numbers.
+Comments: Permanent of the (0,1)-matrix having (i,j)-th entry equal to 0 iff this is on the diagonal or the first upper-diagonal. - _Simone Severini_, Oct 14 2004
+
+Equivalently, number of permutations p of {1,2,...,n} such that p(i)-i not in {0,1}. - _Andrew Howroyd_, Sep 19 2017
+
+From _Vladimir Shevelev_, Jun 21 2015: (Start)
+
+Let 2*n!*V(n)=A137886(n) be the number of ways of seating n married couples at 2*n chairs arranged side-by-side in a straight line, men and women in alternate positions, so that no husband is next to his wife.
+
+It is known [Riordan, Ch. 8, Th. 1, t=0] that, if 2*n!*U(n) is a solution of an analogous problem at a circular table, then U(n) = V(n) - V(n-1), n>=3, where U(n) = A000179(n). Thus V(n) = Sum_{i=3,...,n} A000179(i), n>=1, and comparing the initial conditions, we conclude that a(n) = V(n), n>=1. This gives a combinatorial interpretation for 2*n!*a(n).
+
+(End)
+```

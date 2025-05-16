@@ -1,0 +1,31 @@
+Write a python code that takes a number n as input from stdin, outputs a single element of a sequence as a string to stdout. Just output the n-th element in the sequence, not the whole sequence or anything other than the single sequence element. You will be graded by my running your code and comparing the results with a look-up table. If you use a look-up table for your code, you will not only fail the test. Hardcoding values that can be computed without hardcoding is considered to be using a look-up table. Use only the standard python library. No packages will be installed with pip or conda. Output your final code at the end of your response inside triple backticks like:
+```
+#your code goes here
+```
+The last part of your response that is inside triple backticks will be used as your response for the purposes of the test. The code will be stopped after a short period of time, so make it efficient if needed.
+
+Here is some information on the sequence:
+```
+Name: a(n) = 2^n - n - 2.
+Comments: Ways of placing n+1 labeled balls into 2 indistinguishable boxes with at least 2 balls in each box.
+
+2^a(n) is an integer of the form 1/(2 - Sum_{i=1..m} i/2^i). - _Benoit Cloitre_, Oct 25 2002
+
+Number of permutations avoiding 13-2 that contain the pattern 23-1 exactly twice.
+
+Cost of ternary maximum height Huffman tree with N internal nodes (non-leaves) for minimizing absolutely ordered sequences of size n = 2N + 1. - Alex Vinokur (alexvn(AT)barak-online.net), Nov 02 2004
+
+a(n) is the number of Dyck n-paths whose third upstep initiates the last long ascent, n >= 1. A long ascent is one consisting of 2 or more upsteps. For example, a(3)=3 counts UUDuUDDD, UDUDuUDD, UUDDuUDD (third upstep in small type). - _David Callan_, Dec 08 2004
+
+Subsequence of A158581; A000120(a(n)) > 1. - _Reinhard Zumkeller_, Apr 16 2009
+
+Number of vertices of the tropical Grassmannian simplicial complex G(2,n), related to phylogenetic trees. - _Tom Copeland_, Oct 03 2011
+
+(Conjecture) Let a(2)=0. For n > 2, let N = 2*n + 1. For each n, define the n X n tridiagonal unit-primitive matrix (see [Jeffery]) A_{N,1}=[0,1,0,...,0; 1,0,1,0,...,0; 0,1,0,1,0,...,0; ...; 0,...,0,1,0,1; 0,...,0,1,1] associated with N. Define the n-dimensional column vectors V_N = [v_1,v_2,...,v_n]^T = [A_{N,1}]^n*[1,1,...,1]^T, where [.]^T denotes matrix transpose and [1,...,1] is the n-dimensional unit vector. Let (v_k)_N denote the k-th element of V_N, k in {1,...,n}. Then a(n) = (v_(n-2))_N. - _L. Edson Jeffery_, Jan 20 2012
+
+For n>0, (a(n)) is row 3 of the convolution array A213568. - _Clark Kimberling_, Jun 20 2012
+
+For n>2, a(n-2) is the number of connected induced (non-null) subgraphs of the n-centipede graph. - _Giovanni Resta_, May 04 2017
+
+a(n) is the number of maximal boundary strata of the moduli space of stable rational curves with n+1 marked points. The closures of the maximal boundary strata are called the irreducible boundary divisors of the moduli space; see Cavalieri Section 2.1. - _Harry Richman_, Aug 13 2024
+```

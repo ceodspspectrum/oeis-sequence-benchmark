@@ -1,0 +1,57 @@
+Write a python code that takes a number n as input from stdin, outputs a single element of a sequence as a string to stdout. Just output the n-th element in the sequence, not the whole sequence or anything other than the single sequence element. You will be graded by my running your code and comparing the results with a look-up table. If you use a look-up table for your code, you will not only fail the test. Hardcoding values that can be computed without hardcoding is considered to be using a look-up table. Use only the standard python library. No packages will be installed with pip or conda. Output your final code at the end of your response inside triple backticks like:
+```
+#your code goes here
+```
+The last part of your response that is inside triple backticks will be used as your response for the purposes of the test. The code will be stopped after a short period of time, so make it efficient if needed.
+
+Here is some information on the sequence:
+```
+Name: a(n) is the number of distinct (infinite) output sequences from binary n-stage shift register which feeds back the complement of the last stage.
+Comments: Also a(n+1) = number of distinct (infinite) output sequences from binary n-stage shift register which feeds back the complement of the sum of its contents. E.g., for n=5 there are 6 such sequences.
+
+Also a(n+1) = number of binary vectors (x_1,...x_n) satisfying Sum_{i=1..n} i*x_i = 0 (mod n+1) = size of Varshamov-Tenengolts code VT_0(n). E.g., |VT_0(5)| = 6 = a(6).
+
+Number of binary necklaces with an odd number of zeros. - _Joerg Arndt_, Oct 26 2015
+
+Also, number of subsets of {1,2,...,n-1} which sum to 0 modulo n (cf. A063776). - _Max Alekseyev_, Mar 26 2016
+
+From _Gus Wiseman_, Sep 14 2019: (Start)
+
+Also the number of subsets of {1..n} containing n whose mean is an element. For example, the a(1) = 1 through a(8) = 16 subsets are:
+
+  1  2  3    4    5      6      7        8
+
+        123  234  135    246    147      258
+
+                  345    456    357      468
+
+                  12345  1236   567      678
+
+                         1456   2347     1348
+
+                         23456  2567     1568
+
+                                12467    3458
+
+                                13457    3678
+
+                                34567    12458
+
+                                1234567  14578
+
+                                         23578
+
+                                         24568
+
+                                         45678
+
+                                         123468
+
+                                         135678
+
+                                         2345678
+
+(End)
+
+Number of self-dual binary necklaces with 2n beads (cf. A263768, A007147). - _Bernd Mulansky_, Apr 25 2023
+```

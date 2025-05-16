@@ -1,0 +1,51 @@
+Write a python code that takes a number n as input from stdin, outputs a single element of a sequence as a string to stdout. Just output the n-th element in the sequence, not the whole sequence or anything other than the single sequence element. You will be graded by my running your code and comparing the results with a look-up table. If you use a look-up table for your code, you will not only fail the test. Hardcoding values that can be computed without hardcoding is considered to be using a look-up table. Use only the standard python library. No packages will be installed with pip or conda. Output your final code at the end of your response inside triple backticks like:
+```
+#your code goes here
+```
+The last part of your response that is inside triple backticks will be used as your response for the purposes of the test. The code will be stopped after a short period of time, so make it efficient if needed.
+
+Here is some information on the sequence:
+```
+Name: a(n) = 3*(2*n)!/((n+2)!*(n-1)!).
+Comments: This sequence represents the expected saturation of a binary search tree (or BST) on n nodes times the number of binary search trees on n nodes, or alternatively, the sum of the saturation of all binary search trees on n nodes. - _Marko Riedel_, Jan 24 2002
+
+1->12, 2->123, 3->1234 etc. starting with 1, gives A007001: 1, 12, 12123, 12123121231234... summing the digits gives this sequence. - _Miklos Kristof_, Nov 05 2002
+
+a(n-1) = number of n-th generation vertices in the tree of sequences with unit increase labeled by 2 (cf. _Zoran Sunic_ reference). - _Benoit Cloitre_, Oct 07 2003
+
+With offset 1, number of permutations beginning with 12 and avoiding 32-1.
+
+Number of lattice paths from (0,0) to (n,n) with steps E=(1,0) and N=(0,1) which touch but do not cross the line x-y=1. - _Herbert Kociemba_, May 24 2004
+
+a(n) is the number of Dyck (n+1)-paths that start with UU. For example, a(2)=3 counts UUUDDD, UUDUDD, UUDDUD. - _David Callan_, Dec 08 2004
+
+a(n) is the number of Dyck (n+2)-paths that start with UUDU. For example, a(2)=3 counts UUDUDDUD, UUDUDUDD, UUDUUDDD. - _David Scambler_, Feb 14 2011
+
+Hankel transform is (0,-1,-1,0,1,1,0,-1,-1,0,...). Hankel transform of a(n+1) is (1,0,-1,-1,0,1,1,0,-1,-1,0,...). - _Paul Barry_, Feb 08 2008
+
+Starting with offset 1 = row sums of triangle A154558. - _Gary W. Adamson_, Jan 11 2009
+
+Starting with offset 1 equals INVERT transform of A014137, partial sums of the Catalan numbers: (1, 2, 4, 9, 23, ...). - _Gary W. Adamson_, May 15 2009
+
+With offset 1, a(n) is the binomial transform of the shortened Motzkin numbers: 1, 2, 4, 9, 21, 51, 127, 323, ... (A001006). - Aoife Hennessy (aoife.hennessy(AT)gmail.com), Sep 07 2009
+
+The Catalan sequence convolved with its shifted variant, e.g. a(5) = 90 = (1, 1, 2, 5, 14) dot (42, 14, 5, 2, 1) = (42 + 14 + 10 + 10 + 14 ) = 90. - _Gary W. Adamson_, Nov 22 2011
+
+a(n+2) = A214292(2*n+3,n). - _Reinhard Zumkeller_, Jul 12 2012
+
+With offset 3, a(n) is the number of permutations on {1,2,...,n} that are 123-avoiding, i.e., do not contain a three term monotone subsequence, for which the first ascent is at positions (3,4); see Connolly link. There it is shown in general that the k-th Catalan Convolution is the number of 123-avoiding permutations for which the first ascent is at (k, k+1). (For n=k, the first ascent is defined to be at positions (k,k+1) if the permutation is the decreasing permutation with no ascents.) - _Anant Godbole_, Jan 17 2014
+
+With offset 3, a(n)=number of permutations on {1,2,...,n} that are 123-avoiding and for which the integer n is in the 3rd spot; see Connolly link. For example, there are 297 123-avoiding permutations on n=9 at which the element 9 is in the third spot. - _Anant Godbole_, Jan 17 2014
+
+With offset 1, a(n) is the number of North-East paths from (0,0) to (n+1,n+1) that bounce off y = x to the right exactly once but do not cross y = x vertically. Details can be found in Section 4.4 in Pan and Remmel's link. - _Ran Pan_, Feb 01 2016
+
+The total number of returns (downsteps which end on the line y=0) within the set of all Dyck paths from (0,0) to (2n,0). - _Cheyne Homberger_, Sep 05 2016
+
+a(n) is the number of intervals of the form [s,w] that are distributive (equivalently, modular) lattices in the weak order on S_n, for a fixed simple reflection s. - _Bridget Tenner_, Jan 16 2020
+
+a(n+2) is the number of coalescent histories for a pair (G,S) where G is a gene tree with 3-pseudocaterpillar shape and n leaves, S is a species tree with caterpillar shape and n leaves, and G and S have identical leaf labeling. - _Noah A Rosenberg_, Jun 15 2022
+
+a(n) is the number of parking functions of size n avoiding the patterns 132, 213, and 312. - _Lara Pudwell_, Apr 10 2023
+
+a(n) is the number of parking functions of size n avoiding the patterns 123 and 213. - _Lara Pudwell_, Apr 10 2023
+```

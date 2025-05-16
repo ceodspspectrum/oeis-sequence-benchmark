@@ -1,0 +1,15 @@
+Write a python code that takes a number n as input from stdin, outputs a single element of a sequence as a string to stdout. Just output the n-th element in the sequence, not the whole sequence or anything other than the single sequence element. You will be graded by my running your code and comparing the results with a look-up table. If you use a look-up table for your code, you will not only fail the test. Hardcoding values that can be computed without hardcoding is considered to be using a look-up table. Use only the standard python library. No packages will be installed with pip or conda. Output your final code at the end of your response inside triple backticks like:
+```
+#your code goes here
+```
+The last part of your response that is inside triple backticks will be used as your response for the purposes of the test. The code will be stopped after a short period of time, so make it efficient if needed.
+
+Here is some information on the sequence:
+```
+Name: Triangle of numbers related to triangle A049213; generalization of Stirling numbers of second kind A008277, Bessel triangle A001497.
+Comments: a(n,m) := S2p(-3; n,m), a member of a sequence of triangles including S2p(-1; n,m) := A001497(n-1,m-1) (Bessel triangle) and ((-1)^(n-m))*S2p(1; n,m) := A008277(n,m) (Stirling 2nd kind). a(n,1)= A008545(n-1).
+
+a(n,m), n>=m>=1, enumerates unordered n-vertex m-forests composed of m increasing plane (aka ordered) trees, with one vertex of out-degree r=0 (leafs or a root) and each vertex with out-degree r>=1 comes in r+2 types (like for an (r+2)-ary vertex). Proof from the e.g.f. of the first column Y(z):=1-(1-4*x)^(1/4) and the F. Bergeron et al. reference given in A001498, eq. (8), Y'(z)= phi(Y(z)), Y(0)=0, with out-degree o.g.f. phi(w)=1/(1-w)^3. - _Wolfdieter Lang_, Oct 12 2007
+
+Also the Bell transform of the quadruple factorial numbers Product_{k=0..n-1} (4*k+3) (A008545) adding 1,0,0,0,... as column 0. For the definition of the Bell transform see A264428 and for cross-references A265606. - _Peter Luschny_, Dec 31 2015
+```

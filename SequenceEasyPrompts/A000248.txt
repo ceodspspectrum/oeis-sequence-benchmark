@@ -1,0 +1,21 @@
+Write a python code that takes a number n as input from stdin, outputs a single element of a sequence as a string to stdout. Just output the n-th element in the sequence, not the whole sequence or anything other than the single sequence element. You will be graded by my running your code and comparing the results with a look-up table. If you use a look-up table for your code, you will not only fail the test. Hardcoding values that can be computed without hardcoding is considered to be using a look-up table. Use only the standard python library. No packages will be installed with pip or conda. Output your final code at the end of your response inside triple backticks like:
+```
+#your code goes here
+```
+The last part of your response that is inside triple backticks will be used as your response for the purposes of the test. The code will be stopped after a short period of time, so make it efficient if needed.
+
+Here is some information on the sequence:
+```
+Name: Expansion of e.g.f. exp(x*exp(x)).
+Comments: Number of forests with n nodes and height at most 1.
+
+Equivalently, number of idempotent mappings f from a set of n elements into itself (i.e., satisfying f o f = f). - _Robert FERREOL_, Oct 11 2007
+
+In other words, a(n) = number of idempotents in the full semigroup of maps from [1..n] to itself. [Tainiter]
+
+a(n) is the number of ways to select a set partition of {1,2,...,n} and then designate one element in each block (cell) of the partition.
+
+Let set B have cardinality n. Then a(n) is the number of functions f:D->C over all partitions {D,C} of B. See the example in the Example Section below. We note that f:empty set->B is designated as the null function, whereas f:B->empty set is undefined unless B itself is empty. - _Dennis P. Walsh_, Dec 05 2013
+
+In physics, a(n) would be interpreted as the number of projection operators P on S_n, i.e., ones satisfying P^2 = P. Example: a particle with a half-integer spin s has a spin space with 2s+1 base states which admits a(2s+1) linear projection operators (including the identity). These are important because they satisfy the operator identity exp(zU) = 1+(exp(z)-1)*U, valid for any complex z. - _Stanislav Sykora_, Nov 03 2016
+```

@@ -1,0 +1,13 @@
+Write a python code that takes a number n as input from stdin, outputs a single element of a sequence as a string to stdout. Just output the n-th element in the sequence, not the whole sequence or anything other than the single sequence element. You will be graded by my running your code and comparing the results with a look-up table. If you use a look-up table for your code, you will not only fail the test. Hardcoding values that can be computed without hardcoding is considered to be using a look-up table. Use only the standard python library. No packages will be installed with pip or conda. Output your final code at the end of your response inside triple backticks like:
+```
+#your code goes here
+```
+The last part of your response that is inside triple backticks will be used as your response for the purposes of the test. The code will be stopped after a short period of time, so make it efficient if needed.
+
+Here is some information on the sequence:
+```
+Name: Number of Hamiltonian paths (or Gray codes) on n-cube with a marked starting node.
+Comments: More precisely, this is the number of ways of making a list of the 2^n nodes of the n-cube, with a distinguished starting position and a direction, such that each node is adjacent to the previous one. The final node may or may not be adjacent to the first. Finally, divide by 2^n since the starting node really doesn't matter.
+
+Also, the number of strings s of length 2^n - 1 over the alphabet {1,2,...,n} with the property that every contiguous subblock has some letter that appears an odd number of times.
+```

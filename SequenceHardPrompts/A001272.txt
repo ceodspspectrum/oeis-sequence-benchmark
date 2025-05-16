@@ -1,0 +1,17 @@
+Write a python code that takes a number n as input from stdin, outputs a single element of a sequence as a string to stdout. Just output the n-th element in the sequence, not the whole sequence or anything other than the single sequence element. You will be graded by my running your code and comparing the results with a look-up table. If you use a look-up table for your code, you will not only fail the test. Hardcoding values that can be computed without hardcoding is considered to be using a look-up table. Use only the standard python library. No packages will be installed with pip or conda. Output your final code at the end of your response inside triple backticks like:
+```
+#your code goes here
+```
+The last part of your response that is inside triple backticks will be used as your response for the purposes of the test. The code will be stopped after a short period of time, so make it efficient if needed.
+
+Here is some information on the sequence:
+```
+Name: Numbers k such that k! - (k-1)! + (k-2)! - (k-3)! + ... - (-1)^k*1! is prime.
+Comments: At present the terms greater than or equal to 2653 are only probable primes.
+
+Živković shows that all terms must be less than p = 3612703, which divides the alternating factorial af(k) for k >= p. - _T. D. Noe_, Jan 25 2008
+
+Notwithstanding Živković's wording, p = 3612703 also divides the alternating factorial for k = 3612702. [Guy: If there is a value of k such that k + 1 divides af(k), then k + 1 will divide af(m) for all m > k.] Therefore af(3612701), approximately 7.3 * 10^22122513, is the final primality candidate. - _Hans Havermann_, Jun 17 2013
+
+Next term (if it exists) has k > 100000 (per M. Rodenkirch post). - _Eric W. Weisstein_, Dec 18 2017
+```

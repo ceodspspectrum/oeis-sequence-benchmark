@@ -1,0 +1,81 @@
+Write a python code that takes a number n as input from stdin, outputs a single element of a sequence as a string to stdout. Just output the n-th element in the sequence, not the whole sequence or anything other than the single sequence element. You will be graded by my running your code and comparing the results with a look-up table. If you use a look-up table for your code, you will not only fail the test. Hardcoding values that can be computed without hardcoding is considered to be using a look-up table. Use only the standard python library. No packages will be installed with pip or conda. Output your final code at the end of your response inside triple backticks like:
+```
+#your code goes here
+```
+The last part of your response that is inside triple backticks will be used as your response for the purposes of the test. The code will be stopped after a short period of time, so make it efficient if needed.
+
+Here is some information on the sequence:
+```
+Name: Mersenne primes (primes of the form 2^n - 1).
+Comments: For a Mersenne number 2^n - 1 to be prime, the exponent n must itself be prime.
+
+See A000043 for the values of n.
+
+Primes that are repunits in base 2.
+
+Define f(k) = 2k+1; begin with k = 2, a(n+1) = least prime of the form f(f(f(...(a(n)))). - _Amarnath Murthy_, Dec 26 2003
+
+Mersenne primes other than the first are of the form 6n+1. - _Lekraj Beedassy_, Aug 27 2004. Mersenne primes other than the first are of the form 24n+7; see also A124477. - _Artur Jasinski_, Nov 25 2007
+
+A034876(a(n)) = 0 and A034876(a(n)+1) = 1. - _Jonathan Sondow_, Dec 19 2004
+
+Mersenne primes are solutions to sigma(n+1)-sigma(n) = n as perfect numbers (A000396(n)) are solutions to sigma(n) = 2n. In fact, appears to give all n such that sigma(n+1)-sigma(n) = n. - _Benoit Cloitre_, Aug 27 2002
+
+If n is in the sequence then sigma(sigma(n)) = 2n+1. Is it true that this sequence gives all numbers n such that sigma(sigma(n)) = 2n+1? - _Farideh Firoozbakht_, Aug 19 2005
+
+It is easily proved that if n is a Mersenne prime then sigma(sigma(n)) - sigma(n) = n. Is it true that Mersenne primes are all the solutions of the equation sigma(sigma(x)) - sigma(x) = x? - _Farideh Firoozbakht_, Feb 12 2008
+
+Sum of divisors of n-th even superperfect number A061652(n). Sum of divisors of n-th superperfect number A019279(n), if there are no odd superperfect numbers. - _Omar E. Pol_, Mar 11 2008
+
+Indices of both triangular numbers and generalized hexagonal numbers (A000217) that are also even perfect numbers. - _Omar E. Pol_, May 10 2008, Sep 22 2013
+
+Number of positive integers (1, 2, 3, ...) whose sum is the n-th perfect number A000396(n). - _Omar E. Pol_, May 10 2008
+
+Vertex number where the n-th perfect number A000396(n) is located in the square spiral whose vertices are the positive triangular numbers A000217. - _Omar E. Pol_, May 10 2008
+
+Mersenne numbers A000225 whose indices are the prime numbers A000043. - _Omar E. Pol_, Aug 31 2008
+
+The digital roots are 1 if p == 1 (mod 6) and 4 if p == 5 (mod 6). [T. Koshy, Math Gaz. 89 (2005) p. 465]
+
+Primes p such that for all primes q < p, p XOR q = p - q. - _Brad Clardy_, Oct 26 2011
+
+All these primes, except 3, are Brazilian primes, so they are also in A085104 and A023195. - _Bernard Schott_, Dec 26 2012
+
+All prime numbers p can be classified by k = (p mod 12) into four classes: k=1, 5, 7, 11. The Mersennne prime numbers 2^p-1, p > 2 are in the class k=7 with p=12*(n-1)+7, n=1,2,.... As all 2^p (p odd) are in class k=8 it follows that all 2^p-1, p > 2 are in class k=7. - _Freimut Marschner_, Jul 27 2013
+
+From "The Guinness Book of Primes": "During the reign of Queen Elizabeth I, the largest known prime number was the number of grains of rice on the chessboard up to and including the nineteenth square: 524,287 [= 2^19 - 1]. By the time Lord Nelson was fighting the Battle of Trafalgar, the record for the largest prime had gone up to the thirty-first square of the chessboard: 2,147,483,647 [= 2^31 - 1]. This ten-digits number was proved to be prime in 1772 by the Swiss mathematician Leonard Euler, and it held the record until 1867." [du Sautoy] - _Robert G. Wilson v_, Nov 26 2013
+
+If n is in the sequence then A024816(n) = antisigma(n) = antisigma(n+1) - 1. Is it true that this sequence gives all numbers n such that antisigma(n) = antisigma(n+1) - 1? Are there composite numbers with this property? - _Jaroslav Krizek_, Jan 24 2014
+
+If n is in the sequence then phi(n) + sigma(sigma(n)) = 3n. Is it true that Mersenne primes are all the solutions of the equation phi(x) + sigma(sigma(x)) = 3x? - _Farideh Firoozbakht_, Sep 03 2014
+
+a(5) = A229381(2) = 8191 is the "Simpsons' Mersenne prime". - _Jonathan Sondow_, Jan 02 2015
+
+Equivalently, prime powers of the form 2^n - 1, see Theorem 2 in Lemos & Cambraia Junior. - _Charles R Greathouse IV_, Jul 07 2016
+
+Primes whose sum of divisors is a power of 2. Primes p such that p + 1 is a power of 2. Primes in A046528. - _Omar E. Pol_, Jul 09 2016
+
+From _Jaroslav Krizek_, Jan 19 2017: (Start)
+
+Primes p such that sigma(p+1) = 2p+1.
+
+Primes p such that A051027(p) = sigma(sigma(p)) = 2^k-1 for some k > 1.
+
+Primes p of the form sigma(2^prime(n)-1)-1 for some n. Corresponding values of numbers n are in A016027.
+
+Primes p of the form sigma(2^(n-1)) for some n > 1. Corresponding values of numbers n are in A000043 (Mersenne exponents).
+
+Primes of the form sigma(2^(n+1)) for some n > 1. Corresponding values of numbers n are in A153798 (Mersenne exponents-2).
+
+Primes p of the form sigma(n) where n is even; subsequence of A023195. Primes p of the form sigma(n) for some n. Conjecture: 31 is the only prime p such that p = sigma(x) = sigma(y) for distinct numbers x and y; 31 = sigma(16) = sigma(25).
+
+Conjecture: numbers n such that n = sigma(sigma(n+1)-n-1))-1, i.e., A072868(n)-1.
+
+Conjecture: primes of the form sigma(4*(n-1)) for some n. Corresponding values of numbers n are in A281312. (End)
+
+[Conjecture] For n > 2, the Mersenne number M(n) = 2^n - 1 is a prime if and only if 3^M(n-1) == -1 (mod M(n)). - _Thomas Ordowski_, Aug 12 2018 [This needs proof! - _Joerg Arndt_, Mar 31 2019]
+
+Named "Mersenne's numbers" by W. W. Rouse Ball (1892, 1912) after Marin Mersenne (1588-1648). - _Amiram Eldar_, Feb 20 2021
+
+Theorem. Let b = 2^p - 1 (where p is a prime). Then b is a Mersenne prime iff (c = 2^p - 2 is totient or a term of A002202). Otherwise, if c is (nontotient or a term of A005277) then b is composite. Proof. Trivial, since, while b = v^g - 1 where v is even, v > 2, g is integer, g > 1, b is always composite, and c = v^g - 2 is nontotient (or a term of A005277), and so is for any composite b = 2^g - 1 (in the last case, c = v^g - 2 is also nontotient, or a term of A005277). - _Sergey Pavlov_, Aug 30 2021 [Disclaimer: This proof has not been checked. - _N. J. A. Sloane_, Oct 01 2021]
+```

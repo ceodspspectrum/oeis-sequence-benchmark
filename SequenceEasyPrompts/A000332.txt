@@ -1,0 +1,83 @@
+Write a python code that takes a number n as input from stdin, outputs a single element of a sequence as a string to stdout. Just output the n-th element in the sequence, not the whole sequence or anything other than the single sequence element. You will be graded by my running your code and comparing the results with a look-up table. If you use a look-up table for your code, you will not only fail the test. Hardcoding values that can be computed without hardcoding is considered to be using a look-up table. Use only the standard python library. No packages will be installed with pip or conda. Output your final code at the end of your response inside triple backticks like:
+```
+#your code goes here
+```
+The last part of your response that is inside triple backticks will be used as your response for the purposes of the test. The code will be stopped after a short period of time, so make it efficient if needed.
+
+Here is some information on the sequence:
+```
+Name: Binomial coefficient binomial(n,4) = n*(n-1)*(n-2)*(n-3)/24.
+Comments: Number of intersection points of diagonals of convex n-gon where no more than two diagonals intersect at any point in the interior.
+
+Also the number of equilateral triangles with vertices in an equilateral triangular array of points with n rows (offset 1), with any orientation. - _Ignacio Larrosa Cañestro_, Apr 09 2002. [See Les Reid link for proof. - _N. J. A. Sloane_, Apr 02 2016]
+
+Start from cubane and attach amino acids according to the reaction scheme that describes the reaction between the active sites. See the hyperlink on chemistry. - _Robert G. Wilson v_, Aug 02 2002
+
+For n>0, a(n) = (-1/8)*(coefficient of x in Zagier's polynomial P_(2n,n)). (Zagier's polynomials are used by PARI/GP for acceleration of alternating or positive series.)
+
+Figurate numbers based on the 4-dimensional regular convex polytope called the regular 4-simplex, pentachoron, 5-cell, pentatope or 4-hypertetrahedron with Schlaefli symbol {3,3,3}. a(n)=((n*(n-1)*(n-2)*(n-3))/4!). - Michael J. Welch (mjw1(AT)ntlworld.com), Apr 01 2004, _R. J. Mathar_, Jul 07 2009
+
+Maximal number of crossings that can be created by connecting n vertices with straight lines. - Cameron Redsell-Montgomerie (credsell(AT)uoguelph.ca), Jan 30 2007
+
+If X is an n-set and Y a fixed (n-1)-subset of X then a(n) is equal to the number of 4-subsets of X intersecting Y. - _Milan Janjic_, Aug 15 2007
+
+Product of four consecutive numbers divided by 24. - _Artur Jasinski_, Dec 02 2007
+
+The only prime in this sequence is 5. - _Artur Jasinski_, Dec 02 2007
+
+For strings consisting entirely of 0's and 1's, the number of distinct arrangements of four 1's such that 1's are not adjacent. The shortest possible string is 7 characters, of which there is only one solution: 1010101, corresponding to a(5). An eight-character string has 5 solutions, nine has 15, ten has 35 and so on, congruent to A000332. - _Gil Broussard_, Mar 19 2008
+
+For a(n)>0, a(n) is pentagonal if and only if 3 does not divide n. All terms belong to the generalized pentagonal sequence (A001318). Cf. A000326, A145919, A145920. - _Matthew Vandermast_, Oct 28 2008
+
+Nonzero terms = row sums of triangle A158824. - _Gary W. Adamson_, Mar 28 2009
+
+Except for the 4 initial 0's, is equivalent to the partial sums of the tetrahedral numbers A000292. - Jeremy Cahill (jcahill(AT)inbox.com), Apr 15 2009
+
+If the first 3 zeros are disregarded, that is, if one looks at binomial(n+3, 4) with n>=0, then it becomes a 'Matryoshka doll' sequence with alpha=0: seq(add(add(add(i,i=alpha..k),k=alpha..n),n=alpha..m),m=alpha..50). - _Peter Luschny_, Jul 14 2009
+
+For n>=1, a(n) is the number of n-digit numbers the binary expansion of which contains two runs of 0's. - _Vladimir Shevelev_, Jul 30 2010
+
+For n>0, a(n) is the number of crossing set partitions of {1,2,..,n} into n-2 blocks. - _Peter Luschny_, Apr 29 2011
+
+The Kn3, Ca3 and Gi3 triangle sums of A139600 are related to the sequence given above, e.g., Gi3(n) = 2*A000332(n+3) - A000332(n+2) + 7*A000332(n+1). For the definitions of these triangle sums, see A180662. - _Johannes W. Meijer_, Apr 29 2011
+
+For n > 3, a(n) is the hyper-Wiener index of the path graph on n-2 vertices. - _Emeric Deutsch_, Feb 15 2012
+
+Except for the four initial zeros, number of all possible tetrahedra of any size, having the same orientation as the original regular tetrahedron, formed when intersecting the latter by planes parallel to its sides and dividing its edges into n equal parts. - _V.J. Pohjola_, Aug 31 2012
+
+a(n+3) is the number of different ways to color the faces (or the vertices) of a regular tetrahedron with n colors if we count mirror images as the same.
+
+a(n) = fallfac(n,4)/4! is also the number of independent components of an antisymmetric tensor of rank 4 and dimension n >= 1. Here fallfac is the falling factorial. - _Wolfdieter Lang_, Dec 10 2015
+
+Does not satisfy Benford's law [Ross, 2012] - _N. J. A. Sloane_, Feb 12 2017
+
+Number of chiral pairs of colorings of the vertices (or faces) of a regular tetrahedron with n available colors. Chiral colorings come in pairs, each the reflection of the other. - _Robert A. Russell_, Jan 22 2020
+
+From _Mircea Dan Rus_, Aug 26 2020: (Start)
+
+a(n+3) is the number of lattice rectangles (squares included) in a staircase of order n; this is obtained by stacking n rows of consecutive unit lattice squares, aligned either to the left or to the right, which consist of 1, 2, 3, ..., n squares and which are stacked either in the increasing or in the decreasing order of their lengths. Below, there is a staircase or order 4 which contains a(7) = 35 rectangles. [See the Teofil Bogdan and Mircea Dan Rus link, problem 3, under A004320]
+
+    _
+
+   |_|_
+
+   |_|_|_
+
+   |_|_|_|_
+
+   |_|_|_|_|
+
+(End)
+
+a(n+4) is the number of strings of length n on an ordered alphabet of 5 letters where the characters in the word are in nondecreasing order. E.g., number of length-2 words is 15: aa,ab,ac,ad,ae,bb,bc,bd,be,cc,cd,ce,dd,de,ee. - _Jim Nastos_, Jan 18 2021
+
+From _Tom Copeland_, Jun 07 2021: (Start)
+
+Aside from the zeros, this is the fifth diagonal of the Pascal matrix A007318, the only nonvanishing diagonal (fifth) of the matrix representation IM = (A132440)^4/4! of the differential operator D^4/4!, when acting on the row vector of coefficients of an o.g.f., or power series.
+
+M = e^{IM} is the matrix of coefficients of the Appell sequence p_n(x) = e^{D^4/4!} x^n = e^{b. D} x^n = (b. + x)^n = Sum_{k=0..n} binomial(n,k) b_n x^{n-k}, where the (b.)^n = b_n have the e.g.f. e^{b.t} = e^{t^4/4!}, which is that for A025036 aerated with triple zeros, the first column of M.
+
+See A099174 and A000292 for analogous relationships for the third and fourth diagonals of the Pascal matrix. (End)
+
+For integer m and positive integer r >= 3, the polynomial a(n) + a(n + m) + a(n + 2*m) + ... + a(n + r*m) in n has its zeros on the vertical line Re(n) = (3 - r*m)/2 in the complex plane. - _Peter Bala_, Jun 02 2024
+```

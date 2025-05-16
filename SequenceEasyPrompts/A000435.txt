@@ -1,0 +1,21 @@
+Write a python code that takes a number n as input from stdin, outputs a single element of a sequence as a string to stdout. Just output the n-th element in the sequence, not the whole sequence or anything other than the single sequence element. You will be graded by my running your code and comparing the results with a look-up table. If you use a look-up table for your code, you will not only fail the test. Hardcoding values that can be computed without hardcoding is considered to be using a look-up table. Use only the standard python library. No packages will be installed with pip or conda. Output your final code at the end of your response inside triple backticks like:
+```
+#your code goes here
+```
+The last part of your response that is inside triple backticks will be used as your response for the purposes of the test. The code will be stopped after a short period of time, so make it efficient if needed.
+
+Here is some information on the sequence:
+```
+Name: Normalized total height of all nodes in all rooted trees with n labeled nodes.
+Comments: This is the sequence that started it all: the first sequence in the database!
+
+The height h(V) of a node V in a rooted tree is its distance from the root. a(n) = Sum_{all nodes V in all n^(n-1) rooted trees on n nodes} h(V)/n.
+
+In the trees which have [0, n-1] = (0, 1, ..., n-1) as their ordered set of nodes, the number of nodes at distance i from node 0 is f(n,i) = (n-1)...(n-i)(i+1)n^(j-1), 0 <= i < n-1, i+j = n-1 (and f(n,n-1) = (n-1)!): (n-1)...(n-i) counts the words coding the paths of length i from any node to 0, n^(j-1) counts the Pruefer codes of the rest, words build by iterated deletion of the greater node of degree 1 ... except the last one, (i+1), necessary pointing at the path. If g(n,i) = (n-1)...(n-i)n^j, i+j = n-1, f(n,i) = g(n,i) - g(n,i+1), g(n,i) = Sum_{k>=i} f(n,k), the sequence is Sum_{i=1..n-1} g(n,i). - Claude Lenormand (claude.lenormand(AT)free.fr), Jan 26 2001
+
+If one randomly selects one ball from an urn containing n different balls, with replacement, until exactly one ball has been selected twice, the probability that this ball was also the second ball to be selected once is a(n)/n^n. See also A001865. - _Matthew Vandermast_, Jun 15 2004
+
+a(n) is the number of connected endofunctions with no fixed points. - _Geoffrey Critzer_, Dec 13 2011
+
+a(n) is the number of weakly connected simple digraphs on n labeled nodes where every node has out-degree 1. A digraph where all out-degrees are 1 can be called a functional digraph due to the correspondence with endofunctions. - _Andrew Howroyd_, Feb 06 2024
+```

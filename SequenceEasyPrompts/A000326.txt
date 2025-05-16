@@ -1,0 +1,51 @@
+Write a python code that takes a number n as input from stdin, outputs a single element of a sequence as a string to stdout. Just output the n-th element in the sequence, not the whole sequence or anything other than the single sequence element. You will be graded by my running your code and comparing the results with a look-up table. If you use a look-up table for your code, you will not only fail the test. Hardcoding values that can be computed without hardcoding is considered to be using a look-up table. Use only the standard python library. No packages will be installed with pip or conda. Output your final code at the end of your response inside triple backticks like:
+```
+#your code goes here
+```
+The last part of your response that is inside triple backticks will be used as your response for the purposes of the test. The code will be stopped after a short period of time, so make it efficient if needed.
+
+Here is some information on the sequence:
+```
+Name: Pentagonal numbers: a(n) = n*(3*n-1)/2.
+Comments: The average of the first n (n > 0) pentagonal numbers is the n-th triangular number. - Mario Catalani (mario.catalani(AT)unito.it), Apr 10 2003
+
+a(n) is the sum of n integers starting from n, i.e., 1, 2 + 3, 3 + 4 + 5, 4 + 5 + 6 + 7, etc. - _Jon Perry_, Jan 15 2004
+
+Partial sums of 1, 4, 7, 10, 13, 16, ... (1 mod 3), a(2k) = k(6k-1), a(2k-1) = (2k-1)(3k-2). - _Jon Perry_, Sep 10 2004
+
+Starting with offset 1 = binomial transform of [1, 4, 3, 0, 0, 0, ...]. Also, A004736 * [1, 3, 3, 3, ...]. - _Gary W. Adamson_, Oct 25 2007
+
+If Y is a 3-subset of an n-set X then, for n >= 4, a(n-3) is the number of 4-subsets of X having at least two elements in common with Y. - _Milan Janjic_, Nov 23 2007
+
+Solutions to the duplication formula 2*a(n) = a(k) are given by the index pairs (n, k) = (5,7), (5577, 7887), (6435661, 9101399), etc. The indices are integer solutions to the pair of equations 2(6n-1)^2 = 1 + y^2, k = (1+y)/6, so these n can be generated from the subset of numbers [1+A001653(i)]/6, any i, where these are integers, confined to the cases where the associated k=[1+A002315(i)]/6 are also integers. - _R. J. Mathar_, Feb 01 2008
+
+a(n) is a binomial coefficient C(n,4) (A000332) if and only if n is a generalized pentagonal number (A001318). Also see A145920. - _Matthew Vandermast_, Oct 28 2008
+
+Even octagonal numbers divided by 8. - _Omar E. Pol_, Aug 18 2011
+
+Sequence found by reading the line from 0, in the direction 0, 5, ... and the line from 1, in the direction 1, 12, ..., in the square spiral whose vertices are the generalized pentagonal numbers A001318. - _Omar E. Pol_, Sep 08 2011
+
+The hyper-Wiener index of the star-tree with n edges (see A196060, example). - _Emeric Deutsch_, Sep 30 2011
+
+More generally the n-th k-gonal number is equal to n + (k-2)*A000217(n-1), n >= 1, k >= 3. In this case k = 5. - _Omar E. Pol_, Apr 06 2013
+
+Note that both Euler's pentagonal theorem for the partition numbers and Euler's pentagonal theorem for the sum of divisors refer more exactly to the generalized pentagonal numbers, not this sequence. For more information see A001318, A175003, A238442. - _Omar E. Pol_, Mar 01 2014
+
+The Fuss-Catalan numbers are Cat(d,k)= [1/(k*(d-1)+1)]*binomial(k*d,k) and enumerate the number of (d+1)-gon partitions of a (k*(d-1)+2)-gon (cf. Schuetz and Whieldon link). a(n)= Cat(n,3), so enumerates the number of (n+1)-gon partitions of a (3*(n-1)+2)-gon. Analogous sequences are A100157 (k=4) and A234043 (k=5). - _Tom Copeland_, Oct 05 2014
+
+Binomial transform of (0, 1, 3, 0, 0, 0, ...) (A169585 with offset 1) and second partial sum of (0, 1, 3, 3, 3, ...). - _Gary W. Adamson_, Oct 05 2015
+
+For n > 0, a(n) is the number of compositions of n+8 into n parts avoiding parts 2 and 3. - _Milan Janjic_, Jan 07 2016
+
+a(n) is also the number of edges in the Mycielskian of the complete graph K[n]. Indeed, K[n] has n vertices and n(n-1)/2 edges. Then its Mycielskian has n + 3n(n-1)/2 = n(3n-1)/2. See p. 205 of the West reference. - _Emeric Deutsch_, Nov 04 2016
+
+Sum of the numbers from n to 2n-1. - _Wesley Ivan Hurt_, Dec 03 2016
+
+Also the number of maximal cliques in the n-Andrásfai graph. - _Eric W. Weisstein_, Dec 01 2017
+
+Coefficients in the hypergeometric series identity 1 - 5*(x - 1)/(2*x + 1) + 12*(x - 1)*(x - 2)/((2*x + 1)*(2*x + 2)) - 22*(x - 1)*(x - 2)*(x - 3)/((2*x + 1)*(2*x + 2)*(2*x + 3)) + ... = 0, valid for Re(x) > 1. Cf. A002412 and A002418. Column 2 of A103450. - _Peter Bala_, Mar 14 2019
+
+A generalization of the Comment dated Apr 10 2003 follows. (k-3)*A000292(n-2) plus the average of the first n (2k-1)-gonal numbers is the n-th k-gonal number. - _Charlie Marion_, Nov 01 2020
+
+a(n+1) is the number of Dyck paths of size (3,3n+1); i.e., the number of NE lattice paths from (0,0) to (3,3n+1) which stay above the line connecting these points. - _Harry Richman_, Jul 13 2021
+```

@@ -1,0 +1,19 @@
+Write a python code that takes a number n as input from stdin, outputs a single element of a sequence as a string to stdout. Just output the n-th element in the sequence, not the whole sequence or anything other than the single sequence element. You will be graded by my running your code and comparing the results with a look-up table. If you use a look-up table for your code, you will not only fail the test. Hardcoding values that can be computed without hardcoding is considered to be using a look-up table. Use only the standard python library. No packages will be installed with pip or conda. Output your final code at the end of your response inside triple backticks like:
+```
+#your code goes here
+```
+The last part of your response that is inside triple backticks will be used as your response for the purposes of the test. The code will be stopped after a short period of time, so make it efficient if needed.
+
+Here is some information on the sequence:
+```
+Name: a(n) = (2*n+1)! / n!.
+Comments: The e.g.f. of 1/a(n) = n!/(2*n+1)! is (exp(sqrt(x)) - exp(-sqrt(x)))/(2*sqrt(x)). - _Wolfdieter Lang_, Jan 09 2012
+
+Product of the larger parts of the partitions of 2n+2 into exactly two parts. - _Wesley Ivan Hurt_, Jun 15 2013
+
+For n > 0, a(n-1) = (2n-1)!/(n-1)!, the number of ways n people can line up in n labeled queues. The derivation is straightforward. Person 1 has (2n-1) choices - be first in line in one of the queues or get behind one of the other people. Person 2 has (2n-2) choices - choose one of the n queues or get behind one of the remaining n-2 people. Continuing in this fashion, we finally find that person n has to choose one of the n queues. - _Dennis P. Walsh_, Mar 24 2016
+
+For n > 0, a(n-1) is the number of functions f:[n]->[2n] that are acyclic and injective. Note that f is acyclic if, for all x in [n], x is not a member of the set {f(x),f(f(x)), f(f(f(x))), ...}. - _Dennis P. Walsh_, Mar 25 2016
+
+a(n) is the number of labeled maximal outerplanar graphs with n-3 vertices. - _Allan Bickle_, Feb 19 2024
+```

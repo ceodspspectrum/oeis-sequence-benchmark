@@ -1,0 +1,23 @@
+Write a python code that takes a number n as input from stdin, outputs a single element of a sequence as a string to stdout. Just output the n-th element in the sequence, not the whole sequence or anything other than the single sequence element. You will be graded by my running your code and comparing the results with a look-up table. If you use a look-up table for your code, you will not only fail the test. Hardcoding values that can be computed without hardcoding is considered to be using a look-up table. Use only the standard python library. No packages will be installed with pip or conda. Output your final code at the end of your response inside triple backticks like:
+```
+#your code goes here
+```
+The last part of your response that is inside triple backticks will be used as your response for the purposes of the test. The code will be stopped after a short period of time, so make it efficient if needed.
+
+Here is some information on the sequence:
+```
+Name: Indices of prime Fibonacci numbers.
+Comments: Some of the larger entries may only correspond to probable primes.
+
+Since F(n) divides F(mn) (cf. A001578, A086597), all terms of this sequence are primes except for a(2) = 4 = 2 * 2 but F(2) = 1. - _M. F. Hasler_, Dec 12 2007
+
+What is the next larger twin prime after F(4) = 3, F(5) = 5, F(7) = 13? The next candidates seem to be F(104911) or F(1968721) (greater of a pair), or F(397379), F(931517) (lesser of a pair). - _M. F. Hasler_, Jan 30 2013, edited Dec 24 2016, edited Sep 23 2017 by _Bobby Jacobs_
+
+_Henri Lifchitz_ confirms that the data section gives the full list (49 terms) as far as we know it today of indices of prime Fibonacci numbers (including proven primes and PRPs). - _N. J. A. Sloane_, Jul 09 2016
+
+Terms n such that n-2 is also a term are listed in A279795. - _M. F. Hasler_, Dec 24 2016
+
+There are no Fibonacci numbers that are twin primes after F(7) = 13. Every Fibonacci prime greater than F(4) = 3 is of the form F(2*n+1). Since F(2*n+1)+2 and F(2*n+1)-2 are F(n+2)*L(n-1) and F(n-1)*L(n+2) in some order, and F(n+2) > 1, L(n-1) > 1, F(n-1) > 1, and L(n+2) > 1 for n > 3, there are no other Fibonacci twin primes. - _Bobby Jacobs_, Sep 23 2017
+
+These primes are occurring with about the same normalized frequency as Repunit primes (see Generalized Repunit Conjecture Ref).  Assuming a base=1.618 (ratio of sequential terms), then the best fit coefficient is 0.60324 for the first 56 terms, which is already approaching Euler's constant 0.56145948. - _Paul Bourdelais_, Aug 23 2024
+```

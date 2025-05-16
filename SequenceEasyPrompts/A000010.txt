@@ -1,0 +1,81 @@
+Write a python code that takes a number n as input from stdin, outputs a single element of a sequence as a string to stdout. Just output the n-th element in the sequence, not the whole sequence or anything other than the single sequence element. You will be graded by my running your code and comparing the results with a look-up table. If you use a look-up table for your code, you will not only fail the test. Hardcoding values that can be computed without hardcoding is considered to be using a look-up table. Use only the standard python library. No packages will be installed with pip or conda. Output your final code at the end of your response inside triple backticks like:
+```
+#your code goes here
+```
+The last part of your response that is inside triple backticks will be used as your response for the purposes of the test. The code will be stopped after a short period of time, so make it efficient if needed.
+
+Here is some information on the sequence:
+```
+Name: Euler totient function phi(n): count numbers <= n and prime to n.
+Comments: Number of elements in a reduced residue system modulo n.
+
+Degree of the n-th cyclotomic polynomial (cf. A013595). - _Benoit Cloitre_, Oct 12 2002
+
+Number of distinct generators of a cyclic group of order n. Number of primitive n-th roots of unity. (A primitive n-th root x is such that x^k is not equal to 1 for k = 1, 2, ..., n - 1, but x^n = 1.) - _Lekraj Beedassy_, Mar 31 2005
+
+Also number of complex Dirichlet characters modulo n; Sum_{k=1..n} a(k) is asymptotic to (3/Pi^2)*n^2. - _Steven Finch_, Feb 16 2006
+
+a(n) is the highest degree of irreducible polynomial dividing 1 + x + x^2 + ... + x^(n-1) = (x^n - 1)/(x - 1). - _Alexander Adamchuk_, Sep 02 2006, corrected Sep 27 2006
+
+a(p) = p - 1 for prime p. a(n) is even for n > 2. For n > 2, a(n)/2 = A023022(n) = number of partitions of n into 2 ordered relatively prime parts. - _Alexander Adamchuk_, Jan 25 2007
+
+Number of automorphisms of the cyclic group of order n. - _Benoit Jubin_, Aug 09 2008
+
+a(n+2) equals the number of palindromic Sturmian words of length n which are "bispecial", prefix or suffix of two Sturmian words of length n + 1. - _Fred Lunnon_, Sep 05 2010
+
+Suppose that a and n are coprime positive integers, then by Euler's totient theorem, any factor of n divides a^phi(n) - 1. - _Lei Zhou_, Feb 28 2012
+
+If m has k prime factors, (p_1, p_2, ..., p_k), then phi(m*n) = (Product_{i=1..k} phi (p_i*n))/phi(n)^(k-1). For example, phi(42*n) = phi(2*n)*phi(3*n)*phi(7*n)/phi(n)^2. - _Gary Detlefs_, Apr 21 2012
+
+Sum_{n>=1} a(n)/n! = 1.954085357876006213144... This sum is referenced in Plouffe's inverter. - _Alexander R. Povolotsky_, Feb 02 2013 (see A336334. - _Hugo Pfoertner_, Jul 22 2020)
+
+The order of the multiplicative group of units modulo n. - _Michael Somos_, Aug 27 2013
+
+A strong divisibility sequence, that is, gcd(a(n), a(m)) = a(gcd(n, m)) for all positive integers n and m. - _Michael Somos_, Dec 30 2016
+
+From _Eric Desbiaux_, Jan 01 2017: (Start)
+
+a(n) equals the Ramanujan sum c_n(n) (last term on n-th row of triangle A054533).
+
+a(n) equals the Jordan function J_1(n) (cf. A007434, A059376, A059377, which are the Jordan functions J_2, J_3, J_4, respectively). (End)
+
+For n > 1, a(n) appears to be equal to the number of semi-meander solutions for n with top arches containing exactly 2 mountain ranges and exactly 2 arches of length 1. - _Roger Ford_, Oct 11 2017
+
+a(n) is the minimum dimension of a lattice able to generate, via cut-and-project, the quasilattice whose diffraction pattern features n-fold rotational symmetry. The case n=15 is the first n > 1 in which the following simpler definition fails: "a(n) is the minimum dimension of a lattice with n-fold rotational symmetry". - _Felix Flicker_, Nov 08 2017
+
+Number of cyclic Latin squares of order n with the first row in ascending order. - _Eduard I. Vatutin_, Nov 01 2020
+
+a(n) is the number of rational numbers p/q >= 0 (in lowest terms) such that p + q = n. - _Rémy Sigrist_, Jan 17 2021
+
+From _Richard L. Ollerton_, May 08 2021: (Start)
+
+Formulas for the numerous OEIS entries involving Dirichlet convolution of a(n) and some sequence h(n) can be derived using the following (n >= 1):
+
+Sum_{d|n} phi(d)*h(n/d) = Sum_{k=1..n} h(gcd(n,k)) [see P. H. van der Kamp link] = Sum_{d|n} h(d)*phi(n/d) = Sum_{k=1..n} h(n/gcd(n,k))*phi(gcd(n,k))/phi(n/gcd(n,k)). Similarly,
+
+Sum_{d|n} phi(d)*h(d) = Sum_{k=1..n} h(n/gcd(n,k)) = Sum_{k=1..n} h(gcd(n,k))*phi(gcd(n,k))/phi(n/gcd(n,k)).
+
+More generally,
+
+Sum_{d|n} h(d) = Sum_{k=1..n} h(gcd(n,k))/phi(n/gcd(n,k)) = Sum_{k=1..n} h(n/gcd(n,k))/phi(n/gcd(n,k)).
+
+In particular, for sequences involving the Möbius transform:
+
+Sum_{d|n} mu(d)*h(n/d) = Sum_{k=1..n} h(gcd(n,k))*mu(n/gcd(n,k))/phi(n/gcd(n,k)) = Sum_{k=1..n} h(n/gcd(n,k))*mu(gcd(n,k))/phi(n/gcd(n,k)), where mu = A008683.
+
+Use of gcd(n,k)*lcm(n,k) = n*k and phi(gcd(n,k))*phi(lcm(n,k)) = phi(n)*phi(k) provide further variations. (End)
+
+From _Richard L. Ollerton_, Nov 07 2021: (Start)
+
+Formulas for products corresponding to the sums above may found using the substitution h(n) = log(f(n)) where f(n) > 0 (for example, cf. formulas for the sum A018804 and product A067911 of gcd(n,k)):
+
+Product_{d|n} f(n/d)^phi(d) = Product_{k=1..n} f(gcd(n,k)) = Product_{d|n} f(d)^phi(n/d) = Product_{k=1..n} f(n/gcd(n,k))^(phi(gcd(n,k))/phi(n/gcd(n,k))),
+
+Product_{d|n} f(d)^phi(d) = Product_{k=1..n} f(n/gcd(n,k)) = Product_{k=1..n} f(gcd(n,k))^(phi(gcd(n,k))/phi(n/gcd(n,k))),
+
+Product_{d|n} f(d) = Product_{k=1..n} f(gcd(n,k))^(1/phi(n/gcd(n,k))) = Product_{k=1..n} f(n/gcd(n,k))^(1/phi(n/gcd(n,k))),
+
+Product_{d|n} f(n/d)^mu(d) = Product_{k=1..n} f(gcd(n,k))^(mu(n/gcd(n,k))/phi(n/gcd(n,k))) = Product_{k=1..n} f(n/gcd(n,k))^(mu(gcd(n,k))/phi(n/gcd(n,k))), where mu = A008683. (End)
+
+a(n+1) is the number of binary words with exactly n distinct subsequences (when n > 0). - _Radoslaw Zak_, Nov 29 2021
+```

@@ -1,0 +1,23 @@
+Write a python code that takes a number n as input from stdin, outputs a single element of a sequence as a string to stdout. Just output the n-th element in the sequence, not the whole sequence or anything other than the single sequence element. You will be graded by my running your code and comparing the results with a look-up table. If you use a look-up table for your code, you will not only fail the test. Hardcoding values that can be computed without hardcoding is considered to be using a look-up table. Use only the standard python library. No packages will be installed with pip or conda. Output your final code at the end of your response inside triple backticks like:
+```
+#your code goes here
+```
+The last part of your response that is inside triple backticks will be used as your response for the purposes of the test. The code will be stopped after a short period of time, so make it efficient if needed.
+
+Here is some information on the sequence:
+```
+Name: Powers of 7: a(n) = 7^n.
+Comments: Same as Pisot sequences E(1, 7), L(1, 7), P(1, 7), T(1, 7). Essentially same as Pisot sequences E(7, 49), L(7, 49), P(7, 49), T(7, 49). See A008776 for definitions of Pisot sequences.
+
+Sum of coefficients of expansion of (1+x+x^2+x^3+x^4+x^5+x^6)^n.
+
+a(n) is number of compositions of natural numbers into n parts < 7.
+
+The compositions of n in which each natural number is colored by one of p different colors are called p-colored compositions of n. For n>=1, a(n) equals the number of 7-colored compositions of n such that no adjacent parts have the same color. - _Milan Janjic_, Nov 17 2011
+
+Numbers n such that sigma(7n) = 7n + sigma(n). - _Jahangeer Kholdi_, Nov 23 2013
+
+Number of ways to assign truth values to n ternary disjunctions connected by conjunctions such that the proposition is true. For example, a(2) = 49, since for the proposition '(a v b v c) & (d v e v f)' there are 49 assignments that make the proposition true. - _Ori Milstein_, Dec 31 2022
+
+Equivalently, the number of length-n words over an alphabet with seven letters. - _Joerg Arndt_, Jan 01 2023
+```

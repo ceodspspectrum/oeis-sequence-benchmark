@@ -1,0 +1,21 @@
+Write a python code that takes a number n as input from stdin, outputs a single element of a sequence as a string to stdout. Just output the n-th element in the sequence, not the whole sequence or anything other than the single sequence element. You will be graded by my running your code and comparing the results with a look-up table. If you use a look-up table for your code, you will not only fail the test. Hardcoding values that can be computed without hardcoding is considered to be using a look-up table. Use only the standard python library. No packages will be installed with pip or conda. Output your final code at the end of your response inside triple backticks like:
+```
+#your code goes here
+```
+The last part of your response that is inside triple backticks will be used as your response for the purposes of the test. The code will be stopped after a short period of time, so make it efficient if needed.
+
+Here is some information on the sequence:
+```
+Name: Expansion of Jacobi theta function theta_3(x) = Sum_{m =-oo..oo} x^(m^2) (number of integer solutions to k^2 = n).
+Comments: Ramanujan theta functions: f(q) (see A121373), phi(q) (the present sequence), psi(q) (A010054), chi(q) (A000700).
+
+Theta series of the one-dimensional lattice Z.
+
+Also, essentially the same as the theta series of the one-dimensional lattices A_1, A*_1, D_1, D*_1.
+
+Number of ways of writing n as a square.
+
+Closely related: theta_4(x) = Sum_{m = -oo..oo} (-x)^(m^2). See A002448.
+
+Number 6 of the 14 primitive eta-products which are holomorphic modular forms of weight 1/2 listed by D. Zagier on page 30 of "The 1-2-3 of Modular Forms". - _Michael Somos_, May 04 2016
+```

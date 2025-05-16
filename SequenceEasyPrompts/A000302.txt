@@ -1,0 +1,55 @@
+Write a python code that takes a number n as input from stdin, outputs a single element of a sequence as a string to stdout. Just output the n-th element in the sequence, not the whole sequence or anything other than the single sequence element. You will be graded by my running your code and comparing the results with a look-up table. If you use a look-up table for your code, you will not only fail the test. Hardcoding values that can be computed without hardcoding is considered to be using a look-up table. Use only the standard python library. No packages will be installed with pip or conda. Output your final code at the end of your response inside triple backticks like:
+```
+#your code goes here
+```
+The last part of your response that is inside triple backticks will be used as your response for the purposes of the test. The code will be stopped after a short period of time, so make it efficient if needed.
+
+Here is some information on the sequence:
+```
+Name: Powers of 4: a(n) = 4^n.
+Comments: Same as Pisot sequences E(1, 4), L(1, 4), P(1, 4), T(1, 4). Essentially same as Pisot sequences E(4, 16), L(4, 16), P(4, 16), T(4, 16). See A008776 for definitions of Pisot sequences.
+
+The convolution square root of this sequence is A000984, the central binomial coefficients: C(2n,n). - _T. D. Noe_, Jun 11 2002
+
+With P(n) being the number of integer partitions of n, p(i) as the number of parts of the i-th partition of n, d(i) as the number of different parts of the i-th partition of n, m(i, j) the multiplicity of the j-th part of the i-th partition of n, one has a(n) = Sum_{i = 1..P(n)} p(i)!/(Product_{j = 1..d(i)} m(i, j)!) * 2^(n-1). - _Thomas Wieder_, May 18 2005
+
+Sums of rows of the triangle in A122366. - _Reinhard Zumkeller_, Aug 30 2006
+
+Hankel transform of A076035. - _Philippe Deléham_, Feb 28 2009
+
+Equals the Catalan sequence: (1, 1, 2, 5, 14, ...), convolved with A032443: (1, 3, 11, 42, ...). - _Gary W. Adamson_, May 15 2009
+
+Sum of coefficients of expansion of (1 + x + x^2 + x^3)^n.
+
+a(n) is number of compositions of natural numbers into n parts less than 4. For example, a(2) = 16 since there are 16 compositions of natural numbers into 2 parts less than 4.
+
+The compositions of n in which each natural number is colored by one of p different colors are called p-colored compositions of n. For n >= 1, a(n) equals the number of 4-colored compositions of n such that no adjacent parts have the same color. - _Milan Janjic_, Nov 17 2011
+
+Squares in A002984. - _Reinhard Zumkeller_, Dec 28 2011
+
+Row sums of Pascal's triangle using the rule that going left increases the value by a factor of k = 3. For example, the first three rows are {1}, {3, 1}, and {9, 6, 1}. Using this rule gives row sums as (k+1)^n. - _Jon Perry_, Oct 11 2012
+
+First differences of A002450. - _Omar E. Pol_, Feb 20 2013
+
+Sum of all peak heights in Dyck paths of semilength n+1. - _David Scambler_, Apr 22 2013
+
+Powers of 4 exceed powers of 2 by A020522 which is the m-th oblong number A002378(m), m being the n-th Mersenne number A000225(n); hence, we may write, a(n) = A000079(n) + A002378(A000225(n)). - _Lekraj Beedassy_, Jan 17 2014
+
+a(n) is equal to 1 plus the sum for 0 < k < 2^n of the numerators and denominators of the reduced fractions k/2^n. - _J. M. Bergot_, Jul 13 2015
+
+Binomial transform of A000244. - _Tony Foster III_, Oct 01 2016
+
+From _Ilya Gutkovskiy_, Oct 01 2016: (Start)
+
+Number of nodes at level n regular 4-ary tree.
+
+Partial sums of A002001. (End)
+
+Satisfies Benford's law [Berger-Hill, 2011]. - _N. J. A. Sloane_, Feb 08 2017
+
+Also the number of connected dominating sets in the (n+1)-barbell graph. - _Eric W. Weisstein_, Jun 29 2017
+
+Side length of the cells at level n in a pyramid scheme where a square grid is decomposed into overlapping 2 X 2 blocks (cf. Kropatsch, 1985). - _Felix Fröhlich_, Jul 04 2019
+
+a(n-1) is the number of 3-compositions of n; see Hopkins & Ouvry reference. - _Brian Hopkins_, Aug 15 2020
+```

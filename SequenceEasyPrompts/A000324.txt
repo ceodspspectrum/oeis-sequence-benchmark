@@ -1,0 +1,15 @@
+Write a python code that takes a number n as input from stdin, outputs a single element of a sequence as a string to stdout. Just output the n-th element in the sequence, not the whole sequence or anything other than the single sequence element. You will be graded by my running your code and comparing the results with a look-up table. If you use a look-up table for your code, you will not only fail the test. Hardcoding values that can be computed without hardcoding is considered to be using a look-up table. Use only the standard python library. No packages will be installed with pip or conda. Output your final code at the end of your response inside triple backticks like:
+```
+#your code goes here
+```
+The last part of your response that is inside triple backticks will be used as your response for the purposes of the test. The code will be stopped after a short period of time, so make it efficient if needed.
+
+Here is some information on the sequence:
+```
+Name: A nonlinear recurrence: a(0) = 1, a(1) = 5, a(n) = a(n-1)^2 - 4*a(n-1) + 4 for n>1.
+Comments: An infinite coprime sequence defined by recursion. - _Michael Somos_, Mar 14 2004
+
+This is the special case k=4 of sequences with exact mutual k-residues. In general, a(1)=k+1 and a(n)=min{m | m>a(n-1), mod(m,a(i))=k, i=1,...,n-1}. k=1 gives Sylvester's sequence A000058 and k=2 Fermat sequence A000215. - _Seppo Mustonen_, Sep 04 2005
+
+A000058, A000215, A000289 and this sequence here can be represented as values of polynomials defined via P_0(z)= 1+z, P_{n+1}(z) = z+ prod_{i=0..n} P_i(z), with recurrences P_{n+1}(z) = (P_n(z))^2 -z*P_n(z) +z, n>=0. - _Vladimir Shevelev_, Dec 08 2010
+```

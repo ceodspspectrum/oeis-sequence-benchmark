@@ -1,0 +1,61 @@
+Write a python code that takes a number n as input from stdin, outputs a single element of a sequence as a string to stdout. Just output the n-th element in the sequence, not the whole sequence or anything other than the single sequence element. You will be graded by my running your code and comparing the results with a look-up table. If you use a look-up table for your code, you will not only fail the test. Hardcoding values that can be computed without hardcoding is considered to be using a look-up table. Use only the standard python library. No packages will be installed with pip or conda. Output your final code at the end of your response inside triple backticks like:
+```
+#your code goes here
+```
+The last part of your response that is inside triple backticks will be used as your response for the purposes of the test. The code will be stopped after a short period of time, so make it efficient if needed.
+
+Here is some information on the sequence:
+```
+Name: The prime numbers.
+Comments: See A065091 for comments, formulas etc. concerning only odd primes. For all information concerning prime powers, see A000961. For contributions concerning "almost primes" see A002808.
+
+A number p is prime if (and only if) it is greater than 1 and has no positive divisors except 1 and p.
+
+A natural number is prime if and only if it has exactly two (positive) divisors.
+
+A prime has exactly one proper positive divisor, 1.
+
+The paper by Kaoru Motose starts as follows: "Let q be a prime divisor of a Mersenne number 2^p-1 where p is prime. Then p is the order of 2 (mod q). Thus p is a divisor of q - 1 and q > p. This shows that there exist infinitely many prime numbers." - Pieter Moree, Oct 14 2004
+
+1 is not a prime, for if the primes included 1, then the factorization of a natural number n into a product of primes would not be unique, since n = n*1.
+
+Prime(n) and pi(n) are inverse functions: A000720(a(n)) = n and a(n) is the least number m such that a(A000720(m)) = a(n). a(A000720(n)) = n if (and only if) n is prime.
+
+Second sequence ever computed by electronic computer, on EDSAC, May 09 1949 (see Renwick link). - _Russ Cox_, Apr 20 2006
+
+Every prime p > 3 is a linear combination of previous primes prime(n) with nonzero coefficients c(n) and |c(n)| < prime(n). - _Amarnath Murthy_, _Franklin T. Adams-Watters_ and _Joshua Zucker_, May 17 2006; clarified by _Chayim Lowen_, Jul 17 2015
+
+The Greek transliteration of 'Prime Number' is 'Protos Arithmos'. - _Daniel Forgues_, May 08 2009 [Edited by _Petros Hadjicostas_, Nov 18 2019]
+
+A number n is prime if and only if it is different from zero and different from a unit and each multiple of n decomposes into factors such that n divides at least one of the factors. This applies equally to the integers (where a prime has exactly four divisors (the definition of divisors is relaxed such that they can be negative)) and the positive integers (where a prime has exactly two distinct divisors). - _Peter Luschny_, Oct 09 2012
+
+Motivated by his conjecture on representations of integers by alternating sums of consecutive primes, for any positive integer n, Zhi-Wei Sun conjectured that the polynomial P_n(x) = Sum_{k=0..n} a(k+1)*x^k is irreducible over the field of rational numbers with the Galois group S_n, and moreover P_n(x) is irreducible mod a(m) for some m <= n(n+1)/2. It seems that no known criterion on irreduciblity of polynomials implies this conjecture. - _Zhi-Wei Sun_, Mar 23 2013
+
+Questions on a(2n) and Ramanujan primes are in A233739. - _Jonathan Sondow_, Dec 16 2013
+
+From _Hieronymus Fischer_, Apr 02 2014: (Start)
+
+Natural numbers such that there is exactly one base b such that the base-b alternate digital sum is 0 (see A239707).
+
+Equivalently: Numbers p > 1 such that b = p-1 is the only base >= 1 for which the base-b alternate digital sum is 0.
+
+Equivalently: Numbers p > 1 such that the base-b alternate digital sum is <> 0 for all bases 1 <= b < p-1. (End)
+
+An integer n > 1 is a prime if and only if it is not the sum of positive integers in arithmetic progression with common difference 2. - _Jean-Christophe Hervé_, Jun 01 2014
+
+Conjecture: Numbers having prime factors <= prime(n+1) are {k|k^f(n) mod primorial(n)=1}, where f(n) = lcm(prime(i)-1, i=1..n) = A058254(n) and primorial(n) = A002110(n). For example, numbers with no prime divisor <= prime(7) = 17 are {k|k^60 mod 30030=1}. - _Gary Detlefs_, Jun 07 2014
+
+Cramer conjecture prime(n+1) - prime(n) < C log^2 prime(n) is equivalent to the inequality (log prime(n+1)/log prime(n))^n < e^C, as n tend to infinity, where C is an absolute constant. - _Thomas Ordowski_, Oct 06 2014
+
+I conjecture that for any positive rational number r there are finitely many primes q_1,...,q_k such that r = Sum_{j=1..k} 1/(q_j-1). For example, 2 = 1/(2-1) + 1/(3-1) + 1/(5-1) + 1/(7-1) + 1/(13-1) with 2, 3, 5, 7 and 13 all prime, 1/7 = 1/(13-1) + 1/(29-1) + 1/(43-1) with 13, 29 and 43 all prime, and 5/7 = 1/(3-1) + 1/(7-1) + 1/(31-1) + 1/(71-1) with 3, 7, 31 and 71 all prime. - _Zhi-Wei Sun_, Sep 09 2015
+
+I also conjecture that for any positive rational number r there are finitely many primes p_1,...,p_k such that r = Sum_{j=1..k} 1/(p_j+1). For example, 1 = 1/(2+1) + 1/(3+1) + 1/(5+1) + 1/(7+1) + 1/(11+1) + 1/(23+1) with 2, 3, 5, 7, 11 and 23 all prime, and 10/11 = 1/(2+1) + 1/(3+1) + 1/(5+1) + 1/(7+1) + 1/(43+1) + 1/(131+1) + 1/(263+1) with 2, 3, 5, 7, 43, 131 and 263 all prime. - _Zhi-Wei Sun_, Sep 13 2015
+
+Numbers k such that ((k-2)!!)^2 == +-1 (mod k). - _Thomas Ordowski_, Aug 27 2016
+
+Does not satisfy Benford's law [Diaconis, 1977; Cohen-Katz, 1984; Berger-Hill, 2017]. - _N. J. A. Sloane_, Feb 07 2017
+
+Prime numbers are the integer roots of 1 - sin(Pi*Gamma(s)/s)/sin(Pi/s). - _Peter Luschny_, Feb 23 2018
+
+Conjecture: log log a(n+1) - log log a(n) < 1/n. - _Thomas Ordowski_, Feb 17 2023
+```

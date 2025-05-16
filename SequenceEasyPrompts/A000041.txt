@@ -1,0 +1,125 @@
+Write a python code that takes a number n as input from stdin, outputs a single element of a sequence as a string to stdout. Just output the n-th element in the sequence, not the whole sequence or anything other than the single sequence element. You will be graded by my running your code and comparing the results with a look-up table. If you use a look-up table for your code, you will not only fail the test. Hardcoding values that can be computed without hardcoding is considered to be using a look-up table. Use only the standard python library. No packages will be installed with pip or conda. Output your final code at the end of your response inside triple backticks like:
+```
+#your code goes here
+```
+The last part of your response that is inside triple backticks will be used as your response for the purposes of the test. The code will be stopped after a short period of time, so make it efficient if needed.
+
+Here is some information on the sequence:
+```
+Name: a(n) is the number of partitions of n (the partition numbers).
+Comments: Also number of nonnegative solutions to b + 2c + 3d + 4e + ... = n and the number of nonnegative solutions to 2c + 3d + 4e + ... <= n. - _Henry Bottomley_, Apr 17 2001
+
+a(n) is also the number of conjugacy classes in the symmetric group S_n (and the number of irreducible representations of S_n).
+
+Also the number of rooted trees with n+1 nodes and height at most 2.
+
+Coincides with the sequence of numbers of nilpotent conjugacy classes in the Lie algebras gl(n). A006950, A015128 and this sequence together cover the nilpotent conjugacy classes in the classical A,B,C,D series of Lie algebras. - Alexander Elashvili, Sep 08 2003
+
+Number of distinct Abelian groups of order p^n, where p is prime (the number is independent of p). - _Lekraj Beedassy_, Oct 16 2004
+
+Number of graphs on n vertices that do not contain P3 as an induced subgraph. - _Washington Bomfim_, May 10 2005
+
+Numbers of terms to be added when expanding the n-th derivative of 1/f(x). - _Thomas Baruchel_, Nov 07 2005
+
+Sequence agrees with expansion of Molien series for symmetric group S_n up to the term in x^n. - Maurice D. Craig (towenaar(AT)optusnet.com.au), Oct 30 2006
+
+Also the number of nonnegative integer solutions to x_1 + x_2 + x_3 + ... + x_n = n such that n >= x_1 >= x_2 >= x_3 >= ... >= x_n >= 0, because by letting y_k = x_k - x_(k+1) >= 0 (where 0 < k < n) we get y_1 + 2y_2 + 3y_3 + ... + (n-1)y_(n-1) + nx_n = n. - Werner Grundlingh (wgrundlingh(AT)gmail.com), Mar 14 2007
+
+Let P(z) := Sum_{j>=0} b_j z^j, b_0 != 0. Then 1/P(z) = Sum_{j>=0} c_j z^j, where the c_j must be computed from the infinite triangular system b_0 c_0 = 1, b_0 c_1 + b_1 c_0 = 0 and so on (Cauchy products of the coefficients set to zero). The n-th partition number arises as the number of terms in the numerator of the expression for c_n: The coefficient c_n of the inverted power series is a fraction with b_0^(n+1) in the denominator and in its numerator having a(n) products of n coefficients b_i each. The partitions may be read off from the indices of the b_i. - Peter C. Heinig (algorithms(AT)gmx.de), Apr 09 2007
+
+a(n) is the number of different ways to run up a staircase with n steps, taking steps of sizes 1, 2, 3, ... and r (r <= n), where the order is not important and there is no restriction on the number or the size of each step taken. - _Mohammad K. Azarian_, May 21 2008
+
+A sequence of positive integers p = p_1 ... p_k is a descending partition of the positive integer n if p_1 + ... + p_k = n and p_1 >= ... >= p_k. If formally needed p_j = 0 is appended to p for j > k. Let P_n denote the set of these partition for some n >= 1. Then a(n) = 1 + Sum_{p in P_n} floor((p_1-1)/(p_2+1)). (Cf. A000065, where the formula reduces to the sum.) Proof in Kelleher and O'Sullivan (2009). For example a(6) = 1 + 0 + 0 + 0 + 0 + 1 + 0 + 0 + 1 + 1 + 2 + 5 = 11. - _Peter Luschny_, Oct 24 2010
+
+Let n = Sum( k_(p_m) p_m ) = k_1 + 2k_2 + 5k_5 + 7k_7 + ..., where p_m is the m-th generalized pentagonal number (A001318). Then a(n) is the sum over all such pentagonal partitions of n of (-1)^(k_5+k_7 + k_22 + ...) ( k_1 + k_2 + k_5 + ...)! /( k_1! k_2! k_5! ...), where the exponent of (-1) is the sum of all the k's corresponding to even-indexed GPN's. - _Jerome Malenfant_, Feb 14 2011
+
+From _Jerome Malenfant_, Feb 14 2011: (Start)
+
+The matrix of a(n) values
+
+  a(0)
+
+  a(1) a(0)
+
+  a(2) a(1) a(0)
+
+  a(3) a(2) a(1) a(0)
+
+  ....
+
+  a(n) a(n-1) a(n-2) ... a(0)
+
+is the inverse of the matrix
+
+   1
+
+  -1  1
+
+  -1 -1  1
+
+   0 -1 -1  1
+
+  ....
+
+  -d_n  -d_(n-1) -d_(n-2) ... -d_1  1
+
+where d_q = (-1)^(m+1) if q = m(3m-1)/2 = the m-th generalized pentagonal number (A001318), = 0 otherwise. (End)
+
+Let k > 0 be an integer, and let i_1, i_2, ..., i_k be distinct integers such that 1 <= i_1 < i_2 < ... < i_k. Then, equivalently, a(n) equals the number of partitions of N = n + i_1 + i_2 + ... + i_k in which each i_j (1 <= j <= k) appears as a part at least once. To see this, note that the partitions of N of this class must be in 1-to-1 correspondence with the partitions of n, since N - i_1 - i_2 - ... - i_k = n. - _L. Edson Jeffery_, Apr 16 2011
+
+a(n) is the number of distinct degree sequences over all free trees having n + 2 nodes.  Take a partition of the integer n, add 1 to each part and append as many 1's as needed so that the total is 2n + 2.  Now we have a degree sequence of a tree with n + 2 nodes.  Example: The partition 3 + 2 + 1 = 6 corresponds to the degree sequence {4, 3, 2, 1, 1, 1, 1, 1} of a tree with 8 vertices. - _Geoffrey Critzer_, Apr 16 2011
+
+a(n) is number of distinct characteristic polynomials among  n! of permutations matrices size n X n. - _Artur Jasinski_, Oct 24 2011
+
+Conjecture: starting with offset 1 represents the numbers of ordered compositions of n using the signed (++--++...) terms of A001318 starting (1, 2, -5, -7, 12, 15, ...). - _Gary W. Adamson_, Apr 04 2013 (this is true by the pentagonal number theorem, _Joerg Arndt_, Apr 08 2013)
+
+a(n) is also number of terms in expansion of the n-th derivative of log(f(x)). In Mathematica notation: Table[Length[Together[f[x]^n * D[Log[f[x]], {x, n}]]], {n, 1, 20}]. - _Vaclav Kotesovec_, Jun 21 2013
+
+Conjecture: No a(n) has the form x^m with m > 1 and x > 1. - _Zhi-Wei Sun_, Dec 02 2013
+
+Partitions of n that contain a part p are the partitions of n - p. Thus, number of partitions of m*n - r that include k*n as a part is A000041(h*n-r), where h = m - k >= 0, n >= 2, 0 <= r < n; see A111295 as an example.  - _Clark Kimberling_, Mar 03 2014
+
+a(n) is the number of compositions of n into positive parts avoiding the pattern [1, 2]. - _Bob Selcoe_, Jul 08 2014
+
+Conjecture: For any j there exists k such that all primes p <= A000040(j) are factors of one or more a(n) <= a(k). Growth of this coverage is slow and irregular. k = 1067 covers the first 102 primes, thus slower than A000027. - _Richard R. Forberg_, Dec 08 2014
+
+a(n) is the number of nilpotent conjugacy classes in the order-preserving, order-decreasing and (order-preserving and order-decreasing) injective transformation semigroups. - _Ugbene Ifeanyichukwu_, Jun 03 2015
+
+Define a segmented partition a(n,k, <s(1)..s(j)>) to be a partition of n with exactly k parts, with s(j) parts t(j) identical to each other and distinct from all the other parts. Note that n >= k, j <= k, 0 <= s(j) <= k, s(1)t(1) + ... + s(j)t(j) = n and s(1) + ... + s(j) = k. Then there are up to a(k) segmented partitions of n with exactly k parts. - _Gregory L. Simay_, Nov 08 2015
+
+(End)
+
+From _Gregory L. Simay_, Nov 09 2015: (Start)
+
+The polynomials for a(n, k, <s(1), ..., s(j)>) have degree j-1.
+
+  a(n, k, <k>) = 1 if n = 0 mod k, = 0 otherwise
+
+  a(rn, rk, <r*s(1), ..., r*s(j)>) = a(n, k, <s(1), ..., s(j)>)
+
+  a(n odd, k, <all s(j) even>) = 0
+
+Established results can be recast in terms of segmented partitions:
+
+  For j(j+1)/2 <= n < (j+1)(j+2)/2, A000009(n) = a(n, 1, <1>) + ... + a(n, j, <j 1's>), j < n
+
+  a(n, k, <j 1's>) = a(n - j(j-1)/2, k)
+
+(End)
+
+a(10^20) was computed using the NIST Arb package. It has 11140086260 digits and its head and tail sections are 18381765...88091448. See the Johansson 2015 link. - _Stanislav Sykora_, Feb 01 2016
+
+Satisfies Benford's law [Anderson-Rolen-Stoehr, 2011]. - _N. J. A. Sloane_, Feb 08 2017
+
+The partition function p(n) is log-concave for all n>25 [DeSalvo-Pak, 2014]. - _Michel Marcus_, Apr 30 2019
+
+a(n) is also the dimension of the n-th cohomology of the infinite real Grassmannian with coefficients in Z/2. - _Luuk Stehouwer_, Jun 06 2021
+
+Number of equivalence relations on n unlabeled nodes. - _Lorenzo Sauras Altuzarra_, Jun 13 2022
+
+Equivalently, number of idempotent mappings f from a set X of n elements into itself (i.e., satisfying f o f = f) up to permutation (i.e., f~f' :<=> There is a permutation sigma in Sym(X) such that f' o sigma = sigma o f). - _Philip Turecek_, Apr 17 2023
+
+Conjecture: Each integer n > 2 different from 6 can be written as a sum of finitely many numbers of the form a(k) + 2 (k > 0) with no summand dividing another. This has been verified for n <= 7140. - _Zhi-Wei Sun_, May 16 2023
+
+a(n) is also the number of partitions of n*(n+3)/2 into n distinct parts. - _David García Herrero_, Aug 20 2024
+```

@@ -1,0 +1,25 @@
+Write a python code that takes a number n as input from stdin, outputs a single element of a sequence as a string to stdout. Just output the n-th element in the sequence, not the whole sequence or anything other than the single sequence element. You will be graded by my running your code and comparing the results with a look-up table. If you use a look-up table for your code, you will not only fail the test. Hardcoding values that can be computed without hardcoding is considered to be using a look-up table. Use only the standard python library. No packages will be installed with pip or conda. Output your final code at the end of your response inside triple backticks like:
+```
+#your code goes here
+```
+The last part of your response that is inside triple backticks will be used as your response for the purposes of the test. The code will be stopped after a short period of time, so make it efficient if needed.
+
+Here is some information on the sequence:
+```
+Name: Wagstaff numbers: numbers k such that (2^k + 1)/3 is prime.
+Comments: It is easy to see that the definition implies that k must be an odd prime. - _N. J. A. Sloane_, Oct 06 2006
+
+The terms from a(32) on only give probable primes as of 2018. Caldwell lists the largest certified primes. - _Jens Kruse Andersen_, Jan 10 2018
+
+Prime numbers of the form 1+Sum_{i=1..m} 2^(2i-1). - _Artur Jasinski_, Feb 09 2007
+
+There is a new conjecture stating that a Wagstaff number is prime under the following condition (based on DiGraph cycles under the LLT): Let p be a prime integer > 3, N(p) = 2^p+1 and W(p) = N(p)/3, S(0) = 3/2 (or 1/4) and S(i+1) = S(i)^2 - 2 (mod N(p)). Then W(p) is prime iff S(p-1) == S(0) (mod W(p)). - _Tony Reix_, Sep 03 2007
+
+As a member of the DUR team (Diepeveen, Underwood, Reix), and thanks to the LLR tool built by Jean Penne, I've found a new and big Wagstaff PRP: (2^4031399+1)/3 is Vrba-Reix PRP! This Wagstaff number has 1,213,572 digits and today is the 3rd biggest PRP ever found. I've done a second verification on a Nehalem core with the PFGW tool. - _Tony Reix_, Feb 20 2010
+
+13347311 and 13372531 were found to be terms of this sequence (maybe not the next ones) by _Ryan Propper_ in September 2013. - _Max Alekseyev_, Oct 07 2013
+
+The next term is larger than 10 million. - _Gord Palameta_, Mar 22 2019
+
+Ryan Propper found another likely term, 15135397, though it only corresponds to a probable prime. - _Charles R Greathouse IV_, Jul 01 2021
+```

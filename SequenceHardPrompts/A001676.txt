@@ -1,0 +1,17 @@
+Write a python code that takes a number n as input from stdin, outputs a single element of a sequence as a string to stdout. Just output the n-th element in the sequence, not the whole sequence or anything other than the single sequence element. You will be graded by my running your code and comparing the results with a look-up table. If you use a look-up table for your code, you will not only fail the test. Hardcoding values that can be computed without hardcoding is considered to be using a look-up table. Use only the standard python library. No packages will be installed with pip or conda. Output your final code at the end of your response inside triple backticks like:
+```
+#your code goes here
+```
+The last part of your response that is inside triple backticks will be used as your response for the purposes of the test. The code will be stopped after a short period of time, so make it efficient if needed.
+
+Here is some information on the sequence:
+```
+Name: Number of h-cobordism classes of smooth homotopy n-spheres.
+Comments: For n not equal to 4 (and possibly for all n) this is the number of oriented diffeomorphism classes of differentiable structures on the n-sphere.
+
+a(3) = 1 follows now that the Poincaré conjecture has been proved.
+
+a(n) for n != 4 is the order of S_n, the n-th group in Tables 1 and 2 (explained in Further Details p. 807) of Milnor 2011.
+
+The sequence is essentially given in the rightmost column of tables 1 and 2 in Isaksen, Wang & Xu (2020). It corrects some errors in earlier work. - _Andrey Zabolotskiy_, Nov 27 2022
+```

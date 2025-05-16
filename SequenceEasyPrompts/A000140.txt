@@ -1,0 +1,27 @@
+Write a python code that takes a number n as input from stdin, outputs a single element of a sequence as a string to stdout. Just output the n-th element in the sequence, not the whole sequence or anything other than the single sequence element. You will be graded by my running your code and comparing the results with a look-up table. If you use a look-up table for your code, you will not only fail the test. Hardcoding values that can be computed without hardcoding is considered to be using a look-up table. Use only the standard python library. No packages will be installed with pip or conda. Output your final code at the end of your response inside triple backticks like:
+```
+#your code goes here
+```
+The last part of your response that is inside triple backticks will be used as your response for the purposes of the test. The code will be stopped after a short period of time, so make it efficient if needed.
+
+Here is some information on the sequence:
+```
+Name: Kendall-Mann numbers: the most common number of inversions in a permutation on n letters is floor(n*(n-1)/4); a(n) is the number of permutations with this many inversions.
+Comments: Row maxima of A008302, see example.
+
+The term a(0) would be 1: the empty product is one and there is just one coefficient 1=x^0, corresponding to the 1 empty permutation (which has 0 inversions).
+
+From Ryen Lapham and _Anant Godbole_, Dec 12 2006: (Start)
+
+Also, the number of permutations on {1,2,...,n} for which the number A of monotone increasing subsequences of length 2 and the number D of monotone decreasing 2-subsequences are as close to each other as possible, i.e., 0 or 1. We call such permutations 2-balanced.
+
+If 4|n(n-1) then (with A and D as above) the feasible values of A-D are C(n,2), C(n,2)-2,...,2,0,-2,...,-C(n,2), whereas if 4 does not divide n(n-1), A-D may equal C(n,2), C(n,2)-2,...,1,-1,...,-C(n,2). Let a_n(i) equal the number of permutations with A-D the i-th highest feasible value.
+
+The sequence in question gives the number of permutations for which A-D=0 or A-D=1, i.e., it equals A_n(j) where j = floor((binomial(n,2)+2)/2). Here is the recursion: a_n(i) = a_n(i-1) + a_{n-1}(i) for 1 <= i <= n and a_n(n+k) = a_n(n+k-1) + a_{n-1}(n+k) - a_n(k) for k >= 1. (End)
+
+The only two primes found < 301 are for n = 3 and 6.
+
+Define an ordered list to have n terms with terms t(k) for k=1..n. Specify that t(k) ranges from 1 to k, hence the third term t(3) can be 1, 2, or 3. Find all sums of the terms for all n! allowable arrangements to obtain a maximum sum for the greatest number of arrangements. This number is a(n). For n=4, the maximum sum 7 appears in 6 arrangements: 1114, 1123, 1213, 1222, 1231, and 1132. - _J. M. Bergot_, May 14 2015
+
+Named after the British statistician Maurice George Kendall (1907-1983) and the Austrian-American mathematician Henry Berthold Mann (1905-2000). - _Amiram Eldar_, Apr 07 2023
+```

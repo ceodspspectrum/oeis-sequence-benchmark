@@ -1,0 +1,23 @@
+Write a python code that takes a number n as input from stdin, outputs a single element of a sequence as a string to stdout. Just output the n-th element in the sequence, not the whole sequence or anything other than the single sequence element. You will be graded by my running your code and comparing the results with a look-up table. If you use a look-up table for your code, you will not only fail the test. Hardcoding values that can be computed without hardcoding is considered to be using a look-up table. Use only the standard python library. No packages will be installed with pip or conda. Output your final code at the end of your response inside triple backticks like:
+```
+#your code goes here
+```
+The last part of your response that is inside triple backticks will be used as your response for the purposes of the test. The code will be stopped after a short period of time, so make it efficient if needed.
+
+Here is some information on the sequence:
+```
+Name: Number of rooted simplicial 3-polytopes with n+3 nodes; or rooted 3-connected triangulations with 2n+2 faces; or rooted 3-connected trivalent maps with 2n+2 vertices.
+Comments: Number of rooted loopless planar maps with n edges. E.g., there are a(2)=3 loopless planar maps with 2 edges: two rooted paths (.-.-.) and one digon (.=.). - _Valery A. Liskovets_, Sep 25 2003
+
+Number of intervals (i.e., ordered pairs (x,y) such that x<=y) in the Tamari lattice (rotation lattice of binary trees) of size n (see Pallo and Chapoton references). - _Ralf Stephan_, May 08 2007, Jean Pallo (Jean.Pallo(AT)u-bourgogne.fr), Sep 11 2007
+
+Number of rooted triangulations of type [n, 0] (see Brown paper eq (4.8)). - _Michel Marcus_, Jun 23 2013
+
+Equivalently, number of rooted bridgeless planar maps with n edges. - _Noam Zeilberger_, Oct 06 2016
+
+The September 2018 talk by Noam Zeilberger (see link to video) connects three topics (planar maps, Tamari lattices, lambda calculus) and eight sequences: A000168, A000260, A000309, A000698, A000699, A002005, A062980, A267827. - _N. J. A. Sloane_, Sep 17 2018
+
+Number of uniquely sorted permutations of [2n+1] that avoid the pattern 231. Also the number of uniquely sorted permutations of [2n+1] that avoid 132. - _Colin Defant_, Jun 13 2019
+
+The sequence 1,3,13,68,... appears naturally in integral geometry, namely in the algebra of unitarily invariant valuations on complex space forms. - _Andreas Bernig_, Feb 02 2020
+```

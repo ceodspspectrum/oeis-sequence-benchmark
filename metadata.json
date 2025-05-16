@@ -1,0 +1,56 @@
+{
+  // The name of your dataset, in snake_case
+  "name": "oeis_sequence_benchmark",
+  // A short human‐readable title
+  "title": "OEIS Integer Sequence Generation Benchmark",
+  // Croissant schema version; at the time of writing most implementations use 0.1
+  "schema_version": "0.1",
+  // Your dataset version
+  "version": "1.0.0",
+  
+  // A plain-English description
+  "description": "A 1000-sequence benchmark drawn from the OEIS (Online Encyclopedia of Integer Sequences), split into classic vs. contemporary and easy vs. hard, for evaluating LLM code-generation and mathematical reasoning.",
+  
+  // Your project’s main URL / GitHub repo
+  "homepage": "https://github.com/your_org/oeis-sequence-benchmark",
+  
+  // SPDX-style license identifier
+  "license": "CC-BY-SA-4.0",
+  
+  // List of dataset creators
+  "authors": [
+    { "name": "Daniel O'Malley",  "orcid": "0000-0000-0000-0000" },
+    { "name": "Manish Bhattarai", "orcid": "0000-0000-0000-0001" },
+    { "name": "Javier Santos",    "orcid": "0000-0000-0000-0002" },
+    { "name": "Nishath Rajiv Ranasinghe",    "orcid": "0000-0000-0000-0003" },
+    { "name": "Erick Draayer",    "orcid": "0000-0000-0000-0004" }
+  ],
+  
+  // Keywords to help people discover your dataset
+  "tags": [
+    "benchmark",
+    "integer_sequences",
+    "algorithmic_reasoning",
+    "code_generation",
+    "OEIS"
+  ],
+
+  // What downstream tasks this dataset supports
+  "tasks": [
+    "code-generation",
+    "algorithmic-reasoning"
+  ],
+
+  // Data format / file format
+  "data_format": "jsonl",
+  
+  // How many examples total, and in each split
+  "splits": {
+    "classic_easy": 250,
+    "classic_hard": 250,
+    "contemporary_easy": 250,
+    "contemporary_hard": 250,
+    "total": 1000
+  }
+}
+

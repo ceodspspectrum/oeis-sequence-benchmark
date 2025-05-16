@@ -1,0 +1,51 @@
+Write a python code that takes a number n as input from stdin, outputs a single element of a sequence as a string to stdout. Just output the n-th element in the sequence, not the whole sequence or anything other than the single sequence element. You will be graded by my running your code and comparing the results with a look-up table. If you use a look-up table for your code, you will not only fail the test. Hardcoding values that can be computed without hardcoding is considered to be using a look-up table. Use only the standard python library. No packages will be installed with pip or conda. Output your final code at the end of your response inside triple backticks like:
+```
+#your code goes here
+```
+The last part of your response that is inside triple backticks will be used as your response for the purposes of the test. The code will be stopped after a short period of time, so make it efficient if needed.
+
+Here is some information on the sequence:
+```
+Name: Cake numbers: maximal number of pieces resulting from n planar cuts through a cube (or cake): C(n+1,3) + n + 1.
+Comments: Note that a(n) = a(n-1) + A000124(n-1). This has the following geometrical interpretation: Define a number of planes in space to be in general arrangement when
+
+(1) no two planes are parallel,
+
+(2) there are no two parallel intersection lines,
+
+(3) there is no point common to four or more planes.
+
+Suppose there are already n-1 planes in general arrangement, thus defining the maximal number of regions in space obtainable by n-1 planes and now one more plane is added in general arrangement. Then it will cut each of the n-1 planes and acquire intersection lines which are in general arrangement. (See the comments on A000124 for general arrangement with lines.) These lines on the new plane define the maximal number of regions in 2-space definable by n-1 straight lines, hence this is A000124(n-1). Each of this regions acts as a dividing wall, thereby creating as many new regions in addition to the a(n-1) regions already there, hence a(n) = a(n-1) + A000124(n-1). - Peter C. Heinig (algorithms(AT)gmx.de), Oct 19 2006
+
+More generally, we have: A000027(n) = binomial(n,0) + binomial(n,1) (the natural numbers), A000124(n) = binomial(n,0) + binomial(n,1) + binomial(n,2) (the Lazy Caterer's sequence), a(n) = binomial(n,0) + binomial(n,1) + binomial(n,2) + binomial(n,3) (Cake Numbers). - Peter C. Heinig (algorithms(AT)gmx.de), Oct 19 2006
+
+If Y is a 2-subset of an n-set X then, for n>=3, a(n-3) is the number of 3-subsets of X which do not have exactly one element in common with Y. - _Milan Janjic_, Dec 28 2007
+
+a(n) is the number of compositions (ordered partitions) of n+1 into four or fewer parts or equivalently the sum of the first four terms in the n-th row of Pascal's triangle. - _Geoffrey Critzer_, Jan 23 2009
+
+{a(k): 0 <= k < 4} = divisors of 8. - _Reinhard Zumkeller_, Jun 17 2009
+
+a(n) is also the maximum number of different values obtained by summing n consecutive positive integers with all possible 2^n sign combinations. This maximum is first reached when summing the interval [n, 2n-1]. - _Olivier Gérard_, Mar 22 2010
+
+a(n) contains only 5 perfect squares > 1: 4, 64, 576, 67600, and 75203584. The incidences of > 0 are given by A047694. - _Frank M Jackson_, Mar 15 2013
+
+Given n tiles with two values - an A value and a B value - a player may pick either the A value or the B value. The particular tiles are [n, 0], [n-1, 1], ..., [2, n-2] and [1, n-1]. The sequence is the number of different final A:B counts. For example, with n=4, we can have final total [5, 3] = [4, _] + [_, 1] + [_, 2] + [1, _] = [_, 0] + [3, _] + [2, _] + [_, 3], so a(4) = 2^4 - 1 = 15. The largest and smallest final A+B counts are given by A077043 and A002620 respectively. - _Jon Perry_, Oct 24 2014
+
+For n>=3, a(n) is also the number of maximal cliques in the (n+1)-triangular graph (the 4-triangular graph has a(3)=8 maximal cliques). - _Andrew Howroyd_, Jul 19 2017
+
+a(n) is the number of binary words of length n matching the regular expression 1*0*1*0*. Coincidentally, A000124 counts binary words of the form 0*1*0*. See Alexandersson and Nabawanda for proof. - _Per W. Alexandersson_, May 15 2021
+
+For n > 0, let the n-dimensional cube, {0,1}^n be provided with the Hamming distance, d. Given an element x in {0,1}^n, a(n) is the number of elements y in {0,1}^n such that d(x, y) <= 3. Example: n = 4. Let x = (0,0,0,0) be in {0,1}^4.
+
+d(x,y) = 0: y in {(0,0,0,0)}.
+
+d(x,y) = 1: y in {(1,0,0,0), (0,1,0,0), (0,0,1,0), (0,0,0,1)}.
+
+d(x,y) = 2: y in {(1,1,0,0), (1,0,1,0), (1,0,0,1), (0,1,1,0), (0,1,0,1), (0,0,1,1)}.
+
+d(x,y) = 3: y in {(1,1,1,0), (1,1,0,1), (1,0,1,1), (0,1,1,1)}.
+
+All these y are at a distance <= 3 from (0,0,0,0), so a(4) = 15. (See Peter C. Heinig's formula). - _Yosu Yurramendi_, Dec 14 2021
+
+For n >= 2, a(n) is the number of distinct least squares regression lines fitted to n points (j,y_j), 1 <= j <= n, where each y_j is 0 or 1. The number of distinct lines with exactly k 1's among y_1, ..., y_n is A077028(n,k). The number of distinct slopes is A123596(n). - _Pontus von Brömssen_, Mar 16 2024
+```

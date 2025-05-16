@@ -1,0 +1,25 @@
+Write a python code that takes a number n as input from stdin, outputs a single element of a sequence as a string to stdout. Just output the n-th element in the sequence, not the whole sequence or anything other than the single sequence element. You will be graded by my running your code and comparing the results with a look-up table. If you use a look-up table for your code, you will not only fail the test. Hardcoding values that can be computed without hardcoding is considered to be using a look-up table. Use only the standard python library. No packages will be installed with pip or conda. Output your final code at the end of your response inside triple backticks like:
+```
+#your code goes here
+```
+The last part of your response that is inside triple backticks will be used as your response for the purposes of the test. The code will be stopped after a short period of time, so make it efficient if needed.
+
+Here is some information on the sequence:
+```
+Name: Number of binary partitions: number of partitions of 2n into powers of 2.
+Comments: Also, a(n) = number of "non-squashing" partitions of 2n (or 2n+1), that is, partitions 2n = p_1 + p_2 + ... + p_k with 1 <= p_1 <= p_2 <= ... <= p_k and p_1 + p_2 + ... + p_i <= p_{i+1} for all 1 <= i < k [Hirschhorn and Sellers].
+
+Row sums of A101566. - _Paul Barry_, Jan 03 2005
+
+Equals infinite convolution product of [1,2,2,2,2,2,2,2,2] aerated A000079 - 1 times, i.e., [1,2,2,2,2,2,2,2,2] * [1,0,2,0,2,0,2,0,2] * [1,0,0,0,2,0,0,0,2]. - _Mats Granvik_ and _Gary W. Adamson_, Aug 04 2009
+
+Which can be further decomposed to the infinite convolution product of finally supported sequences, namely [1,1] aerated A000079 - 1 times with multiplicity A000027 + 1 times, i.e., [1,1] * [1,1] * [1,0,1] * [1,0,1] * [1,0,1] * ... (next terms are [1,0,0,0,1] 4 times, etc.). - _Eitan Y. Levine_, Jun 18 2023
+
+Given A018819 = A000123 with repeats, polcoeff (1, 1, 2, 2, 4, 4, ...) * (1, 1, 1, ...) = (1, 2, 4, 6, 10, ...) = (1, 0, 2, 0, 4, 0, 6, ...) * (1, 2, 2, 2, ...). - _Gary W. Adamson_, Dec 16 2009
+
+Let M = an infinite lower triangular matrix with (1, 2, 2, 2, ...) in every column shifted down twice. A000123 = lim_{n->infinity} M^n, the left-shifted vector considered as a sequence. Replacing (1, 2, 2, 2, ...) with (1, 3, 3, 3, ...) and following the same procedure, we obtain A171370: (1, 3, 6, 12, 18, 30, 42, 66, 84, 120, ...). - _Gary W. Adamson_, Dec 06 2009
+
+First differences of the sequence are (1, 2, 2, 4, 4, 6, 6, 10, ...), A018819, i.e., the sequence itself with each term duplicated except for the first one (unless a 0 is prefixed before taking the first differences), as shown by the formula a(n) - a(n-1) = a(floor(n/2)), valid for all n including n = 0 if we let a(-1) = 0. - _M. F. Hasler_, Feb 19 2019
+
+Sum over k <= n of number of partitions of k into powers of 2, A018819. - _Peter Munn_, Feb 21 2020
+```

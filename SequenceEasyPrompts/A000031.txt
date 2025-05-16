@@ -1,0 +1,25 @@
+Write a python code that takes a number n as input from stdin, outputs a single element of a sequence as a string to stdout. Just output the n-th element in the sequence, not the whole sequence or anything other than the single sequence element. You will be graded by my running your code and comparing the results with a look-up table. If you use a look-up table for your code, you will not only fail the test. Hardcoding values that can be computed without hardcoding is considered to be using a look-up table. Use only the standard python library. No packages will be installed with pip or conda. Output your final code at the end of your response inside triple backticks like:
+```
+#your code goes here
+```
+The last part of your response that is inside triple backticks will be used as your response for the purposes of the test. The code will be stopped after a short period of time, so make it efficient if needed.
+
+Here is some information on the sequence:
+```
+Name: Number of n-bead necklaces with 2 colors when turning over is not allowed; also number of output sequences from a simple n-stage cycling shift register; also number of binary irreducible polynomials whose degree divides n.
+Comments: Also a(n)-1 is the number of 1's in the truth table for the lexicographically least de Bruijn cycle (Fredricksen).
+
+In music, a(n) is the number of distinct classes of scales and chords in an n-note equal-tempered tuning system. - _Paul Cantrell_, Dec 28 2011
+
+Also, minimum cardinality of an unavoidable set of length-n binary words (Champarnaud, Hansel, Perrin). - _Jeffrey Shallit_, Jan 10 2019
+
+(1/n) * Dirichlet convolution of phi(n) and 2^n, n>0. - _Richard L. Ollerton_, May 06 2021
+
+From _Jianing Song_, Nov 13 2021: (Start)
+
+a(n) is even for n != 0, 2. Proof: write n = 2^e * s with odd s, then a(n) * s = Sum_{d|s} Sum_{k=0..e} phi((2^e*s)/(2^k*d)) * 2^(2^k*d-e) = Sum_{d|s} Sum_{k=0..e-1} phi(s/d) * 2^(2^k*d-k-1) + Sum_{d|s} phi(s/d) * 2^(2^e*d-e) == Sum_{k=0..e-1} 2^(2^k*s-k-1) + 2^(2^e*s-e) == Sum_{k=0..min{e-1,1}} 2^(2^k*s-k-1) (mod 2). a(n) is odd if and only if s = 1 and e-1 = 0, or n = 2.
+
+a(n) == 2 (mod 4) if and only if n = 1, 4 or n = 2*p^e with prime p == 3 (mod 4).
+
+a(n) == 4 (mod 8) if and only if n = 2^e, 3*2^e for e >= 3, or n = p^e, 4*p^e != 12 with prime p == 3 (mod 4), or n = 2s where s is an odd number such that phi(s) == 4 (mod 8). (End)
+```

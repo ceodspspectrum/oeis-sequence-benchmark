@@ -1,0 +1,93 @@
+Write a python code that takes a number n as input from stdin, outputs a single element of a sequence as a string to stdout. Just output the n-th element in the sequence, not the whole sequence or anything other than the single sequence element. You will be graded by my running your code and comparing the results with a look-up table. If you use a look-up table for your code, you will not only fail the test. Hardcoding values that can be computed without hardcoding is considered to be using a look-up table. Use only the standard python library. No packages will be installed with pip or conda. Output your final code at the end of your response inside triple backticks like:
+```
+#your code goes here
+```
+The last part of your response that is inside triple backticks will be used as your response for the purposes of the test. The code will be stopped after a short period of time, so make it efficient if needed.
+
+Here is some information on the sequence:
+```
+Name: The squares: a(n) = n^2.
+Comments: To test if a number is a square, see Cohen, p. 40. - _N. J. A. Sloane_, Jun 19 2011
+
+Zero followed by partial sums of A005408 (odd numbers). - _Jeremy Gardiner_, Aug 13 2002
+
+Begin with n, add the next number, subtract the previous number and so on ending with subtracting a 1: a(n) = n + (n+1) - (n-1) + (n+2) - (n-2) + (n+3) - (n-3) + ... + (2n-1) - 1 = n^2. - _Amarnath Murthy_, Mar 24 2004
+
+Sum of two consecutive triangular numbers A000217. - _Lekraj Beedassy_, May 14 2004
+
+Numbers with an odd number of divisors: {d(n^2) = A048691(n); for the first occurrence of 2n + 1 divisors, see A071571(n)}. - _Lekraj Beedassy_, Jun 30 2004
+
+See also A000037.
+
+First sequence ever computed by electronic computer, on EDSAC, May 06 1949 (see Renwick link). - _Russ Cox_, Apr 20 2006
+
+Numbers k such that the imaginary quadratic field Q(sqrt(-k)) has four units. - _Marc LeBrun_, Apr 12 2006
+
+For n > 0: number of divisors of (n-1)th power of any squarefree semiprime: a(n) = A000005(A006881(k)^(n-1)); a(n) = A000005(A000400(n-1)) = A000005(A011557(n-1)) = A000005(A001023(n-1)) = A000005(A001024(n-1)). - _Reinhard Zumkeller_, Mar 04 2007
+
+If a 2-set Y and an (n-2)-set Z are disjoint subsets of an n-set X then a(n-2) is the number of 3-subsets of X intersecting both Y and Z. - _Milan Janjic_, Sep 19 2007
+
+Numbers a such that a^1/2 + b^1/2 = c^1/2 and a^2 + b = c. - _Cino Hilliard_, Feb 07 2008 (this comment needs clarification, _Joerg Arndt_, Sep 12 2013)
+
+Numbers k such that the geometric mean of the divisors of k is an integer. - _Ctibor O. Zizka_, Jun 26 2008
+
+Equals row sums of triangle A143470. Example: 36 = sum of row 6 terms: (23 + 7 + 3 + 1 + 1 + 1). - _Gary W. Adamson_, Aug 17 2008
+
+Equals row sums of triangles A143595 and A056944. - _Gary W. Adamson_, Aug 26 2008
+
+Number of divisors of 6^(n-1) for n > 0. - _J. Lowell_, Aug 30 2008
+
+Denominators of Lyman spectrum of hydrogen atom. Numerators are A005563. A000290-A005563 = A000012. - _Paul Curtz_, Nov 06 2008
+
+a(n) is the number of all partitions of the sum 2^2 + 2^2 + ... + 2^2, (n-1) times, into powers of 2. - _Valentin Bakoev_, Mar 03 2009
+
+a(n) is the maximal number of squares that can be 'on' in an n X n board so that all the squares turn 'off' after applying the operation: in any 2 X 2 sub-board, a square turns from 'on' to 'off' if the other three are off. - _Srikanth K S_, Jun 25 2009
+
+Zero together with the numbers k such that 2 is the number of perfect partitions of k. - _Juri-Stepan Gerasimov_, Sep 26 2009
+
+Totally multiplicative sequence with a(p) = p^2 for prime p. - _Jaroslav Krizek_, Nov 01 2009
+
+Satisfies A(x)/A(x^2), A(x) = A173277: (1, 4, 13, 32, 74, ...). - _Gary W. Adamson_, Feb 14 2010
+
+Positive members are the integers with an odd number of odd divisors and an even number of even divisors. See also A120349, A120359, A181792, A181793, A181795. - _Matthew Vandermast_, Nov 14 2010
+
+Besides the first term, this sequence is the denominator of Pi^2/6 = 1 + 1/4 + 1/9 + 1/16 + 1/25 + 1/36 + ... . - _Mohammad K. Azarian_, Nov 01 2011
+
+Partial sums give A000330. - _Omar E. Pol_, Jan 12 2013
+
+Drmota, Mauduit, and Rivat proved that the Thue-Morse sequence along the squares is normal; see A228039. - _Jonathan Sondow_, Sep 03 2013
+
+a(n) can be decomposed into the sum of the four numbers [binomial(n, 1) + binomial(n, 2) + binomial(n-1, 1) + binomial(n-1, 2)] which form a "square" in Pascal's Triangle A007318, or the sum of the two numbers [binomial(n, 2) + binomial(n+1, 2)], or the difference of the two numbers [binomial(n+2, 3) - binomial(n, 3)]. - _John Molokach_, Sep 26 2013
+
+In terms of triangular tiling, the number of equilateral triangles with side length 1 inside an equilateral triangle with side length n. - _K. G. Stier_, Oct 30 2013
+
+Number of positive roots in the root systems of type B_n and C_n (when n > 1). - _Tom Edgar_, Nov 05 2013
+
+Squares of squares (fourth powers) are also called biquadratic numbers: A000583. - _M. F. Hasler_, Dec 29 2013
+
+For n > 0, a(n) is the largest integer k such that k^2 + n is a multiple of k + n. More generally, for m > 0 and n > 0, the largest integer k such that k^(2*m) + n is a multiple of k + n is given by k = n^(2*m). - _Derek Orr_, Sep 03 2014
+
+For n > 0, a(n) is the number of compositions of n + 5 into n parts avoiding the part 2. - _Milan Janjic_, Jan 07 2016
+
+a(n), for n >= 3, is also the number of all connected subtrees of a cycle graph, having n vertices. - _Viktar Karatchenia_, Mar 02 2016
+
+On every sequence of natural continuous numbers with an even number of elements, the summatory of the second half of the sequence minus the summatory of the first half of the sequence is always a square. Example: Sequence from 61 to 70 has an even number of elements (10). Then 61 + 62 + 63 + 64 + 65 = 315; 66 + 67 + 68 + 69 + 70 = 340; 340 - 315 = 25. (n/2)^2 for n = number of elements. - _César Aguilera_, Jun 20 2016
+
+On every sequence of natural continuous numbers from n^2 to (n+1)^2, the sum of the differences of pairs of elements of the two halves in every combination possible is always (n+1)^2. - _César Aguilera_, Jun 24 2016
+
+Suppose two circles with radius 1 are tangent to each other as well as to a line not passing through the point of tangency. Create a third circle tangent to both circles as well as the line. If this process is continued, a(n) for n > 0 is the reciprocals of the radii of the circles, beginning with the largest circle. - _Melvin Peralta_, Aug 18 2016
+
+Does not satisfy Benford's law [Ross, 2012]. - _N. J. A. Sloane_, Feb 08 2017
+
+Numerators of the solution to the generalization of the Feynman triangle problem, with an offset of 2. If each vertex of a triangle is joined to the point (1/p) along the opposite side (measured say clockwise), then the area of the inner triangle formed by these lines is equal to (p - 2)^2/(p^2 - p + 1) times the area of the original triangle, p > 2. For example, when p = 3, the ratio of the areas is 1/7. The denominators of the ratio of the areas is given by A002061. [Cook & Wood, 2004] - _Joe Marasco_, Feb 20 2017
+
+Equals row sums of triangle A004737, n >= 1. - _Martin Michael Musatov_, Nov 07 2017
+
+Right-hand side of the binomial coefficient identity Sum_{k = 0..n} (-1)^(n+k+1)*binomial(n,k)*binomial(n + k,k)*(n - k) = n^2. - _Peter Bala_, Jan 12 2022
+
+Conjecture: For n>0, min{k such that there exist subsets A,B of {0,1,2,...,a(n)-1} such that |A|=|B|=k and A+B contains {0,1,2,...,a(n)-1}} = n. - _Michael Chu_, Mar 09 2022
+
+Number of 3-permutations of n elements avoiding the patterns 132, 213, 321. See Bonichon and Sun. - _Michel Marcus_, Aug 20 2022
+
+Number of intercalates in cyclic Latin squares of order 2n (cyclic Latin squares of odd order do not have intercalates). - _Eduard I. Vatutin_, Feb 15 2024
+```

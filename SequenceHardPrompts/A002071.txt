@@ -1,0 +1,17 @@
+Write a python code that takes a number n as input from stdin, outputs a single element of a sequence as a string to stdout. Just output the n-th element in the sequence, not the whole sequence or anything other than the single sequence element. You will be graded by my running your code and comparing the results with a look-up table. If you use a look-up table for your code, you will not only fail the test. Hardcoding values that can be computed without hardcoding is considered to be using a look-up table. Use only the standard python library. No packages will be installed with pip or conda. Output your final code at the end of your response inside triple backticks like:
+```
+#your code goes here
+```
+The last part of your response that is inside triple backticks will be used as your response for the purposes of the test. The code will be stopped after a short period of time, so make it efficient if needed.
+
+Here is some information on the sequence:
+```
+Name: Number of pairs of consecutive integers x, x+1 such that all prime factors of both x and x+1 are at most the n-th prime.
+Comments: Størmer's theorem proves that a(n) is finite. - _Charles R Greathouse IV_, Feb 19 2013
+
+Also: Number of positive integers x such that x(x+1) is prime(n)-smooth. - _M. F. Hasler_, Jan 16 2015
+
+Also: Row lengths of A138180; partial sums of A145604. - _M. F. Hasler_, Jan 16 2015
+
+On an effective abc conjecture (c < rad(abc)^2), we have that a(20)-a(33) is (4839, 6040, 7441, 9179, 11134, 13374, 16167, 19507, 23367, 27949, 33233, 39283, 46166, 54150). - _Lucas A. Brown_, Oct 16 2022
+```

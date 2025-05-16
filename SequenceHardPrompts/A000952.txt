@@ -1,0 +1,13 @@
+Write a python code that takes a number n as input from stdin, outputs a single element of a sequence as a string to stdout. Just output the n-th element in the sequence, not the whole sequence or anything other than the single sequence element. You will be graded by my running your code and comparing the results with a look-up table. If you use a look-up table for your code, you will not only fail the test. Hardcoding values that can be computed without hardcoding is considered to be using a look-up table. Use only the standard python library. No packages will be installed with pip or conda. Output your final code at the end of your response inside triple backticks like:
+```
+#your code goes here
+```
+The last part of your response that is inside triple backticks will be used as your response for the purposes of the test. The code will be stopped after a short period of time, so make it efficient if needed.
+
+Here is some information on the sequence:
+```
+Name: Numbers k == 2 (mod 4) that are the orders of conference matrices.
+Comments: A conference matrix of order k is a k X k {-1,0,+1} matrix A such that A A' = (k-1)I.
+
+If k == 2 (mod 4) then a necessary condition is that k-1 is a sum of 2 squares (A286636). It is conjectured that this condition is also sufficient. If k == 2 (mod 4) and k-1 is a prime or prime power the condition is automatically satisfied.
+```

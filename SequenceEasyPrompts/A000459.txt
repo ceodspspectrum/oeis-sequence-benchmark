@@ -1,0 +1,17 @@
+Write a python code that takes a number n as input from stdin, outputs a single element of a sequence as a string to stdout. Just output the n-th element in the sequence, not the whole sequence or anything other than the single sequence element. You will be graded by my running your code and comparing the results with a look-up table. If you use a look-up table for your code, you will not only fail the test. Hardcoding values that can be computed without hardcoding is considered to be using a look-up table. Use only the standard python library. No packages will be installed with pip or conda. Output your final code at the end of your response inside triple backticks like:
+```
+#your code goes here
+```
+The last part of your response that is inside triple backticks will be used as your response for the purposes of the test. The code will be stopped after a short period of time, so make it efficient if needed.
+
+Here is some information on the sequence:
+```
+Name: Number of multiset permutations of {1, 1, 2, 2, ..., n, n} with no fixed points.
+Comments: Original definition: Number of permutations with no hits on 2 main diagonals. (Identical to definition of A000316.) - _M. F. Hasler_, Sep 27 2015
+
+Card-matching numbers (Dinner-Diner matching numbers): A deck has n kinds of cards, 2 of each kind. The deck is shuffled and dealt in to n hands with 2 cards each. A match occurs for every card in the j-th hand of kind j. A(n) is the number of ways of achieving no matches. The probability of no matches is A(n)/((2n)!/2!^n).
+
+Also, Penrice's Christmas gift numbers (see Penrice 1991).
+
+a(n) is the maximal number of totally mixed Nash equilibria in games of n players, each with 3 pure options. - _Raimundas Vidunas_, Jan 22 2014
+```

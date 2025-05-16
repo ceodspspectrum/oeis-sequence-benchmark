@@ -1,0 +1,25 @@
+Write a python code that takes a number n as input from stdin, outputs a single element of a sequence as a string to stdout. Just output the n-th element in the sequence, not the whole sequence or anything other than the single sequence element. You will be graded by my running your code and comparing the results with a look-up table. If you use a look-up table for your code, you will not only fail the test. Hardcoding values that can be computed without hardcoding is considered to be using a look-up table. Use only the standard python library. No packages will be installed with pip or conda. Output your final code at the end of your response inside triple backticks like:
+```
+#your code goes here
+```
+The last part of your response that is inside triple backticks will be used as your response for the purposes of the test. The code will be stopped after a short period of time, so make it efficient if needed.
+
+Here is some information on the sequence:
+```
+Name: No-3-in-line problem: number of inequivalent ways of placing 2n points on an n X n grid so that no 3 are in a line.
+Comments: This means no three points on any line, not just lines in the X or Y directions.
+
+A000755 gives the total number of solutions (as opposed to the number of equivalence classes).
+
+It is conjectured that a(n)=0 for all sufficiently large n.
+
+Flammenkamp's web site reports that at least one solution is known for all n <= 46 and n=48, 50, 52.
+
+From _R. K. Guy_, Oct 22 2004: (Start)
+
+I got the no-three-in-line problem from Heilbronn over 50 years ago. See Section F4 in UPINT.
+
+In Canad. Math. Bull. 11 (1968) 527-531, MR 39 #129, Guy & Kelly conjecture that, for large n, at most (c + eps)*n points can be selected, where 3*c^3 = 2*Pi^2, i.e., c ~ 1.87.
+
+As recently as last March, Gabor Ellmann pointed out an error in our heuristic reasoning, which, when corrected, gives 3*c^2 = Pi^2, or c ~ 1.813799. (End)
+```

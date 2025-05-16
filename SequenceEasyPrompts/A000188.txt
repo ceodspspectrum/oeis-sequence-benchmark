@@ -1,0 +1,17 @@
+Write a python code that takes a number n as input from stdin, outputs a single element of a sequence as a string to stdout. Just output the n-th element in the sequence, not the whole sequence or anything other than the single sequence element. You will be graded by my running your code and comparing the results with a look-up table. If you use a look-up table for your code, you will not only fail the test. Hardcoding values that can be computed without hardcoding is considered to be using a look-up table. Use only the standard python library. No packages will be installed with pip or conda. Output your final code at the end of your response inside triple backticks like:
+```
+#your code goes here
+```
+The last part of your response that is inside triple backticks will be used as your response for the purposes of the test. The code will be stopped after a short period of time, so make it efficient if needed.
+
+Here is some information on the sequence:
+```
+Name: (1) Number of solutions to x^2 == 0 (mod n). (2) Also square root of largest square dividing n. (3) Also max_{ d divides n } gcd(d, n/d).
+Comments: Shadow transform of the squares A000290. - _Vladeta Jovovic_, Aug 02 2002
+
+_Labos Elemer_ and _Henry Bottomley_ independently proved that (2) and (3) define the same sequence. Bottomley also showed that (1) and (2) define the same sequence.
+
+Proof that (2) = (3): Let max{gcd(d, n/d)} = K, then d = Kx, n/d = Ky so n = KKxy where xy is the squarefree part of n, otherwise K is not maximal. Observe also that g = gcd(K, xy) is not necessarily 1. Thus K is also the "maximal square-root factor" of n. - _Labos Elemer_, July 2000
+
+We can write sqrt(n) = b*sqrt(c) where c is squarefree. Then b = A000188(n) is the "inner square root" of n, c = A007913(n), lcm(b,c) = A007947(n) = "squarefree kernel" of n and bc = A019554(n) = "outer square root" of n. [The relation with LCM is wrong if b is not squarefree. One must, e.g., replace b with A007947(b). - _M. F. Hasler_, Mar 03 2018]
+```

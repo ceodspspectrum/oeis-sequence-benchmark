@@ -1,0 +1,41 @@
+Write a python code that takes a number n as input from stdin, outputs a single element of a sequence as a string to stdout. Just output the n-th element in the sequence, not the whole sequence or anything other than the single sequence element. You will be graded by my running your code and comparing the results with a look-up table. If you use a look-up table for your code, you will not only fail the test. Hardcoding values that can be computed without hardcoding is considered to be using a look-up table. Use only the standard python library. No packages will be installed with pip or conda. Output your final code at the end of your response inside triple backticks like:
+```
+#your code goes here
+```
+The last part of your response that is inside triple backticks will be used as your response for the purposes of the test. The code will be stopped after a short period of time, so make it efficient if needed.
+
+Here is some information on the sequence:
+```
+Name: Mersenne exponents: primes p such that 2^p - 1 is prime. Then 2^p - 1 is called a Mersenne prime.
+Comments: Equivalently, integers k such that 2^k - 1 is prime.
+
+It is believed (but unproved) that this sequence is infinite. The data suggest that the number of terms up to exponent N is roughly K log N for some constant K.
+
+Length of prime repunits in base 2.
+
+The associated perfect number N=2^(p-1)*M(p) (=A019279*A000668=A000396), has 2p (=A061645) divisors with harmonic mean p (and geometric mean sqrt(N)). - _Lekraj Beedassy_, Aug 21 2004
+
+In one of his first publications Euler found the numbers up to 31 but erroneously included 41 and 47.
+
+Equals number of bits in binary expansion of n-th Mersenne prime (A117293). - _Artur Jasinski_, Feb 09 2007
+
+Number of divisors of n-th even perfect number, divided by 2. Number of divisors of n-th even perfect number that are powers of 2. Number of divisors of n-th even perfect number that are multiples of n-th Mersenne prime A000668(n). - _Omar E. Pol_, Feb 24 2008
+
+Number of divisors of n-th even superperfect number A061652(n). Numbers of divisors of n-th superperfect number A019279(n), assuming there are no odd superperfect numbers. - _Omar E. Pol_, Mar 01 2008
+
+Differences between exponents when the even perfect numbers are represented as differences of powers of 2, for example: The 5th even perfect number is 33550336 = 2^25 - 2^12 then a(5)=25-12=13 (see A135655, A133033, A090748). - _Omar E. Pol_, Mar 01 2008
+
+Number of 1's in binary expansion of n-th even perfect number (see A135650). Number of 1's in binary expansion of divisors of n-th even perfect number that are multiples of n-th Mersenne prime A000668(n) (see A135652, A135653, A135654, A135655). - _Omar E. Pol_, May 04 2008
+
+Indices of the numbers A006516 that are also even perfect numbers. - _Omar E. Pol_, Aug 30 2008
+
+Indices of Mersenne numbers A000225 that are also Mersenne primes A000668. - _Omar E. Pol_, Aug 31 2008
+
+The (prime) number p appears in this sequence if and only if there is no prime q<2^p-1 such that the order of 2 modulo q equals p; a special case is that if p=4k+3 is prime and also q=2p+1 is prime then the order of 2 modulo q is p so p is not a term of this sequence. - _Joerg Arndt_, Jan 16 2011
+
+Primes p such that sigma(2^p) - sigma(2^p-1) = 2^p-1. - _Jaroslav Krizek_, Aug 02 2013
+
+Integers k such that every degree k irreducible polynomial over GF(2) is also primitive, i.e., has order 2^k-1.  Equivalently, the integers k such that A001037(k) = A011260(k). - _Geoffrey Critzer_, Dec 08 2019
+
+Conjecture: for k > 1, 2^k-1 is (a Mersenne) prime or k = 2^(2^m)+1 (is a Fermat number) if and only if (k-1)^(2^k-2) == 1 (mod (2^k-1)k^2). - _Thomas Ordowski_, Oct 05 2023
+```

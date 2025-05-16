@@ -1,0 +1,23 @@
+Write a python code that takes a number n as input from stdin, outputs a single element of a sequence as a string to stdout. Just output the n-th element in the sequence, not the whole sequence or anything other than the single sequence element. You will be graded by my running your code and comparing the results with a look-up table. If you use a look-up table for your code, you will not only fail the test. Hardcoding values that can be computed without hardcoding is considered to be using a look-up table. Use only the standard python library. No packages will be installed with pip or conda. Output your final code at the end of your response inside triple backticks like:
+```
+#your code goes here
+```
+The last part of your response that is inside triple backticks will be used as your response for the purposes of the test. The code will be stopped after a short period of time, so make it efficient if needed.
+
+Here is some information on the sequence:
+```
+Name: Number of permutations in the symmetric group S_n that have odd order.
+Comments: Michael Reid (mreid(AT)math.umass.edu) points out that the e.g.f. for the number of permutations of odd order can be obtained from the cycle index for S_n, F(Y; X1, X2, X3, ... ) := e^(X1 Y + X2 Y^2/2 + X3 Y^3/3 + ... ) and is F(Y, 1, 0, 1, 0, 1, 0, ... ) = sqrt((1 + Y)/(1 - Y)).
+
+a(n) appears to be the number of permutations on [n] whose up-down signature has nonnegative partial sums. For example, the up-down signature of (2,4,5,1,3) is (+1,+1,-1,+1) with nonnegative partial sums 1,2,1,2 and a(3)=3 counts (1,2,3), (1,3,2), (2,3,1). - _David Callan_, Jul 14 2006
+
+This conjecture has been confirmed, see Bernardi, Duplantier, Nadeau link.
+
+a(n) is the number of permutations of [n] for which all left-to-right minima occur in odd locations in the permutation. For example, a(3)=3 counts 123, 132, 231. Proof: For such a permutation of length 2n, you can append 1,2,..., or 2n+1 (2n+1 choices) and increase by 1 the original entries that weakly exceed the appended entry. This gives all such permutations of length 2n+1. But if the original length is 2n-1, you cannot append 1 (for then 1 would be a left-to-right min in an even location) so you can only append 2,3,..., or 2n (2n-1 choices). This count matches the given recurrence relation a(2n)=(2n-1)a(2n-1), a(2n+1)=(2n+1)a(2n). - _David Callan_, Jul 22 2008
+
+a(n) is the n-th derivative of exp(arctanh(x)) at x = 0. - _Michel Lagneau_, May 11 2010
+
+a(n) is the absolute value of the Moebius number of the odd partition poset on a set of n+1 points, where the odd partition poset is defined to be the subposet of the partition poset consisting of only partitions using odd part size (as well as the maximum element for n even). - _Kenneth M Monks_, May 06 2012
+
+Number of permutations in S_n in which all cycles have odd length. - _Michael Somos_, Mar 17 2019
+```

@@ -1,0 +1,21 @@
+Write a python code that takes a number n as input from stdin, outputs a single element of a sequence as a string to stdout. Just output the n-th element in the sequence, not the whole sequence or anything other than the single sequence element. You will be graded by my running your code and comparing the results with a look-up table. If you use a look-up table for your code, you will not only fail the test. Hardcoding values that can be computed without hardcoding is considered to be using a look-up table. Use only the standard python library. No packages will be installed with pip or conda. Output your final code at the end of your response inside triple backticks like:
+```
+#your code goes here
+```
+The last part of your response that is inside triple backticks will be used as your response for the purposes of the test. The code will be stopped after a short period of time, so make it efficient if needed.
+
+Here is some information on the sequence:
+```
+Name: Indices of prime repunits: numbers n such that 11...111 (with n 1's) = (10^n - 1)/9 is prime.
+Comments: People who search for repunit primes or repdigit primes may be looking for this entry.
+
+The indices of primes with digital product (i.e., product of digits) equal to 1.
+
+As of August 2014, only the first five repunits, through (10^1031-1)/9, have been proved prime. The last four repunits are known only to be probable primes and have not been proved to be prime. - _Robert Baillie_, Aug 17 2014
+
+These indices p must also be prime. If p is not prime, say p = m*n, then 10^(m*n) - 1 = ((10^m)^n) - 1 => 10^m - 1 divides 10^(m*n) - 1. Since 9 divides 10^m - 1 or (10^m - 1)/9 = q, it follows q divides (10^p - 1)/9. This is a result of the identity, a^n - b^n = (a - b)(a^(n-1) + a^(n-2)*b + ... + b^(n-1)). - _Cino Hilliard_, Dec 23 2008
+
+The numbers R_n = 11...111 = (10^n - 1)/9 with n in this sequence A004023, except for n = 2, are prime repunits in base ten, so they are prime Brazilian numbers belonging to A085104. [See Links: Les nombres brésiliens.] - _Bernard Schott_, Dec 24 2012
+
+Search limit is 10800000, currently. - _Serge Batalov_, Jul 01 2021
+```
