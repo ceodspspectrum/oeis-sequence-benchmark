@@ -1,0 +1,108 @@
+{
+  "@context": "http://schema.org/",
+  "@type": "sc:Dataset",
+  "name": "oeis_sequence_benchmark",
+  "description": "A 1000 sequence benchmark drawn from the OEIS, split into classic vs. contemporary and easy vs. hard, for evaluating LLM code? generation and mathematical reasoning.",
+  "url": "https://github.com/ceodspspectrum/oeis-sequence-benchmark",
+  "conformsTo": "http://mlcommons.org/croissant/0.1",
+  "license": "https://creativecommons.org/licenses/by-sa/4.0/",
+  "version": "1.0.0",
+
+  "author": [
+    {
+      "@type": "Person",
+      "name": "Daniel O'Malley",
+      "identifier": "https://orcid.org/0000-0000-0000-0000"
+    },
+    {
+      "@type": "Person",
+      "name": "Manish Bhattarai",
+      "identifier": "https://orcid.org/0000-0000-0000-0001"
+    },
+    {
+      "@type": "Person",
+      "name": "Javier Santos",
+      "identifier": "https://orcid.org/0000-0000-0000-0002"
+    },
+    {
+      "@type": "Person",
+      "name": "Nishath Rajiv Ranasinghe",
+      "identifier": "https://orcid.org/0000-0000-0000-0003"
+    },
+    {
+      "@type": "Person",
+      "name": "Erick Draayer",
+      "identifier": "https://orcid.org/0000-0000-0000-0004"
+    }
+  ],
+
+  "keywords": [
+    "benchmark",
+    "integer_sequences",
+    "algorithmic_reasoning",
+    "code_generation",
+    "OEIS"
+  ],
+
+  "distribution": [
+    {
+      "@type": "cr:FileObject",
+      "@id": "data/oeis_sequence_benchmark.jsonl",
+      "name": "oeis_sequence_benchmark.jsonl",
+      "contentUrl": "data/oeis_sequence_benchmark.jsonl",
+      "encodingFormat": "application/json",
+      "sha256": "PUT_YOUR_SHA256_HERE"
+    }
+  ],
+
+  "recordSet": [
+    {
+      "@type": "cr:RecordSet",
+      "name": "default",
+      "description": "Each record is one OEIS entry with its splits and metadata.",
+      "field": [
+        {
+          "@type": "cr:Field",
+          "name": "sequence_id",
+          "description": "The OEIS identifier, e.g., A000001",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": { "@id": "data/oeis_sequence_benchmark.jsonl" },
+            "extract": { "jsonPath": "$.sequence_id" }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "name": "category",
+          "description": "One of classic_easy, classic_hard, contemporary_easy, contemporary_hard",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": { "@id": "data/oeis_sequence_benchmark.jsonl" },
+            "extract": { "jsonPath": "$.category" }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "name": "name",
+          "description": "Human‐readable OEIS sequence title",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": { "@id": "data/oeis_sequence_benchmark.jsonl" },
+            "extract": { "jsonPath": "$.name" }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "name": "comments",
+          "description": "OEIS comments / description for the sequence",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": { "@id": "data/oeis_sequence_benchmark.jsonl" },
+            "extract": { "jsonPath": "$.comments" }
+          }
+        }
+      ]
+    }
+  ]
+}
+
