@@ -12,11 +12,31 @@
   "license": "https://creativecommons.org/licenses/by-sa/4.0/",
   "version": "1.0.0",
   "author": [
-    { "@type": "Person", "name": "Daniel O'Malley",            "identifier": "https://orcid.org/0000-0000-0000-0000" },
-    { "@type": "Person", "name": "Manish Bhattarai",          "identifier": "https://orcid.org/0000-0000-0000-0001" },
-    { "@type": "Person", "name": "Javier Santos",            "identifier": "https://orcid.org/0000-0000-0000-0002" },
-    { "@type": "Person", "name": "Nishath Rajiv Ranasinghe",  "identifier": "https://orcid.org/0000-0000-0000-0003" },
-    { "@type": "Person", "name": "Erick Draayer",             "identifier": "https://orcid.org/0000-0000-0000-0004" }
+    {
+      "@type": "Person",
+      "name": "Daniel O'Malley",
+      "identifier": "https://orcid.org/0000-0000-0000-0000"
+    },
+    {
+      "@type": "Person",
+      "name": "Manish Bhattarai",
+      "identifier": "https://orcid.org/0000-0000-0000-0001"
+    },
+    {
+      "@type": "Person",
+      "name": "Javier Santos",
+      "identifier": "https://orcid.org/0000-0000-0000-0002"
+    },
+    {
+      "@type": "Person",
+      "name": "Nishath Rajiv Ranasinghe",
+      "identifier": "https://orcid.org/0000-0000-0000-0003"
+    },
+    {
+      "@type": "Person",
+      "name": "Erick Draayer",
+      "identifier": "https://orcid.org/0000-0000-0000-0004"
+    }
   ],
   "keywords": [
     "benchmark",
@@ -32,7 +52,6 @@
       "name": "oeis-sequence-benchmark-main.zip",
       "contentUrl": "https://github.com/ceodspspectrum/oeis-sequence-benchmark/archive/refs/heads/main.zip",
       "encodingFormat": "application/zip"
-      /* sha256: "…" */
     },
     {
       "@id": "classic-easy-files",
@@ -68,7 +87,6 @@
       "@type": "cr:RecordSet",
       "name": "oeis_sequence_record",
       "description": "Extract one record per OEIS JSON file across all four splits.",
-
       "field": [
         {
           "@type": "cr:Field",
