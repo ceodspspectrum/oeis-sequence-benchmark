@@ -1,41 +1,25 @@
 {
-  "@context": "http://schema.org/",
-  "@type": "sc:Dataset",
+  "@context": {
+    "@language": "en",
+    "@vocab": "https://schema.org/",
+    "cr": "http://mlcommons.org/croissant/"
+  },
+  "@type": "Dataset",
+  "conformsTo": "http://mlcommons.org/croissant/1.0",
+
+  /* ─── Dataset Metadata ─────────────────────────────────────────────────── */
   "name": "oeis_sequence_benchmark",
-  "description": "A 1000 sequence benchmark drawn from the OEIS, split into classic vs. contemporary and easy vs. hard, for evaluating LLM code? generation and mathematical reasoning.",
+  "description": "A 1000-sequence benchmark drawn from the OEIS, split into classic vs. contemporary and easy vs. hard, for evaluating LLM code generation and mathematical reasoning.",
   "url": "https://github.com/ceodspspectrum/oeis-sequence-benchmark",
-  "conformsTo": "http://mlcommons.org/croissant/0.1",
   "license": "https://creativecommons.org/licenses/by-sa/4.0/",
   "version": "1.0.0",
-
   "author": [
-    {
-      "@type": "Person",
-      "name": "Daniel O'Malley",
-      "identifier": "https://orcid.org/0000-0000-0000-0000"
-    },
-    {
-      "@type": "Person",
-      "name": "Manish Bhattarai",
-      "identifier": "https://orcid.org/0000-0000-0000-0001"
-    },
-    {
-      "@type": "Person",
-      "name": "Javier Santos",
-      "identifier": "https://orcid.org/0000-0000-0000-0002"
-    },
-    {
-      "@type": "Person",
-      "name": "Nishath Rajiv Ranasinghe",
-      "identifier": "https://orcid.org/0000-0000-0000-0003"
-    },
-    {
-      "@type": "Person",
-      "name": "Erick Draayer",
-      "identifier": "https://orcid.org/0000-0000-0000-0004"
-    }
+    { "@type": "Person", "name": "Daniel O'Malley",            "identifier": "https://orcid.org/0000-0000-0000-0000" },
+    { "@type": "Person", "name": "Manish Bhattarai",          "identifier": "https://orcid.org/0000-0000-0000-0001" },
+    { "@type": "Person", "name": "Javier Santos",            "identifier": "https://orcid.org/0000-0000-0000-0002" },
+    { "@type": "Person", "name": "Nishath Rajiv Ranasinghe",  "identifier": "https://orcid.org/0000-0000-0000-0003" },
+    { "@type": "Person", "name": "Erick Draayer",             "identifier": "https://orcid.org/0000-0000-0000-0004" }
   ],
-
   "keywords": [
     "benchmark",
     "integer_sequences",
@@ -44,65 +28,160 @@
     "OEIS"
   ],
 
+  /* ─── Distribution: GitHub ZIP + FileSets ──────────────────────────────── */
   "distribution": [
     {
+      "@id": "oeis-benchmark-zip",
       "@type": "cr:FileObject",
-      "@id": "data/oeis_sequence_benchmark.jsonl",
-      "name": "oeis_sequence_benchmark.jsonl",
-      "contentUrl": "data/oeis_sequence_benchmark.jsonl",
-      "encodingFormat": "application/json",
-      "sha256": "PUT_YOUR_SHA256_HERE"
+      "name": "oeis-sequence-benchmark-main.zip",
+      "contentUrl": "https://github.com/ceodspspectrum/oeis-sequence-benchmark/archive/refs/heads/main.zip",
+      "encodingFormat": "application/zip"
+      /* sha256: "…" */
+    },
+    {
+      "@id": "classic-easy-files",
+      "@type": "cr:FileSet",
+      "containedIn": { "@id": "oeis-benchmark-zip" },
+      "includes": "oeis-sequence-benchmark-main/data/classic/SequenceEasyJson_files/*.json",
+      "encodingFormat": "application/json"
+    },
+    {
+      "@id": "classic-hard-files",
+      "@type": "cr:FileSet",
+      "containedIn": { "@id": "oeis-benchmark-zip" },
+      "includes": "oeis-sequence-benchmark-main/data/classic/SequenceHardJson_files/*.json",
+      "encodingFormat": "application/json"
+    },
+    {
+      "@id": "contemporary-easy-files",
+      "@type": "cr:FileSet",
+      "containedIn": { "@id": "oeis-benchmark-zip" },
+      "includes": "oeis-sequence-benchmark-main/data/contemporary/SequenceEasyJson_files/*.json",
+      "encodingFormat": "application/json"
+    },
+    {
+      "@id": "contemporary-hard-files",
+      "@type": "cr:FileSet",
+      "containedIn": { "@id": "oeis-benchmark-zip" },
+      "includes": "oeis-sequence-benchmark-main/data/contemporary/SequenceHardJson_files/*.json",
+      "encodingFormat": "application/json"
     }
   ],
 
+  /* ─── RecordSet: parsing each OEIS JSON file ───────────────────────────── */
   "recordSet": [
     {
       "@type": "cr:RecordSet",
-      "name": "default",
-      "description": "Each record is one OEIS entry with its splits and metadata.",
+      "name": "oeis_sequence_record",
+      "description": "Extract one record per OEIS JSON file across all four splits.",
+
       "field": [
         {
           "@type": "cr:Field",
+          "name": "sequence_number",
+          "description": "OEIS sequence number (e.g. 1 for A000001)",
+          "dataType": "Integer",
+          "source": {
+            "fileSet": { "@id": "classic-easy-files" },
+            "extract": { "jsonPath": "$[0].number" }
+          }
+        },
+        {
+          "@type": "cr:Field",
           "name": "sequence_id",
-          "description": "The OEIS identifier, e.g., A000001",
-          "dataType": "sc:Text",
+          "description": "Full OEIS ID (e.g. A000001)",
+          "dataType": "Text",
           "source": {
-            "fileObject": { "@id": "data/oeis_sequence_benchmark.jsonl" },
-            "extract": { "jsonPath": "$.sequence_id" }
+            "fileSet": { "@id": "classic-easy-files" },
+            "extract": { "jsonPath": "$[0].id" }
           }
         },
         {
           "@type": "cr:Field",
-          "name": "category",
-          "description": "One of classic_easy, classic_hard, contemporary_easy, contemporary_hard",
-          "dataType": "sc:Text",
+          "name": "sequence_name",
+          "description": "Human-readable name of the sequence",
+          "dataType": "Text",
           "source": {
-            "fileObject": { "@id": "data/oeis_sequence_benchmark.jsonl" },
-            "extract": { "jsonPath": "$.category" }
+            "fileSet": { "@id": "classic-easy-files" },
+            "extract": { "jsonPath": "$[0].name" }
           }
         },
         {
           "@type": "cr:Field",
-          "name": "name",
-          "description": "Human‐readable OEIS sequence title",
-          "dataType": "sc:Text",
+          "name": "sequence_data_string",
+          "description": "Raw comma-separated terms",
+          "dataType": "Text",
           "source": {
-            "fileObject": { "@id": "data/oeis_sequence_benchmark.jsonl" },
-            "extract": { "jsonPath": "$.name" }
+            "fileSet": { "@id": "classic-easy-files" },
+            "extract": { "jsonPath": "$[0].data" }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "name": "sequence_terms",
+          "description": "Parsed list of integers",
+          "dataType": "Integer",
+          "repeated": true,
+          "source": {
+            "fileSet": { "@id": "classic-easy-files" },
+            "extract": { "jsonPath": "$[0].data" },
+            "transform": {
+              "separator": ",",
+              "dataType": "Integer"
+            }
           }
         },
         {
           "@type": "cr:Field",
           "name": "comments",
-          "description": "OEIS comments / description for the sequence",
-          "dataType": "sc:Text",
+          "description": "List of OEIS comments",
+          "dataType": "Text",
+          "repeated": true,
           "source": {
-            "fileObject": { "@id": "data/oeis_sequence_benchmark.jsonl" },
-            "extract": { "jsonPath": "$.comments" }
+            "fileSet": { "@id": "classic-easy-files" },
+            "extract": { "jsonPath": "$[0].comment[*]" }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "name": "references",
+          "description": "List of OEIS bibliographic references",
+          "dataType": "Text",
+          "repeated": true,
+          "source": {
+            "fileSet": { "@id": "classic-easy-files" },
+            "extract": { "jsonPath": "$[0].reference[*]" }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "name": "category",
+          "description": "classic vs. contemporary",
+          "dataType": "Text",
+          "source": {
+            "fileSet": { "@id": "classic-easy-files" },
+            "extract": { "fileProperty": "path" },
+            "transform": {
+              "regex": ".*/data/(classic|contemporary)/.*",
+              "replacement": "$1"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "name": "difficulty",
+          "description": "easy vs. hard",
+          "dataType": "Text",
+          "source": {
+            "fileSet": { "@id": "classic-easy-files" },
+            "extract": { "fileProperty": "path" },
+            "transform": {
+              "regex": ".*Sequence(Easy|Hard)Json_files/.*",
+              "replacement": "$1"
+            }
           }
         }
       ]
     }
   ]
 }
-
