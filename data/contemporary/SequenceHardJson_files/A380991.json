@@ -1,0 +1,1 @@
+[{"number": 380991, "data": "1,4,15,48", "name": "a(n) = largest number of cells of a polyomino with at most n collinear cell centers.", "xref": ["Cf. A378169, A380990."], "keyword": "nonn,bref,hard,more", "offset": "1,2", "author": "_Dave Budd_, Feb 11 2025", "references": 0, "revision": 14, "time": "2025-02-12T14:23:32-05:00", "created": "2025-02-12T14:23:32-05:00"}]

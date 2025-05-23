@@ -1,0 +1,1 @@
+[{"number": 4078, "data": "1,0,1,0,736,466144", "name": "Number of Tuscan squares of order n.", "reference": ["CRC Handbook of Combinatorial Designs, 1996, p. 480."], "keyword": "nonn,hard", "offset": "2,5", "author": "_N. J. A. Sloane_", "references": 0, "revision": 10, "time": "2023-10-24T10:09:43-04:00", "created": "1996-12-11T03:00:00-05:00"}]
