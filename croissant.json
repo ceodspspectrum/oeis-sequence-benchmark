@@ -11,31 +11,28 @@
   "url": "https://github.com/ceodspspectrum/oeis-sequence-benchmark",
   "license": "https://creativecommons.org/licenses/by-sa/4.0/",
   "version": "1.0.0",
+  "datePublished": "2025-05-22",
+  "citation": "https://github.com/ceodspspectrum/oeis-sequence-benchmark",
   "author": [
     {
       "@type": "Person",
       "name": "Daniel O'Malley",
-      "identifier": "https://orcid.org/0000-0000-0000-0000"
     },
     {
       "@type": "Person",
       "name": "Manish Bhattarai",
-      "identifier": "https://orcid.org/0000-0000-0000-0001"
     },
     {
       "@type": "Person",
       "name": "Javier Santos",
-      "identifier": "https://orcid.org/0000-0000-0000-0002"
     },
     {
       "@type": "Person",
       "name": "Nishath Rajiv Ranasinghe",
-      "identifier": "https://orcid.org/0000-0000-0000-0003"
     },
     {
       "@type": "Person",
       "name": "Erick Draayer",
-      "identifier": "https://orcid.org/0000-0000-0000-0004"
     }
   ],
   "keywords": [
@@ -48,36 +45,44 @@
   "distribution": [
     {
       "@id": "oeis-benchmark-zip",
-      "@type": "cr:FileObject",
+      "@type": "FileObject",
       "name": "oeis-sequence-benchmark-main.zip",
       "contentUrl": "https://github.com/ceodspspectrum/oeis-sequence-benchmark/archive/refs/heads/main.zip",
       "encodingFormat": "application/zip"
     },
     {
       "@id": "classic-easy-files",
-      "@type": "cr:FileSet",
-      "containedIn": { "@id": "oeis-benchmark-zip" },
+      "@type": "FileSet",
+      "containedIn": {
+        "@id": "oeis-benchmark-zip"
+      },
       "includes": "oeis-sequence-benchmark-main/data/classic/SequenceEasyJson_files/*.json",
       "encodingFormat": "application/json"
     },
     {
       "@id": "classic-hard-files",
-      "@type": "cr:FileSet",
-      "containedIn": { "@id": "oeis-benchmark-zip" },
+      "@type": "FileSet",
+      "containedIn": {
+        "@id": "oeis-benchmark-zip"
+      },
       "includes": "oeis-sequence-benchmark-main/data/classic/SequenceHardJson_files/*.json",
       "encodingFormat": "application/json"
     },
     {
       "@id": "contemporary-easy-files",
-      "@type": "cr:FileSet",
-      "containedIn": { "@id": "oeis-benchmark-zip" },
+      "@type": "FileSet",
+      "containedIn": {
+        "@id": "oeis-benchmark-zip"
+      },
       "includes": "oeis-sequence-benchmark-main/data/contemporary/SequenceEasyJson_files/*.json",
       "encodingFormat": "application/json"
     },
     {
       "@id": "contemporary-hard-files",
-      "@type": "cr:FileSet",
-      "containedIn": { "@id": "oeis-benchmark-zip" },
+      "@type": "FileSet",
+      "containedIn": {
+        "@id": "oeis-benchmark-zip"
+      },
       "includes": "oeis-sequence-benchmark-main/data/contemporary/SequenceHardJson_files/*.json",
       "encodingFormat": "application/json"
     }
@@ -94,8 +99,12 @@
           "description": "OEIS sequence number (e.g. 1 for A000001)",
           "dataType": "Integer",
           "source": {
-            "fileSet": { "@id": "classic-easy-files" },
-            "extract": { "jsonPath": "$[0].number" }
+            "fileSet": {
+              "@id": "classic-easy-files"
+            },
+            "extract": {
+              "jsonPath": "$[0].number"
+            }
           }
         },
         {
@@ -104,8 +113,12 @@
           "description": "Full OEIS ID (e.g. A000001)",
           "dataType": "Text",
           "source": {
-            "fileSet": { "@id": "classic-easy-files" },
-            "extract": { "jsonPath": "$[0].id" }
+            "fileSet": {
+              "@id": "classic-easy-files"
+            },
+            "extract": {
+              "jsonPath": "$[0].id"
+            }
           }
         },
         {
@@ -114,8 +127,12 @@
           "description": "Human-readable name of the sequence",
           "dataType": "Text",
           "source": {
-            "fileSet": { "@id": "classic-easy-files" },
-            "extract": { "jsonPath": "$[0].name" }
+            "fileSet": {
+              "@id": "classic-easy-files"
+            },
+            "extract": {
+              "jsonPath": "$[0].name"
+            }
           }
         },
         {
@@ -124,8 +141,12 @@
           "description": "Raw comma-separated terms",
           "dataType": "Text",
           "source": {
-            "fileSet": { "@id": "classic-easy-files" },
-            "extract": { "jsonPath": "$[0].data" }
+            "fileSet": {
+              "@id": "classic-easy-files"
+            },
+            "extract": {
+              "jsonPath": "$[0].data"
+            }
           }
         },
         {
@@ -135,8 +156,12 @@
           "dataType": "Integer",
           "repeated": true,
           "source": {
-            "fileSet": { "@id": "classic-easy-files" },
-            "extract": { "jsonPath": "$[0].data" },
+            "fileSet": {
+              "@id": "classic-easy-files"
+            },
+            "extract": {
+              "jsonPath": "$[0].data"
+            },
             "transform": {
               "separator": ",",
               "dataType": "Integer"
@@ -150,8 +175,12 @@
           "dataType": "Text",
           "repeated": true,
           "source": {
-            "fileSet": { "@id": "classic-easy-files" },
-            "extract": { "jsonPath": "$[0].comment[*]" }
+            "fileSet": {
+              "@id": "classic-easy-files"
+            },
+            "extract": {
+              "jsonPath": "$[0].comment[*]"
+            }
           }
         },
         {
@@ -161,8 +190,12 @@
           "dataType": "Text",
           "repeated": true,
           "source": {
-            "fileSet": { "@id": "classic-easy-files" },
-            "extract": { "jsonPath": "$[0].reference[*]" }
+            "fileSet": {
+              "@id": "classic-easy-files"
+            },
+            "extract": {
+              "jsonPath": "$[0].reference[*]"
+            }
           }
         },
         {
@@ -171,8 +204,12 @@
           "description": "classic vs. contemporary",
           "dataType": "Text",
           "source": {
-            "fileSet": { "@id": "classic-easy-files" },
-            "extract": { "fileProperty": "path" },
+            "fileSet": {
+              "@id": "classic-easy-files"
+            },
+            "extract": {
+              "fileProperty": "path"
+            },
             "transform": {
               "regex": ".*/data/(classic|contemporary)/.*",
               "replacement": "$1"
@@ -185,8 +222,12 @@
           "description": "easy vs. hard",
           "dataType": "Text",
           "source": {
-            "fileSet": { "@id": "classic-easy-files" },
-            "extract": { "fileProperty": "path" },
+            "fileSet": {
+              "@id": "classic-easy-files"
+            },
+            "extract": {
+              "fileProperty": "path"
+            },
             "transform": {
               "regex": ".*Sequence(Easy|Hard)Json_files/.*",
               "replacement": "$1"
