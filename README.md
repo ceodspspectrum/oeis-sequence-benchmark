@@ -211,3 +211,23 @@ Model & Timeout & \multicolumn{2}{c|}{SequenceEasy} & \multicolumn{2}{c|}{Sequen
 \caption{Evaluation of Average Scores and Cheating Percentages by Timeout}
 \end{table}
 ```
+
+## License & Attribution
+
+**Code (this repository’s scripts and tooling)**  
+Licensed under the **BSD 3-Clause License**. See [`LICENSE`](./LICENSE).  
+SPDX: `BSD-3-Clause`
+
+**Data (anything derived from OEIS content)**  
+Licensed under **Creative Commons Attribution–ShareAlike 4.0 International**.  
+SPDX: `CC-BY-SA-4.0`  
+This includes, for example, cached OEIS sequence data, any files that embed OEIS values or metadata (e.g., prompts constructed from OEIS sequences), and other OEIS-derived artifacts.
+
+**Required attribution (OEIS):**  
+> Data from The On-Line Encyclopedia of Integer Sequences® (OEIS®), https://oeis.org/ (e.g., A000045), used under CC BY-SA 4.0.
+
+- OEIS License: https://oeis.org/LICENSE  
+- CC BY-SA 4.0 Summary: https://creativecommons.org/licenses/by-sa/4.0/
+
+**ShareAlike notice:** If you remix/transform/build upon the OEIS-derived dataset and distribute the result, you must license your contributions under CC BY-SA 4.0.
+
